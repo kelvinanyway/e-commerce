@@ -28,6 +28,10 @@
         <servlet-name>CadastrarProdutoController</servlet-name>
         <servlet-class>controller.CadastrarProdutoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CarrinhoController</servlet-name>
+        <servlet-class>controller.CarrinhoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -55,6 +59,14 @@
     <servlet-mapping>
         <servlet-name>CadastrarProdutoController</servlet-name>
         <url-pattern>/cadastro-de-produto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastrarProdutoController</servlet-name>
+        <url-pattern>/addProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/carrinho</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
