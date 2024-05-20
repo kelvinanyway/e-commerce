@@ -6,34 +6,32 @@
                 <html>
 
                 <head>
-                    <link rel="stylesheet" href="./styles/telaInicial.css">
+                    <link rel="stylesheet" href="./styles/cadastroP.css">
                     <link rel="shortcut icon" href="./assets/88header.png" type="image/x-icon">
                     <meta charset="UTF-8">
                     <title>Cadastro de Produto</title>
                     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
                 </head>
 
-                <body>
+                <body class="vh-100">
                     <header>
-                        <div id="container-head">
-                            <nav class="row g-0 justify-content-between align-items-center">
-                                <div class="col-2 ">
-                                    <a href="./home"><img class="img-header align-self-center"
-                                            src="./assets/88header.png" alt="img header"></a>
+                        <nav class="row g-0 justify-content-between align-items-center">
+                            <div class="col-2 ">
+                                <a href="./home"><img class="img-header align-self-center" src="./assets/88header.png"
+                                        alt="img header"></a>
 
-                                </div>
-                                <ul class="col-12 nav justify-content-center">
-                                    <li class="nav-item">
-                                        <a class="nav-link active text-dark " aria-current="page" href="">Editar
-                                            Produtos</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-dark" href="#">Historico de Pedidos</a>
-                                    </li>
-                                </ul>
-                        </div>
+                            </div>
+                            <ul class="col-12 nav justify-content-center">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-dark " aria-current="page" href="">Editar
+                                        Produtos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="#">Historico de Pedidos</a>
+                                </li>
+                            </ul>
                     </header>
-                    <main>
+                    <main class="m-2">
                         <div class="container">
                             <h2>Cadastro de Produtos</h2>
                             <form action="addProduto" method="POST" enctype="multipart/form-data">
@@ -53,7 +51,12 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="valor">Valor:</label>
+                                    <label for="valor">Desconto:</label>
+                                    <input type="number" step="0.01" class="form-control" id="desconto" name="desconto"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="desconto">Valor:</label>
                                     <input type="number" step="0.01" class="form-control" id="valor" name="valor"
                                         required>
                                 </div>
@@ -62,10 +65,14 @@
                                     <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
                                 </div>
                                 <div class="form-group">
+                                    <label for="validade">Validade:</label>
+                                    <input type="date" class="form-control" id="validade" name="validade" required>
+                                </div>
+                                <div class="form-group">
                                     <label for="imagem">Imagem do Produto:</label>
                                     <input type="file" class="form-control-file" id="imagem" name="imagem">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                <button type="submit" class="btn btn-primary">Cadastrar Produto</button>
                             </form>
                         </div>
                     </main>

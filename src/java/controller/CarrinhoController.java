@@ -5,28 +5,19 @@
  */
 package controller;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
-import java.sql.Date;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
-import model.bean.Categoria;
-import model.bean.Produto;
-import model.dao.CategoriaDAO;
-import model.dao.ProdutoDAO;
 
 /**
  *
  * @author Senai
  */
-public class CadastrarProdutoController extends HttpServlet {
+public class CarrinhoController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,11 +30,7 @@ public class CadastrarProdutoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nextPage = "/WEB-INF/jsp/cadastrarProduto.jsp";
-        CategoriaDAO cDAO = new CategoriaDAO();
-        
-        List<Categoria> categoria = cDAO.listarCategorias();
-        request.setAttribute("categorias", categoria);
+        String nextPage = "/WEB-INF/jsp/carrinho.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
         dispatcher.forward(request, response);
     }
@@ -74,33 +61,7 @@ public class CadastrarProdutoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String url = request.getServletPath();
-        if (url.equals("/addProduto")) {
-            Produto p = new Produto();
-            ProdutoDAO pDao = new ProdutoDAO();
-            p.setNome(request.getParameter("nome"));
-            p.setDescricao(request.getParameter("descricao"));
-            p.setValor(Float.parseFloat(request.getParameter("valor")));
-            p.setDesconto(Float.parseFloat(request.getParameter("desconto")));
-            p.setValidade(Date.valueOf(request.getParameter("validade")));
-            Part filePart = request.getPart("imagem");
-            InputStream iStream = filePart.getInputStream();
-            ByteArrayOutputStream byteA = new ByteArrayOutputStream();
-            byte[] img = new byte[4096];
-            int byteRead = -1;
-            while ((byteRead = iStream.read(img)) != -1) {
-                byteA.write(img, 0, byteRead);
-            }
-            byte[] imgBytes = byteA.toByteArray();
-            //Imagem imagem = new Imagem();
-            //imagem.setProduto(pDao.create(p));
-            //imagem.setImagem(imgBytes);
-            //ImagemDAO imgDAO = new ImagemDAO();
-            //imgDAO.insertImagem(imagem);
-            //response.sendRedirect("./cadastroproduto"); 
-
-        }
+        processRequest(request, response);
     }
 
     /**

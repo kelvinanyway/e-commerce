@@ -1,4 +1,4 @@
-
+drop database mercado88;
 create database mercado88;
 use mercado88;
 
@@ -36,7 +36,8 @@ create table produto (
     valor float(10,2) not null,
     desconto float(10,2) default 0,
     valorFinal float(10,2) GENERATED ALWAYS AS (valor - COALESCE(desconto, 0)) STORED,
-    descricao varchar(2000)
+    descricao varchar(2000),
+    validade varchar (45)
 );
 
 create table imagem ( 
@@ -108,5 +109,8 @@ END //
 DELIMITER ;
 
 select * from usuario;
+INSERT INTO usuario (nome,email,senha) values ("kelvin","adminmercado88@gmail.com","@admin123@");
 select * from produto;
+select * from categoria;
+INSERT INTO categoria (nome) values ("produtos de limpeza"),("frutas/verduras"),("bebidas"),("iogurtes");
 select * from imagem;
