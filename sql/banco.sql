@@ -1,4 +1,3 @@
-drop database mercado88;
 create database mercado88;
 use mercado88;
 
@@ -37,16 +36,10 @@ create table produto (
     desconto float(10,2) default 0,
     valorFinal float(10,2) GENERATED ALWAYS AS (valor - COALESCE(desconto, 0)) STORED,
     descricao varchar(2000),
-    validade varchar (45)
+    validade date,
+    imagem longblob
 );
 
-create table imagem ( 
-idImagem int primary key auto_increment,
-produto int,
-imagem longblob,
-formato varchar(10),
-foreign key (produto) references produto(idProduto)
-);
 
 create table produtoCategoria (
 	idProdutoCategoria int primary key auto_increment,
@@ -109,7 +102,7 @@ END //
 DELIMITER ;
 
 select * from usuario;
-INSERT INTO usuario (nome,email,senha) values ("kelvin","adminmercado88@gmail.com","@admin123@");
+INSERT INTO usuario (nome,email,senha,telefone) values ("kelvin","adminmercado88@gmail.com","@admin123@","(11)11111-1111");
 select * from produto;
 select * from categoria;
 INSERT INTO categoria (nome) values ("produtos de limpeza"),("frutas/verduras"),("bebidas"),("iogurtes");

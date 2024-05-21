@@ -68,15 +68,24 @@
                         <button class="finalizar"> Finalizar Compra</button>
                     </div>
                 </div>
-                <div class="compras">
-                    <input type="checkbox" class="cbox">
-                    <img src="./assets/miojo.png" alt="miojo">
-                    <div class="nvqv">
-                        <h2>Miojo Nissin</h2>
-                        <label for=""></label>
-                    </div>
 
+                <div class="divisao-compras m-4">
+                    <div class="compras w-100">
+                        <div class="d-flex gap-3    ">
+                            <input type="checkbox" class="cbox">
+                            <img class="miojo" src="./assets/miojo.png" alt="miojo">
+                            <div class="nvqv">
+                                <h2>Miojo Nissin</h2>
+                                <label for="valorUnitario">Valor unit:</label>
+                                <label for="qntd">Quantidade:</label>
+                                <label for="valordaunidade">R$ 13,00</label>
+                            </div>
+                        </div>
+                        <button class="excluir"><i class="fa-solid fa-trash fa-xl" style="color: #000000;"></i></button>
+                    </div>
                 </div>
+
+
             </main>
             <footer>
                 <p> Mercado88 &copy; todos os direitos reservados</p>
