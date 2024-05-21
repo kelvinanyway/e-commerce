@@ -34,7 +34,7 @@
                     <main class="m-2">
                         <div class="container">
                             <h2>Cadastro de Produtos</h2>
-                            <form action="addProduto" method="POST" enctype="multipart/form-data">
+                            <form action="addProduto" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="nome">Nome:</label>
                                     <input type="text" class="form-control" id="nome" name="nome" required>

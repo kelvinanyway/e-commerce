@@ -5,7 +5,7 @@
 }
 
 body {
-
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
@@ -64,7 +64,9 @@ nav li:hover {
 #search:focus-visible {
     outline: none;
 }
-
+.divisao-compras{
+    display: flex;
+}
 .carrinho {
     display: flex;
     justify-content: center;
@@ -76,28 +78,57 @@ nav li:hover {
     display: flex;
     gap: 20vh
 }
-.carrinho label{
+
+.carrinho label {
     margin-top: 5px
 }
 
 .carrinho button {
-   background-color: #FFF112;
-   border: none;
+    background-color: #FFF112;
+    border: none;
     border-radius: 5px;
     width: 8vw;
     height: 5vh;
 
 }
 
+.compras {
+    display: flex;
+    justify-content: space-between;
+    gap: 1vw;
+}
+
+.compras input {
+    cursor: pointer;
+}
+
+.compras img {
+    height: 20vh;
+    width: 10vw;
+}
+
+.nvqv {
+    display: flex;
+    flex-direction: column;
+}
+
+.excluir {
+    width: 3vw;
+    height: 3vh;
+    border: none;
+    background-color: white;
+    margin: 7vh;
+}
+
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 230, 0);
+    background-color:  #FFF112;
     height: 10vh;
     width: 100vw;
-    margin: 0;
-    padding: 0;
+    position: relative;
+    bottom: 0;
 }
 
 footer p {

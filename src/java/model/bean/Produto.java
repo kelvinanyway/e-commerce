@@ -20,6 +20,21 @@ public class Produto {
     private Float valorFinal;
     private Date validade;
     private String descricao;
+    private byte[] imagem;
+
+    public Produto() {
+    }
+
+    public Produto(int idProduto, String nome, Float valor, Float desconto, Float valorFinal, Date validade, String descricao, byte[] imagem) {
+        this.idProduto = idProduto;
+        this.nome = nome;
+        this.valor = valor;
+        this.desconto = desconto;
+        this.valorFinal = valorFinal;
+        this.validade = validade;
+        this.descricao = descricao;
+        this.imagem = imagem;
+    }
 
     public int getIdProduto() {
         return idProduto;
@@ -77,17 +92,13 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public Produto(int idProduto, String nome, Float valor, Float desconto, Float valorFinal, Date validade, String descricao) {
-        this.idProduto = idProduto;
-        this.nome = nome;
-        this.valor = valor;
-        this.desconto = desconto;
-        this.valorFinal = valorFinal;
-        this.validade = validade;
-        this.descricao = descricao;
+    public byte[] getImagem() {
+        return imagem;
     }
 
-    public Produto() {
+    public void setImagem(byte[] imagem) {
+        this.imagem = imagem;
     }
+
 
 }
