@@ -1,0 +1,201 @@
+.produtos {
+    position: relative;
+    overflow: hidden;
+    padding: 2vw;
+  }
+  
+  .product-category {
+    padding: 0 10vw;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+  }
+  
+  .produto-container {
+    padding: 0 2vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  
+  .produto-card {
+    flex: 0 0 auto;
+    width: 14vw;
+    height: 34vh;
+    margin: 4px 10px;
+    border: 1px #cee2e6 solid;
+    padding: 3px 5px;
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.247)
+}
+
+.produto-imagem {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    padding: 2px 1px;
+}
+
+.produto-capa {
+    width: 100%;
+    height: 15vh;
+    object-fit: contain;
+}
+
+.tag-desconto {
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ff7d7d;
+    right: 10px;
+    top: 10px;
+    text-transform: capitalize;
+}
+
+#div-valor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#div-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-btn {
+    margin-top: 10px;
+    padding: 4px;
+    padding-bottom: 5px;
+    width: 45%;
+    height: 60%;
+    position: relative;
+    bottom: 0;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 1;
+    font-size: 0.6rem;
+    font-weight: 600;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.27);
+    overflow: hidden;
+}
+
+.card-btn:hover {
+    background: #13a343;
+    color: #fff;
+    transform: scale(1.10);
+}
+
+.produto-info {
+    width: 100%;
+    height: 50%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.produto-info div {
+    height: 50%;
+}
+
+.produto-descricao {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    opacity: 0.5;
+    text-transform: capitalize;
+    margin: 5px 0;
+}
+
+.preco {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.valor {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+  
+  .pre-btn,
+  .nxt-btn {
+    border: none;
+    width: 10vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 10%, #fff 100%);
+    cursor: pointer;
+    z-index: 8;
+  }
+  
+  .pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+  }
+  
+  .nxt-btn {
+    right: 0;
+  }
+  
+  .pre-btn img,
+  .nxt-btn img {
+    opacity: 0.2;
+  }
+  
+  .pre-btn:hover img,
+  .nxt-btn:hover img {
+    opacity: 1;
+  }
+  
+  .collection-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .collection {
+    position: relative;
+  }
+  
+  .collection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .collection p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    text-transform: capitalize;
+  }
+  
+  .collection:nth-child(3) {
+    grid-column: span 2;
+    margin-bottom: 10px;
+  }
+  
+  @media all and (max-width:768px) {
+    .produto-card {
+      min-width: 30vw;
+      max-height: 30vh;
+    }
+  }

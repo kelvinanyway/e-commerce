@@ -84,14 +84,10 @@ public class CadastrarProdutoController extends HttpServlet {
             ProdutoDAO pDAO = new ProdutoDAO();
 
             p.setNome(request.getParameter("nome"));
-            System.out.println(request.getParameter("nome"));
             p.setDescricao(request.getParameter("descricao"));
-            System.out.println(request.getParameter("descricao"));
             p.setValor(Float.parseFloat(request.getParameter("valor")));
-            System.out.println(request.getParameter("valor"));
             p.setDesconto(Float.parseFloat(request.getParameter("desconto")));
             p.setValidade(Date.valueOf(request.getParameter("validade")));
-             System.out.println(request.getParameter("validade"));
              
             Part filePart = request.getPart("imagem");
             InputStream iStream = filePart.getInputStream();
@@ -104,7 +100,7 @@ public class CadastrarProdutoController extends HttpServlet {
             byte[] imgBytes = byteA.toByteArray();
             p.setImagem(imgBytes);
             pDAO.create(p);
-            response.sendRedirect("./cadastroproduto"); 
+            response.sendRedirect("./cadastro-de-produto"); 
 
         }
     }
