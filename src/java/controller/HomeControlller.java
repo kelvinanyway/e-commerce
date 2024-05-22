@@ -7,11 +7,15 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Base64;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.Produto;
+import model.dao.ProdutoDAO;
 
 /**
  *
@@ -31,8 +35,19 @@ public class HomeControlller extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nextPage = "/WEB-INF/jsp/index.jsp";
+        ProdutoDAO pdao = new ProdutoDAO();
+        List<Produto> produtos = pdao.read();
+        System.out.println(produtos.size());
+        for (int i = 0; i < produtos.size(); i++) {
+            produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
+        }
+        
+        
+        
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+        request.setAttribute("produtos", produtos);
         dispatcher.forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

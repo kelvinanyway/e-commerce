@@ -34,12 +34,12 @@ public class ProdutoDAO {
                 produto.setIdProduto(rs.getInt("idProduto"));
                 produto.setNome(rs.getString("nome"));
                 produto.setValor(rs.getFloat("valor"));
-                produto.setDesconto(rs.getFloat("desconto"));
                 produto.setValorFinal(rs.getFloat("valorFinal"));
+                produto.setDesconto(rs.getFloat("desconto"));
                 produto.setDescricao(rs.getString("descricao"));
                 produto.setValidade(rs.getDate("validade"));
                 produto.setImagem(rs.getBytes("imagem"));
-
+                produtos.add(produto);
             }
 
             rs.close();
@@ -57,15 +57,14 @@ public class ProdutoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("INSERT INTO produto( nome, valor, desconto, valorFinal, descricao, validade, imagem) values ( ?, ?, ?, ?, ?, ?, ?)");
+            stmt = conexao.prepareStatement("INSERT INTO produto( nome, valor, desconto, descricao, validade, imagem) values ( ?, ?, ?, ?, ?, ?)");
 
             stmt.setString(1, p.getNome());
             stmt.setFloat(2, p.getValor());
             stmt.setFloat(3, p.getDesconto());
-            stmt.setFloat(4, p.getValorFinal());
-            stmt.setString(5, p.getDescricao());
-            stmt.setDate(6, p.getValidade());
-            stmt.setBytes(7, p.getImagem());
+            stmt.setString(4, p.getDescricao());
+            stmt.setDate(5, p.getValidade());
+            stmt.setBytes(6, p.getImagem());
 
             stmt.executeUpdate();
             stmt.close();
@@ -83,15 +82,14 @@ public class ProdutoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("UPDATE produto SET idProduto = ?, nome = ?, valor = ?, desconto = ?, valorFinal = ?, desconto = ?,descricao = ?,validade = ?, imagem = ? ");
+            stmt = conexao.prepareStatement("UPDATE produto SET idProduto = ?, nome = ?, valor = ?, desconto = ?,descricao = ?,validade = ?, imagem = ? ");
             stmt.setInt(1, p.getIdProduto());
             stmt.setString(2, p.getNome());
             stmt.setFloat(3, p.getValor());
             stmt.setFloat(4, p.getDesconto());
-            stmt.setFloat(5, p.getValorFinal());
-            stmt.setString(6, p.getDescricao());
-            stmt.setDate(7, p.getValidade());
-            stmt.setBytes(8, p.getImagem());
+            stmt.setString(5, p.getDescricao());
+            stmt.setDate(6, p.getValidade());
+            stmt.setBytes(7, p.getImagem());
             ;
 
             stmt.executeUpdate();
