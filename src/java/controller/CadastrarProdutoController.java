@@ -14,14 +14,17 @@ import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import model.bean.Categoria;
 import model.bean.Produto;
+import model.bean.Usuario;
 import model.dao.CategoriaDAO;
 import model.dao.ProdutoDAO;
+import model.dao.UsuarioDAO;
 
 /**
  *
@@ -41,13 +44,30 @@ public class CadastrarProdutoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nextPage = "/WEB-INF/jsp/cadastrarProduto.jsp";
+
         CategoriaDAO cDAO = new CategoriaDAO();
-        
+
         List<Categoria> categoria = cDAO.listarCategorias();
         request.setAttribute("categorias", categoria);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-        dispatcher.forward(request, response);
+        Cookie[] cookies = request.getCookies();
+        Usuario usuario = null;
+        UsuarioDAO uDAO = new UsuarioDAO();
+
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("usuario")) {
+                    usuario = uDAO.getUsuariobyid(Integer.parseInt(cookie.getValue()));
+                    System.out.println(usuario.getNome()+" "+usuario.getTipo());
+                }   
+            }
+        }
+        if (usuario.getTipo() != 1) {
+            response.sendRedirect("./home");
+        } else {
+            String nextPage = "/WEB-INF/jsp/cadastrarProduto.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+            dispatcher.forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -76,10 +96,10 @@ public class CadastrarProdutoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String url = request.getServletPath();
         if (url.equals("/addProduto")) {
-            
+
             Produto p = new Produto();
             ProdutoDAO pDAO = new ProdutoDAO();
 
@@ -88,7 +108,7 @@ public class CadastrarProdutoController extends HttpServlet {
             p.setValor(Float.parseFloat(request.getParameter("valor")));
             p.setDesconto(Float.parseFloat(request.getParameter("desconto")));
             p.setValidade(Date.valueOf(request.getParameter("validade")));
-             
+
             Part filePart = request.getPart("imagem");
             InputStream iStream = filePart.getInputStream();
             ByteArrayOutputStream byteA = new ByteArrayOutputStream();
@@ -100,7 +120,7 @@ public class CadastrarProdutoController extends HttpServlet {
             byte[] imgBytes = byteA.toByteArray();
             p.setImagem(imgBytes);
             pDAO.create(p);
-            response.sendRedirect("./cadastro-de-produto"); 
+            response.sendRedirect("./cadastro-de-produto");
 
         }
     }

@@ -123,7 +123,7 @@
                                                     <span class="preco laranja-texto-3">R$${produto.valorFinal}</span>
                                                 </div>
                                                 <div id="div-btn">
-                                                    <button class="card-btn verde-fundo fs-6">Comprar!</button>
+                                                    <button class="card-btn verde-fundo fs-6">Comprar</button>
                                                 </div>
                                             </div>
                                         </div>

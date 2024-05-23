@@ -37,7 +37,6 @@ public class HomeControlller extends HttpServlet {
         String nextPage = "/WEB-INF/jsp/index.jsp";
         ProdutoDAO pdao = new ProdutoDAO();
         List<Produto> produtos = pdao.read();
-        System.out.println(produtos.size());
         for (int i = 0; i < produtos.size(); i++) {
             produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
         }

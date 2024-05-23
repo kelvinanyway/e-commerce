@@ -19,6 +19,17 @@ public class Usuario {
     private Date data;
     private String cpf;
     private String telefone;
+    private int tipo;
+    private byte[] fotodeperfil;
+    private String fotodeperfilBase64;
+
+    public String getFotodeperfilBase64() {
+        return fotodeperfilBase64;
+    }
+
+    public void setFotodeperfilBase64(String fotodeperfilBase64) {
+        this.fotodeperfilBase64 = fotodeperfilBase64;
+    }
 
     public int getIdUsuario() {
         return idUsuario;
@@ -76,7 +87,23 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-    public Usuario(int idUsuario, String nome, String email, String senha, Date data, String cpf, String telefone) {
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    public byte[] getFotodeperfil() {
+        return fotodeperfil;
+    }
+
+    public void setFotodeperfil(byte[] fotodeperfil) {
+        this.fotodeperfil = fotodeperfil;
+    }
+
+    public Usuario(int idUsuario, String nome, String email, String senha, Date data, String cpf, String telefone, int tipo, byte[] fotodeperfil) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.email = email;
@@ -84,9 +111,10 @@ public class Usuario {
         this.data = data;
         this.cpf = cpf;
         this.telefone = telefone;
+        this.tipo = tipo;
+        this.fotodeperfil = fotodeperfil;
     }
 
     public Usuario() {
     }
-   
 }

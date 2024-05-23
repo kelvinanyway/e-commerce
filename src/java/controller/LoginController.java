@@ -75,7 +75,13 @@ public class LoginController extends HttpServlet {
                 if (uDAO.login(usuario) != -1) {
                     Cookie cookie = new Cookie("usuario", Integer.toString(uDAO.login(usuario)));
                     response.addCookie(cookie);
-                    response.sendRedirect("./home");
+                    usuario = uDAO.getUsuariobyid(uDAO.login(usuario));
+                    if (usuario.getTipo() != 1) {
+                    response.sendRedirect("./home");    
+                    } else {
+                        response.sendRedirect("./cadastro-de-produto");
+                    }
+                    
                 } else {
                     request.setAttribute("errorMessage", "Usuário ou senha inválidos");
                     response.sendRedirect("./login");
