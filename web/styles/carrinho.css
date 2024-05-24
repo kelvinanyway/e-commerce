@@ -115,6 +115,10 @@ ul {
     height: 5vh;
 
 }
+.carrinho button:hover{
+    transform:scale(1.1);
+    
+}
 
 .compras {
     display: flex;
@@ -124,11 +128,6 @@ ul {
 
 .compras input {
     cursor: pointer;
-}
-
-.compras img {
-    height: 20vh;
-    width: 10vw;
 }
 
 .nvqv {
