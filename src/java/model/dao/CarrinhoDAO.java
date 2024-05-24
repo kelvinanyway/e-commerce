@@ -21,11 +21,11 @@ public class CarrinhoDAO {
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
-            
+
             stmt = conexao.prepareStatement("INSERT INTO carrinho(produto,carrinho)values(?,?)");
             stmt.setInt(1, c.getProduto());
             stmt.setInt(2, c.getCarrinho());
-            
+
             stmt.executeUpdate();
             stmt.close();
             conexao.close();
@@ -33,6 +33,7 @@ public class CarrinhoDAO {
             e.printStackTrace();
         }
     }
+
     /*
     public void delete(Carrinho c){
     try{
@@ -48,8 +49,35 @@ public class CarrinhoDAO {
         e.printStackTrace();
     }
     }
-    */
-    public void update(Carrinho c){
-    
+     */
+    public void update(Carrinho c) {
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            stmt = conexao.prepareStatement("UPDATE carrinho SET carrinho = ?, produto = ? WHERE idCarrinho = ?");
+            stmt.setInt(1, c.getCarrinho());
+            stmt.setInt(2, c.getProduto());
+            stmt.setInt(3, c.getIdCarrinho());
+
+            stmt.executeUpdate();
+            stmt.close();
+            conexao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void delete(Carrinho c) {
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            stmt = conexao.prepareStatement("DELETE carrinho WHERE idCarrinho = ?");
+            stmt.setInt(1, c.getIdCarrinho());
+
+            stmt.close();
+            conexao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

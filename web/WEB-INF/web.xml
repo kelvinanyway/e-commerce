@@ -68,6 +68,10 @@
         <servlet-name>CarrinhoController</servlet-name>
         <url-pattern>/carrinho</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/adicionarcarrinho</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

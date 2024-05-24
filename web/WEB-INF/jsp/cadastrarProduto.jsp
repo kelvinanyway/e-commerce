@@ -6,7 +6,7 @@
                 <html>
 
                 <head>
-                    <link rel="stylesheet" href="./styles/cadastroP.css">
+                    <link rel="stylesheet" href="./styles/cadastroProduto.css">
                     <link rel="shortcut icon" href="./assets/88header.png" type="image/x-icon">
                     <meta charset="UTF-8">
                     <title>Cadastro de Produto</title>

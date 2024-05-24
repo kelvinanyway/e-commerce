@@ -19,7 +19,7 @@
             <title>Mercado 88</title>
         </head>
 
-        <body>
+        <body class="vh-100">
             <header>
                 <div id="container-head">
                     <nav class="row g-0 justify-content-between align-items-center">
@@ -76,7 +76,7 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="./assets/banner4.png" class="d-block w-100" alt="...">
+                            <img src="./assets/carrossel2.jpg" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
                             <img src="./assets/carrossel.jpg" class="d-block w-100" alt="...">
@@ -99,36 +99,39 @@
                 <div class="container text-center my-5">
                     <h2 class="font-weight-light"></h2>
                     <div class="row mx-auto my-auto">
+                        <center>
+                            <h1>Nossas Ofertas</h1>
+                        </center>
 
                         <!--JoãoGuilherme carousel-->
                         <section class="produtos">
                             <button class="pre-btn"><img src="./assets/arrow.png" alt=""></button>
                             <button class="nxt-btn"><img src="./assets/arrow.png" alt=""></button>
                             <div class="produto-container">
-                                <c:if test="${produtos.size() > 0}">
-                                    <c:forEach items="${produtos}" var="produto">
-                                        <div class="produto-card">
-                                            <div class="produto-imagem">
-                                                <span class="tag-desconto">-R$${produto.desconto}</span>
-                                                <img src="data:image/png;base64,${produto.imagemBase64}"
-                                                    class="produto-capa" alt="">
-                                            </div>
+                                <c:forEach items="${produtos}" var="produto">
+                                    <div class="produto-card">
+                                        <div class="produto-imagem">
+                                            <span class="tag-desconto">-R$${produto.desconto}</span>
+                                            <img src="data:image/png;base64,${produto.imagemBase64}"
+                                                class="produto-capa" alt="">
+                                        </div>
+                                        <div>
+                                            <span class="produto-info">${produto.descricao}</span>
                                             <div>
-                                                <span class="produto-info">${produto.descricao}</span>
-                                                <div>
 
-                                                </div>
-                                                <div id="div-valor">
-                                                    <span class="valor">R$${produto.valor}</span>
-                                                    <span class="preco laranja-texto-3">R$${produto.valorFinal}</span>
-                                                </div>
+                                            </div>
+                                            <div id="div-valor">
+                                                <span class="valor">R$${produto.valor}</span>
+                                                <span class="preco laranja-texto-3">R$${produto.valorFinal}</span>
+                                            </div>
+                                            <form action="adicionarcarrinho" method="post" class="carrinho">
                                                 <div id="div-btn">
                                                     <button class="card-btn verde-fundo fs-6">Comprar</button>
                                                 </div>
-                                            </div>
+                                            </form>
                                         </div>
-                                    </c:forEach>
-                                </c:if>
+                                    </div>
+                                </c:forEach>
                             </div>
                         </section>
                         <!--JoãoGuilherme carousel-->
