@@ -72,6 +72,7 @@
             <div class="divisao-compras m-4">
                 <div class="compras w-100">
                     <div class="d-flex gap-3    ">
+                        
                         <input type="checkbox" class="cbox">
                         <img src="data:image/png;base64,${produto.imagemBase64}">
 

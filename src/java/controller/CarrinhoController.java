@@ -9,9 +9,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.Usuario;
+import model.dao.CarrinhoDAO;
+import model.dao.UsuarioDAO;
 
 /**
  *
@@ -31,6 +35,22 @@ public class CarrinhoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nextPage = "/WEB-INF/jsp/carrinho.jsp";
+        //Início do código feito por joao guilherme
+        CarrinhoDAO cDao = new CarrinhoDAO();
+        UsuarioDAO uDao = new UsuarioDAO();
+        Cookie[] cookies = request.getCookies();
+        Usuario u = null;
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("usuario") && !cookie.getValue().equals("")) {
+                    u = uDao.getUsuariobyid(Integer.parseInt(cookie.getValue()));
+                }
+            }
+        }
+        if (u != null) {
+            request.setAttribute("carrinho", cDao.listarProdutos(u));
+        }
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
         dispatcher.forward(request, response);
     }

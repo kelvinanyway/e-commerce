@@ -11,18 +11,24 @@ import java.util.Base64;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Produto;
+import model.bean.Usuario;
+import model.dao.CarrinhoDAO;
 import model.dao.ProdutoDAO;
+import model.dao.UsuarioDAO;
 
 /**
  *
  * @author Senai
  */
 public class HomeControlller extends HttpServlet {
-
+ProdutoDAO pDao = new ProdutoDAO();
+UsuarioDAO uDao = new UsuarioDAO();
+CarrinhoDAO cDao = new CarrinhoDAO();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,18 +41,16 @@ public class HomeControlller extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nextPage = "/WEB-INF/jsp/index.jsp";
-        ProdutoDAO pdao = new ProdutoDAO();
-        List<Produto> produtos = pdao.read();
+        
+        List<Produto> produtos = pDao.read();
         for (int i = 0; i < produtos.size(); i++) {
             produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
         }
-        
-        
-        
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
         request.setAttribute("produtos", produtos);
         dispatcher.forward(request, response);
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -81,7 +85,24 @@ public class HomeControlller extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //Início do código feito por João Guilherme
+        Cookie[] cookies = request.getCookies();
+        Usuario u = null;
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("usuario") && !cookie.getValue().equals("")) {
+                    u = uDao.getUsuariobyid(Integer.parseInt(cookie.getValue()));
+                }
+            }
+        }
 
+        String url = request.getServletPath();
+        if (url.equals("/adicionarcarrinho")) {
+            if (u != null) {
+               cDao.addProduto(pDao.getProdutoById(Integer.parseInt(request.getParameter("produtoSelecionado"))), cDao.getCarrinho(u));
+            }
+        }
+        //FIM
     }
 
     /**
