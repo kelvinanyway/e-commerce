@@ -52,6 +52,37 @@ public class ProdutoDAO {
         return produtos;
     }
 
+    //Início do código feito por João Guilherme
+    public Produto getProdutoById(int id) {
+        Produto produto = null;
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+
+            stmt = conexao.prepareStatement("SELECT * FROM produto WHERE idProduto = ?");
+            stmt.setInt(1, id);
+
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                produto.setIdProduto(rs.getInt("idProduto"));
+                produto.setNome(rs.getString("nome"));
+                produto.setValor(rs.getFloat("valor"));
+                produto.setValorFinal(rs.getFloat("valorFinal"));
+                produto.setDesconto(rs.getFloat("desconto"));
+                produto.setDescricao(rs.getString("descricao"));
+                produto.setValidade(rs.getDate("validade"));
+                produto.setImagem(rs.getBytes("imagem"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return produto;
+    }
+    //FIM
+
     public void create(Produto p) {
         try {
             Connection conexao = Conexao.conectar();

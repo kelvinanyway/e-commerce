@@ -197,7 +197,7 @@ CREATE TABLE `produto` (
   `descricao` varchar(2000) DEFAULT NULL,
   `validade` date DEFAULT NULL,
   `imagem` longblob DEFAULT NULL,
-  `valorFinal` float GENERATED ALWAYS AS (`valor` - coalesce(`desconto`,0)) VIRTUAL,
+  `valorFinal` float,
   PRIMARY KEY (`idProduto`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -337,3 +337,5 @@ DELIMITER ;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2024-05-24 17:19:38
+ALTER TABLE produto DROP COLUMN valorFinal;
+ALTER TABLE produto ADD COLUMN valorFinal float GENERATED ALWAYS AS (valor - COALESCE(desconto, 0)) STORED;
