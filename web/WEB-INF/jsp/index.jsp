@@ -126,7 +126,7 @@
                                             </div>
                                             <form action="adicionarcarrinho" method="post" class="carrinho">
                                                 <div id="div-btn">
-                                                    <button class="card-btn verde-fundo fs-6" name="produtoSelecionado" value="${produto.idProduto}">Comprar</button>
+                                                    <button class="card-btn verde-fundo fs-6" type="submit" name="produtoSelecionado" value="${produto.idProduto}">Comprar</button>
                                                 </div>
                                             </form>
                                         </div>

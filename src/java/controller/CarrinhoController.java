@@ -7,12 +7,15 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Base64;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.Produto;
 import model.bean.Usuario;
 import model.dao.CarrinhoDAO;
 import model.dao.UsuarioDAO;
@@ -48,11 +51,21 @@ public class CarrinhoController extends HttpServlet {
             }
         }
         if (u != null) {
-            request.setAttribute("carrinho", cDao.listarProdutos(u));
+            List<Produto> produtos = cDao.listarProdutos(u);
+            Float valorTotal = 0.0f;
+            for (int i = 0; i < produtos.size(); i++) {
+            produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));  
+            valorTotal += produtos.get(i).getValorFinal();
+            }
+            System.out.println(valorTotal);
+            request.setAttribute("valorTotal",valorTotal);
+            request.setAttribute("carrinho", produtos);
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+            dispatcher.forward(request, response);
+        } else {
+            response.sendRedirect("./login");
         }
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-        dispatcher.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

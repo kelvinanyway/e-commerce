@@ -88,6 +88,7 @@ CarrinhoDAO cDao = new CarrinhoDAO();
         //Início do código feito por João Guilherme
         Cookie[] cookies = request.getCookies();
         Usuario u = null;
+        System.out.println(cookies.length+" cookies");
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("usuario") && !cookie.getValue().equals("")) {
@@ -98,9 +99,12 @@ CarrinhoDAO cDao = new CarrinhoDAO();
 
         String url = request.getServletPath();
         if (url.equals("/adicionarcarrinho")) {
-            if (u != null) {
-               cDao.addProduto(pDao.getProdutoById(Integer.parseInt(request.getParameter("produtoSelecionado"))), cDao.getCarrinho(u));
+            int idProduto = Integer.parseInt(request.getParameter("produtoSelecionado"));
+            System.out.println("PRODUTO"+idProduto+".");
+            if (u != null) {       
+               cDao.addProduto(pDao.getProdutoById(idProduto), cDao.getCarrinho(u));
             }
+            response.sendRedirect("./home");
         }
         //FIM
     }
