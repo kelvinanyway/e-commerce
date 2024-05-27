@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import model.bean.Produto;
 
@@ -54,7 +55,7 @@ public class ProdutoDAO {
 
     //Início do código feito por João Guilherme
     public Produto getProdutoById(int id) {
-        Produto produto = null;
+        Produto produto = new Produto();
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
@@ -74,6 +75,7 @@ public class ProdutoDAO {
                 produto.setDescricao(rs.getString("descricao"));
                 produto.setValidade(rs.getDate("validade"));
                 produto.setImagem(rs.getBytes("imagem"));
+                produto.setImagemBase64(Base64.getEncoder().encodeToString(produto.getImagem()));
             }
 
         } catch (SQLException e) {
