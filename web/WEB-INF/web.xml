@@ -21,8 +21,8 @@
         <servlet-class>controller.LoginController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>HomeControlller</servlet-name>
-        <servlet-class>controller.HomeControlller</servlet-class>
+        <servlet-name>HomeController</servlet-name>
+        <servlet-class>controller.HomeController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CadastrarProdutoController</servlet-name>
@@ -31,6 +31,10 @@
     <servlet>
         <servlet-name>CarrinhoController</servlet-name>
         <servlet-class>controller.CarrinhoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CategoriasController</servlet-name>
+        <servlet-class>controller.CategoriasController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
@@ -53,7 +57,7 @@
         <url-pattern>/logar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>HomeControlller</servlet-name>
+        <servlet-name>HomeController</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -69,8 +73,20 @@
         <url-pattern>/carrinho</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>HomeControlller</servlet-name>
+        <servlet-name>HomeController</servlet-name>
         <url-pattern>/adicionarcarrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/excluir</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CategoriasController</servlet-name>
+        <url-pattern>/categorias</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CategoriasController</servlet-name>
+        <url-pattern>/search</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
