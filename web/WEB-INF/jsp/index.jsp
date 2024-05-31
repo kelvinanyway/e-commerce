@@ -18,52 +18,8 @@
             <script src="https://kit.fontawesome.com/abf8e7610f.js" crossorigin="anonymous"></script>
             <title>Mercado 88</title>
         </head>
-
         <body class="vh-100">
-            <header>
-                <div id="container-head">
-                    <nav class="row g-0 justify-content-between align-items-center">
-                        <div class="col-2 ">
-                            <a href="./home"><img class="img-header align-self-center" src="./assets/88header.png"
-                                    alt="img header"></a>
-                        </div>
-                        <div class="col-md-6">
-                            <form class="input-group" action="search" method="get">
-                                <button type="submit" class="input-group-text" id="basic-addon1">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                                <input type="search" class="form-control" name="S"
-                                    placeholder="Pesquise produtos de seu interesse" aria-label="Input group example"
-                                    aria-describedby="basic-addon1">
-                            </form>
-                        </div>
-                        <div class="col-2">
-
-                            <div class="row">
-                                <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                                    style="font-size: 2.5rem ;" href="./login">
-                                    <i class="fa-solid fa-circle-user"></i>
-                                </a>
-                                <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                                    style="font-size: 2.5rem ;" href="./carrinho">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </a>
-                            </div>
-
-                        </div>
-                        <ul class="col-12 nav justify-content-center">
-                            <li class="nav-item">
-                                <a class="nav-link active text-dark " aria-current="page">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="./categorias">Categorias</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="#">Contato</a>
-                            </li>
-                        </ul>
-                </div>
-            </header>
+         <jsp:include page="header.jsp"></jsp:include>
             <main>
                 <div id="carouselExampleIndicators" class="carousel slide margin-top">
                     <div class="carousel-indicators">
@@ -108,7 +64,9 @@
                             <button class="pre-btn"><img src="./assets/arrow.png" alt=""></button>
                             <button class="nxt-btn"><img src="./assets/arrow.png" alt=""></button>
                             <div class="produto-container">
+                                
                                 <c:forEach items="${produtos}" var="produto">
+                                    <c:if test="${produto.desconto > 0}">
                                     <div class="produto-card">
                                         <div class="produto-imagem">
                                             <span class="tag-desconto">-R$${produto.desconto}</span>
@@ -116,7 +74,7 @@
                                                 class="produto-capa" alt="">
                                         </div>
                                         <div>
-                                            <span class="produto-info">${produto.descricao}</span>
+                                            <span class="produto-info">${produto.nome}</span>
                                             <div>
 
                                             </div>
@@ -131,6 +89,7 @@
                                             </form>
                                         </div>
                                     </div>
+                                    </c:if>
                                 </c:forEach>
                             </div>
                         </section>

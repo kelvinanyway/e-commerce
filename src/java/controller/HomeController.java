@@ -25,7 +25,7 @@ import model.dao.UsuarioDAO;
  *
  * @author Senai
  */
-public class HomeControlller extends HttpServlet {
+public class HomeController extends HttpServlet {
 ProdutoDAO pDao = new ProdutoDAO();
 UsuarioDAO uDao = new UsuarioDAO();
 CarrinhoDAO cDao = new CarrinhoDAO();
@@ -102,7 +102,7 @@ CarrinhoDAO cDao = new CarrinhoDAO();
             int idProduto = Integer.parseInt(request.getParameter("produtoSelecionado"));
             System.out.println("PRODUTO"+idProduto+".");
             if (u != null) {       
-               cDao.addProduto(pDao.getProdutoById(idProduto), cDao.getCarrinho(u));
+               cDao.addProduto(pDao.pegarProdutoporID(idProduto), cDao.getCarrinho(u));
             }
             response.sendRedirect("./home");
         }

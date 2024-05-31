@@ -16,50 +16,7 @@
             </head>
 
             <body>
-                <header>
-                    <div id="container-head">
-                        <nav class="row g-0 justify-content-between align-items-center">
-                            <div class="col-2 ">
-                                <a href="./home"><img class="img-header align-self-center" src="./assets/88header.png"
-                                        alt="img header"></a>
-                            </div>
-                            <div class="col-md-6">
-                                <form class="input-group" action="search" method="get">
-                                    <button type="submit" class="input-group-text" id="basic-addon1">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </button>
-                                    <input type="search" class="form-control" name="S"
-                                        placeholder="Pesquise produtos de seu interesse"
-                                        aria-label="Input group example" aria-describedby="basic-addon1">
-                                </form>
-                            </div>
-                            <div class="col-2">
-
-                                <div class="row">
-                                    <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                                        style="font-size: 2.5rem ;" href="./login">
-                                        <i class="fa-solid fa-circle-user"></i>
-                                    </a>
-                                    <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                                        style="font-size: 2.5rem ;" href="./carrinho">
-                                        <i class="fa-solid fa-cart-shopping"></i>
-                                    </a>
-                                </div>
-
-                            </div>
-                            <ul class="col-12 nav justify-content-center">
-                                <li class="nav-item">
-                                    <a class="nav-link active text-dark " aria-current="page" href="./home">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" href="./categorias">Categorias</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" href="#">Contato</a>
-                                </li>
-                            </ul>
-                    </div>
-                </header>
+                <jsp:include page="header.jsp"></jsp:include>
                 <main>
                     <div class="carrinho">
                         <h1>Carrinho</h1>
@@ -72,17 +29,16 @@
                     </div>
                     <div class="divisao-compras m-4">
                         <div class="compras w-100">
-                            <div class="d-flex flex-column gap-3">
+                            <div class="d-flex flex-column gap-2 w-100">
                                 <c:forEach items="${carrinho}" var="produto">
                                     <div class="produtos">
                                         <img src="data:image/png;base64,${produto.imagemBase64}">
                                         <div class="labels">
                                             <h2>${produto.nome}</h2>
-                                            <label for="qntd">Quantidade:</label>
                                             <label for="valorUnitario">Valor unit: ${produto.valorFinal}</label>
                                         </div>
-                                        <form action="" method="post">
-                                            <button class="excluir"><i class="fa-solid fa-trash fa-xl"
+                                        <form class="formExcluir" action="excluir" method="post">
+                                            <button type="submit" name="item" value="${produto.idProduto}" ><i class="fa-solid fa-trash fa-xl"
                                                     style="color: #000000;"></i></button>
                                         </form>
                                     </div>

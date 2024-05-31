@@ -45,7 +45,7 @@ public class CategoriaDAO {
         return categorias;
     
     }
-    public Categoria readById(int id) {
+    public Categoria pegarPorID(int id) {
         Categoria c = new Categoria();
         try {
             Connection conexao = Conexao.conectar();
@@ -72,7 +72,7 @@ public class CategoriaDAO {
         return c;
     }
 
-    public Categoria readByNome(String nome) {
+    public Categoria pegarPorNome(String nome) {
         Categoria c = new Categoria();
         try {
             Connection conexao = Conexao.conectar();

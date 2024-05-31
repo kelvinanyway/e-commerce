@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.bean.Produto;
 import model.bean.Usuario;
 import model.dao.CarrinhoDAO;
+import model.dao.ProdutoDAO;
 import model.dao.UsuarioDAO;
 
 /**
@@ -25,6 +26,11 @@ import model.dao.UsuarioDAO;
  * @author Senai
  */
 public class CarrinhoController extends HttpServlet {
+
+    CarrinhoDAO cDAO = new CarrinhoDAO();
+    UsuarioDAO uDAO = new UsuarioDAO();
+    ProdutoDAO pDAO = new ProdutoDAO();
+    Usuario u = new Usuario();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,26 +45,23 @@ public class CarrinhoController extends HttpServlet {
             throws ServletException, IOException {
         String nextPage = "/WEB-INF/jsp/carrinho.jsp";
         //Início do código feito por joao guilherme
-        CarrinhoDAO cDao = new CarrinhoDAO();
-        UsuarioDAO uDao = new UsuarioDAO();
         Cookie[] cookies = request.getCookies();
-        Usuario u = null;
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("usuario") && !cookie.getValue().equals("")) {
-                    u = uDao.getUsuariobyid(Integer.parseInt(cookie.getValue()));
+                    u = uDAO.getUsuariobyid(Integer.parseInt(cookie.getValue()));
                 }
             }
         }
         if (u != null) {
-            List<Produto> produtos = cDao.listarProdutos(u);
+            List<Produto> produtos = cDAO.listarProdutos(u);
             Float valorTotal = 0.0f;
             for (int i = 0; i < produtos.size(); i++) {
-            produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));  
-            valorTotal += produtos.get(i).getValorFinal();
+                produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
+                valorTotal += produtos.get(i).getValorFinal();
             }
             System.out.println(valorTotal);
-            request.setAttribute("valorTotal",valorTotal);
+            request.setAttribute("valorTotal", valorTotal);
             request.setAttribute("carrinho", produtos);
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
@@ -94,7 +97,12 @@ public class CarrinhoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        String url = request.getServletPath();
+        if (url.equals("/excluir")) {
+            cDAO.removerProduto(pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("item"))), cDAO.getCarrinho(u));
+            response.sendRedirect("./carrinho");
+        }
     }
 
     /**

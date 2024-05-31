@@ -7,6 +7,8 @@
 body {
     min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
+    padding-bottom: 10vh;
 }
 
 .img-header {
@@ -18,6 +20,7 @@ nav {
     background-color: #FFF112;
     padding: 10px;
 }
+
 ul {
     list-style: none;
     padding: 0;
@@ -26,40 +29,49 @@ ul {
     font: bold 1.3rem sans-serif;
     text-transform: uppercase;
     color: grey;
-  }
-  ul li {
+}
+
+ul li {
     padding: 0 .5em .25em;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     transition: .3s;
-  }
-  ul li:hover {
+}
+
+ul li:hover {
     color: #fff;
-  }
-  ul li:before {
+}
+
+ul li:before {
     content: "";
     position: absolute;
-    inset: calc(100% - 3px) 0 0 0; /* 3px = the thickness */
-    background: #000000; /* the color */
+    inset: calc(100% - 3px) 0 0 0;
+    /* 3px = the thickness */
+    background: #000000;
+    /* the color */
     scale: 0 1;
     transition: .3s, translate 0s .3s;
-  }
-  ul:hover li:before {
+}
+
+ul:hover li:before {
     scale: 1;
-  }
-  ul li:hover:before {
+}
+
+ul li:hover:before {
     translate: 0;
     transition: .3s;
-  }
-  ul:hover li:has(~ li:hover):before {
+}
+
+ul:hover li:has(~ li:hover):before {
     translate: 100% 0;
-    transition: .2s .2s,scale 0s .4s;
-  }
-  ul:hover li:hover ~ li:before {
+    transition: .2s .2s, scale 0s .4s;
+}
+
+ul:hover li:hover~li:before {
     translate: -100% 0;
-    transition: .2s .2s,scale 0s .4s;
-  }
+    transition: .2s .2s, scale 0s .4s;
+}
 
 .dropdown-menu {
     position: absolute;
@@ -88,14 +100,16 @@ ul {
 #search:focus-visible {
     outline: none;
 }
-.divisao-compras{
+
+.divisao-compras {
     display: flex;
 }
+
 .carrinho {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 55vw;
+    padding: 0 5vw;
 }
 
 .carrinho div {
@@ -115,17 +129,16 @@ ul {
     height: 5vh;
 
 }
-.carrinho button:hover{
-    transform:scale(1.1);
-    
+
+.carrinho button:hover {
+    transform: scale(1.1);
+
 }
 
 .compras {
     display: flex;
     justify-content: space-between;
     gap: 1vw;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 10px ;
 }
 
 .compras input {
@@ -137,38 +150,50 @@ ul {
     flex-direction: row;
     align-items: center;
     margin-left: 15px;
+    position: relative;
+    border: 1px #000000 solid ;
+    border-radius: 5px;
 }
-.produtos img{
+
+.produtos img {
     height: 10vh;
     width: 10vw;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding-left: 9px;
 }
+
 .labels {
     margin: 20px;
     display: flex;
     flex-direction: column;
 }
-label{
+
+label {
     font-weight: 300;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.excluir {
+
+.formExcluir {
     width: 3vw;
     height: 3vh;
+    position: absolute;
+    right: 0;
+}
+
+.formExcluir button {
     border: none;
-    background-color: white;
-    margin: 7vh;
+    background-color: transparent;
 }
 
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:  #FFF112;
+    background-color: #FFF112;
     height: 10vh;
     width: 100vw;
-    position: relative;
+    position: absolute;
     bottom: 0;
+    
 }
 
 footer p {

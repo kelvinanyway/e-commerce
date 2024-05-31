@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 body{
-
+  position: relative;
+    padding-bottom:10vh ;
     overflow-x:hidden ;
 }
 .img-header{
