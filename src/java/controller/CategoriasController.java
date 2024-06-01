@@ -66,6 +66,7 @@ public class CategoriasController extends HttpServlet {
             throws ServletException, IOException {
 
         String url = request.getServletPath();
+        String nextPage = "/WEB-INF/jsp/categoria.jsp";
         if (url.equals("/search")) {
 
             List<Produto> produtos = null;
@@ -78,11 +79,13 @@ public class CategoriasController extends HttpServlet {
                 for (int i = 0; i < produtos.size(); i++) {
 
                     produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
+
                 }
             }
-
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             request.setAttribute("produtos", produtos);
-            
+            dispatcher.forward(request, response);
+
         } else {
             processRequest(request, response);
         }
