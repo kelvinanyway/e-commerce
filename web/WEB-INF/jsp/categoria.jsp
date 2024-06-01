@@ -8,7 +8,7 @@
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
                     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
                     crossorigin="anonymous">
-                <link rel="shortcut icon" href="./assets/88header.png" type="image/x-icon">
+                <link rel="shortcut icon" href="assets/88header.png" type="image/x-icon">
                 <link rel="stylesheet" href="./styles/categorias.css">
                 <link rel="stylesheet" href="./styles/slider.css">
                 <script src="https://kit.fontawesome.com/abf8e7610f.js" crossorigin="anonymous"></script>

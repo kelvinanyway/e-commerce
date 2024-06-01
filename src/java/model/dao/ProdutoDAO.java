@@ -85,7 +85,7 @@ public class ProdutoDAO {
     }
 
     //FIM
-    public List<Produto>pegarPorNome(String nome) {
+    public List<Produto> pegarPorNome(String nome) {
         
         List<Produto> produtos = new ArrayList();
         try {
