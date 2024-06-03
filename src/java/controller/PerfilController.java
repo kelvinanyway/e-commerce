@@ -7,30 +7,20 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Base64;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.bean.Produto;
 import model.bean.Usuario;
-import model.dao.CarrinhoDAO;
-import model.dao.ProdutoDAO;
 import model.dao.UsuarioDAO;
 
 /**
  *
  * @author Senai
  */
-public class CarrinhoController extends HttpServlet {
-
-    CarrinhoDAO cDAO = new CarrinhoDAO();
-    UsuarioDAO uDAO = new UsuarioDAO();
-    ProdutoDAO pDAO = new ProdutoDAO();
-    Usuario u = new Usuario();
+public class PerfilController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,31 +33,22 @@ public class CarrinhoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nextPage = "/WEB-INF/jsp/carrinho.jsp";
-        //Início do código feito por joao guilherme
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("usuario") && !cookie.getValue().equals("")) {
-                    u = uDAO.pegarPorID(Integer.parseInt(cookie.getValue()));
-                }
-            }
-        }
-        if (u != null) {
-            List<Produto> produtos = cDAO.listarProdutos(u);
-            Float valorTotal = 0.0f;
-            for (int i = 0; i < produtos.size(); i++) {
-                produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
-                valorTotal += produtos.get(i).getValorFinal();
-            }
-            request.setAttribute("valorTotal", valorTotal);
-            request.setAttribute("carrinho", produtos);
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-            dispatcher.forward(request, response);
-        } else {
-            response.sendRedirect("./login");
-        }
+        String nextPage = "/WEB-INF/jsp/perfil.jsp";
+        UsuarioDAO uDAO = new UsuarioDAO();
+        Usuario usuario = new Usuario();
 
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("usuario")) {
+                usuario = uDAO.pegarPorID(Integer.parseInt(cookie.getValue()));
+                request.setAttribute("usuario", usuario);
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+                dispatcher.forward(request, response);
+            }
+        }
+        if(usuario.getIdUsuario()== 0){
+        response.sendRedirect("./login");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -96,12 +77,7 @@ public class CarrinhoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        String url = request.getServletPath();
-        if (url.equals("/excluir")) {
-            cDAO.removerProduto(pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("item"))), cDAO.getCarrinho(u));
-            response.sendRedirect("./carrinho");
-        }
+        processRequest(request, response);
     }
 
     /**

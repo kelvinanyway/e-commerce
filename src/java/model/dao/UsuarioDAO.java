@@ -44,7 +44,7 @@ public class UsuarioDAO {
         return idUsuario;
     }
 
-    public Usuario getUsuariobyid(int id) {
+    public Usuario pegarPorID(int id) {
         Usuario u = new Usuario();
         if (id == -1) {
             return u;

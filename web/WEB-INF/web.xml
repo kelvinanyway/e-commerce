@@ -36,6 +36,10 @@
         <servlet-name>CategoriasController</servlet-name>
         <servlet-class>controller.CategoriasController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PerfilController</servlet-name>
+        <servlet-class>controller.PerfilController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -87,6 +91,14 @@
     <servlet-mapping>
         <servlet-name>CategoriasController</servlet-name>
         <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PerfilController</servlet-name>
+        <url-pattern>/perfil</url-pattern>
+    </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>PerfilController</servlet-name>
+        <url-pattern>/addfoto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

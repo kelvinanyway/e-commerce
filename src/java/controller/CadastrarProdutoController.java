@@ -56,8 +56,7 @@ public class CadastrarProdutoController extends HttpServlet {
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("usuario")) {
-                    usuario = uDAO.getUsuariobyid(Integer.parseInt(cookie.getValue()));
-                    System.out.println(usuario.getNome()+" "+usuario.getTipo());
+                    usuario = uDAO.pegarPorID(Integer.parseInt(cookie.getValue()));
                 }   
             }
         }
