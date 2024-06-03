@@ -24,17 +24,21 @@
                             aria-describedby="basic-addon1">
                     </form>
                 </div>
-                <div class="col-2">
+                <div class="col-3">
     
                     <div class="row">
                         <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                            style="font-size: 2.5rem ;" href="./login">
+                            style="font-size: 2.5rem ;" href="./perfil">
                             <i class="fa-solid fa-circle-user"></i>
                         </a>
                         <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
                             style="font-size: 2.5rem ;" href="./carrinho">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </a>
+                        <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
+                        style="font-size: 2.5rem ;" href="">
+                        <i class="fa-solid fa-box"></i>
+                    </a>
                     </div>
     
                 </div>
@@ -43,7 +47,7 @@
                         <a class="nav-link active text-dark " aria-current="page" href="./home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="./categorias">Categorias</a>
+                        <a class="nav-link text-dark" href="./categorias">Produtos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">Contato</a>

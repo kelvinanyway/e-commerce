@@ -75,7 +75,7 @@ public class LoginController extends HttpServlet {
                 if (uDAO.login(usuario) != -1) {
                     Cookie cookie = new Cookie("usuario", Integer.toString(uDAO.login(usuario)));
                     response.addCookie(cookie);
-                    usuario = uDAO.getUsuariobyid(uDAO.login(usuario));
+                    usuario = uDAO.pegarPorID(uDAO.login(usuario));
                     if (usuario.getTipo() != 1) {
                     response.sendRedirect("./home");    
                     } else {
