@@ -67,13 +67,6 @@ public class UsuarioDAO {
                 u.setCpf(rs.getString("cpf"));
                 u.setData(rs.getDate("data"));
                 u.setTipo(rs.getInt("tipo"));
-                u.setFotodeperfil(rs.getBytes("fotoPerfil"));
-                if (u.getFotodeperfil() != null) {
-                    u.setFotodeperfilBase64(Base64.getEncoder().encodeToString(u.getFotodeperfil()));
-                }
-
-            } else {
-                System.out.println("Usuario não localizado.");
             }
 
             rs.close();
@@ -107,19 +100,27 @@ public class UsuarioDAO {
         }
     }
 
-    public void update(Usuario u) {
+    public void update(int idUsuario, String valor, String tipo) {
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("UPDATE usuario SET nome = ?, email = ?, senha = ?, telefone = ?, fotodeperfil = ? WHERE idUsuario = ?");
-
-            stmt.setString(1, u.getNome());
-            stmt.setString(2, u.getEmail());
-            stmt.setString(3, u.getSenha());
-            stmt.setString(4, u.getTelefone());
-            stmt.setBytes(5, u.getFotodeperfil());
-            stmt.setInt(6, u.getIdUsuario());
+            stmt = conexao.prepareStatement("UPDATE usuario SET " + tipo + " = ? WHERE idUsuario = ?");
+            switch (tipo) {
+                case "nome":
+                    stmt.setString(1, valor);
+                    break;
+                case "email":
+                    stmt.setString(1, valor);
+                    break;
+                case "senha":
+                    stmt.setString(1, valor);
+                    break;
+                case "telefone":
+                    stmt.setString(1, valor);
+                    break;
+            }
+            stmt.setInt(2, idUsuario);
 
             stmt.executeUpdate();
             stmt.close();

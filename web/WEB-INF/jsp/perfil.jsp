@@ -5,6 +5,8 @@
         <html>
 
         <head>
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
             <script src="https://kit.fontawesome.com/abf8e7610f.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="./styles/perfil.css">
             <link rel="shortcut icon" href="./assets/88header.png" type="image/x-icon">
@@ -14,39 +16,53 @@
 
         <body>
             <button id="btnVoltar"><a href="./home">Voltar</a></button>
+            <a href="./cadastro-de-produto" class="d-none" id="linkadm"><button id="btnAdm"><i
+                        class="fa-solid fa-user-tie fa-lg"></i></button></a>
             <main>
 
                 <div class="perfil">
                     <div method="post" action="" class="formPerfil">
                         <center>
-                            <h1>Perfil</h1>
+                            <h1>Perfil</h1>${adm}
                         </center>
                         <p>Atualize seu perfil quando quiser</p>
                         <label for="nome">Nome</label>
-                        <form action="" method="post" >
-                            <input id="inputNome" name="nome" type="text" placeholder="${usuario.nome}" />
-                            <button type="submit" name="atualizar"><i class="fa-solid fa-pen"></i></button>
+                        <form action="atualizarNome" method="post">
+                            <input name="nome" id="inputNome" type="text" placeholder="${usuario.nome}" />
+                            <button class="btnAtualizar" type="submit" name="atualizar"><i
+                                    class="fa-solid fa-pen"></i></button>
                         </form>
                         <label for="email">Email</label>
-                        <form action="" method="" >
-                            <input id="inputEmail" name="email" type="email" placeholder="${usuario.email}" />
-                            <button type="submit" name="atualizar"><i class="fa-solid fa-pen"></i></button>
+                        <form action="atualizarEmail" method="post">
+                            <input name="email" id="inputEmail" type="email" placeholder="${usuario.email}" />
+                            <button class="btnAtualizar" type="submit" name="atualizar"><i
+                                    class="fa-solid fa-pen"></i></button>
                         </form>
                         <label for="senha">Senha</label>
-                        <form action="" method="post" >
-                            <input id="inputSenha" name="senha" type="password" placeholder="Nova senha" />
-                            <button class="ms-1" type="submit" name="atualizar"><i class="fa-solid fa-pen"></i></button>
+                        <form action="atualizarSenha" method="post">
+                            <input name="senha" id="inputSenha" type="password" placeholder="Nova senha" />
+                            <button class="btnAtualizar" type="submit" name="atualizar"><i
+                                    class="fa-solid fa-pen"></i></button>
                         </form>
                         <label for="telefone">Telefone</label>
-                        <form action="" method="post" >
-                            <input id="inputTelefone" name="Telefone" type="tel" placeholder="${usuario.telefone}" />
-                            <button type="submit" name="atualizar"><i class="fa-solid fa-pen"></i></button>
+                        <form action="atualizarTelefone" method="post">
+                            <input id="inputTelefone" name="telefone" type="tel" placeholder="${usuario.telefone}" />
+                            <button class="btnAtualizar" type="submit" name="atualizar"><i
+                                    class="fa-solid fa-pen"></i></button>
                         </form>
-                        <form action="">
-                            <button type="submit" class="btn">Sair</button>
+                        <form action="sair" method="post">
+                            <button type="submit" value="0" class="btn">Sair</button>
                         </form>
                     </div>
                 </div>
             </main>
-        </body> 
+            <script>
+                var valida = '${usuario.tipo}';
+                if (valida === '1') {
+                    $('#linkadm').removeClass('d-none').addClass('d-flex');
+                }
+            </script>
+
+        </body>
+
         </html>
