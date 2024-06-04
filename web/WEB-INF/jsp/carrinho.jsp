@@ -22,7 +22,7 @@
                         <h1>Carrinho</h1>
                         <div>
                             <h2> Total: ${valorTotal}</h2>
-                            <form action="" method="post">
+                            <form action="finalizarCompra" method="post">
                                 <button class="finalizar"> Finalizar Compra</button>
                             </form>
                         </div>
