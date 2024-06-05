@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/USER/Documents/e-commerce/web/WEB-INF/jsp/header.jsp</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/model/dao/ProdutoDAO.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/web/WEB-INF/jsp/perfil.jsp</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/CategoriasController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/HomeController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/web/WEB-INF/jsp/index.jsp</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/web/WEB-INF/jsp/login.jsp</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/model/dao/CategoriaDAO.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/PerfilController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/web/WEB-INF/jsp/categoria.jsp</file>
+        </group>
     </open-files>
 </project-private>
