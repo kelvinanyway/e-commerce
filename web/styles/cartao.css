@@ -47,9 +47,7 @@ ul li:before {
     content: "";
     position: absolute;
     inset: calc(100% - 3px) 0 0 0;
-    /* 3px = the thickness */
     background: #000000;
-    /* the color */
     scale: 0 1;
     transition: .3s, translate 0s .3s;
 }
@@ -100,90 +98,6 @@ ul:hover li:hover~li:before {
 #search:focus-visible {
     outline: none;
 }
-
-.divisao-compras {
-    display: flex;
-}
-
-.carrinho {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5vw;
-}
-
-.carrinho div {
-    display: flex;
-    gap: 20vh
-}
-
-.carrinho label {
-    margin-top: 5px
-}
-
-.carrinho button {
-    background-color: #FFF112;
-    border: none;
-    border-radius: 5px;
-    width: 8vw;
-    height: 5vh;
-
-}
-
-.carrinho button:hover {
-    transform: scale(1.1);
-
-}
-
-.compras {
-    display: flex;
-    justify-content: space-between;
-    gap: 1vw;
-}
-
-.compras input {
-    cursor: pointer;
-}
-
-.produtos {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 15px;
-    position: relative;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    border-radius: 5px;
-    height: 13vh;
-}
-
-.produtos img {
-    height: 11vh;
-    width: vw;
-    padding-left: 9px;
-}
-
-.labels {
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-weight: 300;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.formExcluir {
-    width: 3vw;
-    height: 3vh;
-    position: absolute;
-    right: 0;
-}
-
-.formExcluir button {
-    border: none;
-    background-color: transparent;
-}
-
 footer {
     display: flex;
     justify-content: center;

@@ -44,6 +44,10 @@
         <servlet-name>CheckoutController</servlet-name>
         <servlet-class>controller.CheckoutController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AdicionarCartaoController</servlet-name>
+        <servlet-class>controller.AdicionarCartaoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -98,6 +102,10 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CategoriasController</servlet-name>
+        <url-pattern>/adicionacarrinho</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CategoriasController</servlet-name>
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -127,6 +135,10 @@
     <servlet-mapping>
         <servlet-name>CheckoutController</servlet-name>
         <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdicionarCartaoController</servlet-name>
+        <url-pattern>/adicionarcartao</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
