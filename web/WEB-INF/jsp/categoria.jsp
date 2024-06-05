@@ -39,7 +39,7 @@
                                         <span class="valor">R$${produto.valor}</span>
                                         <span class="preco laranja-texto-3">R$${produto.valorFinal}</span>
                                     </div>
-                                    <form action="adicionarcarrinho" method="post" class="carrinho">
+                                    <form action="adicionacarrinho" method="post" class="carrinho">
                                         <div id="div-btn">
                                             <button class="card-btn verde-fundo fs-6" type="submit"
                                                 name="produtoSelecionado" value="${produto.idProduto}">Comprar</button>

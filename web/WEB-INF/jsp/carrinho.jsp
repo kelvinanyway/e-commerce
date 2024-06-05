@@ -22,9 +22,8 @@
                         <h1>Carrinho</h1>
                         <div>
                             <h2> Total: ${valorTotal}</h2>
-                            <form action="finalizarCompra" method="post">
-                                <button class="finalizar"> Finalizar Compra</button>
-                            </form>
+                            <a href="./adicionarcartao"><button class="btnPagamento"> Adicionar cartão para
+                                    pagamento</button></a>
                         </div>
                     </div>
                     <div class="divisao-compras m-4">
@@ -38,7 +37,8 @@
                                             <label for="valorUnitario">Valor unit: ${produto.valorFinal}</label>
                                         </div>
                                         <form class="formExcluir" action="excluir" method="post">
-                                            <button type="submit" name="item" value="${produto.idProduto}" ><i class="fa-solid fa-trash fa-xl"
+                                            <button type="submit" name="item" value="${produto.idProduto}"><i
+                                                    class="fa-solid fa-trash fa-xl"
                                                     style="color: #000000;"></i></button>
                                         </form>
                                     </div>

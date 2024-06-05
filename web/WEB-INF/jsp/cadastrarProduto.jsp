@@ -31,7 +31,6 @@
                                 </li>
                             </ul>
                     </header>
-                    <!--yagon-->
                     <main class="m-2">
                         <div class="container">
                             <h2>Cadastro de Produtos</h2>
