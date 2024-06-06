@@ -1,55 +1,82 @@
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
-body {
-
-    overflow-x: hidden;
+body{
+  position: relative;
+    padding-bottom:10vh ;
+    overflow-x:hidden ;
 }
-
-.img-header {
+.img-header{
     height: 50%;
     width: 50%;
 }
-
-nav {
-    background-color: #FFF112;
+nav{
+    background-color:#FFF112;
     padding: 10px;
 }
 
-nav li {
-    display: inline-block;
-}
-
-nav li a {
-    display: inline-block;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    padding: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-nav li:hover {
-    background-color: rgb(2, 168, 16);
-    border-radius: 20px;
-
-}
-
-.dropdown-menu {
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    font: bold 1.3rem sans-serif;
+    text-transform: uppercase;
+    color: grey;
+  }
+  ul li {
+    padding: 0 .5em .25em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+  }
+  ul li:hover {
+    color: #fff;
+  }
+  ul li:before {
+    content: "";
     position: absolute;
-    box-shadow: 0 0 2px black;
-    display: none;
-}
-
-.dropdown-menu a {
+    inset: calc(100% - 3px) 0 0 0; 
+    background: #000000;
+    scale: 0 1;
+    transition: .3s, translate 0s .3s;
+  }
+  ul:hover li:before {
+    scale: 1;
+  }
+  ul li:hover:before {
+    translate: 0;
+    transition: .3s;
+  }
+  ul:hover li:has(~ li:hover):before {
+    translate: 100% 0;
+    transition: .2s .2s,scale 0s .4s;
+  }
+  ul:hover li:hover ~ li:before {
+    translate: -100% 0;
+    transition: .2s .2s,scale 0s .4s;
+  }
+.dropdown-menu a{
     display: block;
     color: black;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu{
     display: block;
+}
+#search{
+    box-shadow: 0px 0px 5px 2px rgb(180, 175, 175)  ;
+    border: 2px solid white; 
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 10px;
+
+}
+#search:focus-visible{
+outline: none;
 }
 
 footer {

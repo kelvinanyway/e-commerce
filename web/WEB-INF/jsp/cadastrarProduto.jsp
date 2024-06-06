@@ -8,6 +8,7 @@
                 <head>
                     <link rel="stylesheet" href="./styles/cadastroProduto.css">
                     <link rel="shortcut icon" href="./assets/88header.png" type="image/x-icon">
+                    <script src="https://kit.fontawesome.com/abf8e7610f.js" crossorigin="anonymous"></script>
                     <meta charset="UTF-8">
                     <title>Cadastro de Produto</title>
                     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -15,21 +16,28 @@
 
                 <body class="vh-100">
                     <header>
-                        <nav class="row g-0 justify-content-between align-items-center">
-                            <div class="col-2 ">
-                                <a href="./home"><img class="img-header align-self-center" src="./assets/88header.png"
-                                        alt="img header"></a>
+                        <div id="container-head">
+                            <nav class="row g-0 justify-content-between align-items-center">
+                                <div class="col-2 ">
+                                    <a href="./home"><img class="img-header align-self-center"
+                                            src="./assets/88header.png" alt="img header"></a>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
+                                            style="font-size: 2.5rem ;" href="./perfil">
+                                            <i class="fa-solid fa-circle-user"></i>
+                                        </a>
+                                    </div>
 
-                            </div>
-                            <ul class="col-12 nav justify-content-center">
-                                <li class="nav-item">
-                                    <a class="nav-link active text-dark " aria-current="page" href="">Editar
-                                        Produtos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" href="#">Historico de Pedidos</a>
-                                </li>
-                            </ul>
+                                </div>
+                                <ul class="col-12 nav justify-content-center">
+                                    <li class="nav-item">
+                                        <a class="nav-link active text-dark " aria-current="page" href="">Editar
+                                            Produtos</a>
+                                    </li>
+                                </ul>
+                        </div>
                     </header>
                     <main class="m-2">
                         <div class="container">
