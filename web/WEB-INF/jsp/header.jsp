@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/telaInicial.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <div id="container-head">
@@ -25,7 +27,7 @@
                     </form>
                 </div>
                 <div class="col-3">
-    
+
                     <div class="row">
                         <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
                             style="font-size: 2.5rem ;" href="./perfil">
@@ -36,11 +38,39 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </a>
                         <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                        style="font-size: 2.5rem ;" href="">
-                        <i class="fa-solid fa-box"></i>
-                    </a>
+                            style="font-size: 2.5rem ;" href="">
+                            <i class="fa-solid fa-box"></i>
+                        </a>
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle bg-dark" type="button" id="dropdownMenu2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa-solid fa-bars"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <button class="dropdown-item" type="button">
+                                    <a class="col icon-link text-decoration-none text-dark d-flex "
+                                        style="font-size: 2.5rem ;" href="./perfil">
+                                        <i class="fa-solid fa-circle-user"></i> <span class="fs-6 ">Perfil</span>
+                                    </a>
+                                </button>
+                                <button class="dropdown-item" type="button">
+                                    <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
+                                        style="font-size: 2.5rem ;" href="./carrinho">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </button>
+                                <button class="dropdown-item" type="button">
+                                    <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
+                                        style="font-size: 2.5rem ;" href="">
+                                        <i class="fa-solid fa-box"></i>
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
-    
+
                 </div>
                 <ul class="col-12 nav justify-content-center">
                     <li class="nav-item">
@@ -56,4 +86,5 @@
         </div>
     </header>
 </body>
+
 </html>
