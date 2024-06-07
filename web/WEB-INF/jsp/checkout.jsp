@@ -25,7 +25,6 @@
                     </div>
                     <div class="container-span">
                         <span>Status:</span>
-                        <span>Forma de Pagamento:</span>
                         <span>Numero do Pedido:</span>
                         <span>Valor do Pedido:</span>
                         <span>Data do Pedido:</span>
