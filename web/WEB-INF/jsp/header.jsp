@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/telaInicial.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./styles/header.css">
+        <title>Document</title>
 </head>
 
 <body>
@@ -42,6 +42,7 @@
                             <i class="fa-solid fa-box"></i>
                         </a>
 
+
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle bg-dark" type="button" id="dropdownMenu2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,13 +58,13 @@
                                 <button class="dropdown-item" type="button">
                                     <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
                                         style="font-size: 2.5rem ;" href="./carrinho">
-                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <i class="fa-solid fa-cart-shopping"></i><span class="fs-6 ">Carrinho</span>
                                     </a>
                                 </button>
                                 <button class="dropdown-item" type="button">
                                     <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
                                         style="font-size: 2.5rem ;" href="">
-                                        <i class="fa-solid fa-box"></i>
+                                        <i class="fa-solid fa-box"></i><span class="fs-6 ">contato</span>
                                     </a>
                                 </button>
                             </div>

@@ -18,8 +18,9 @@
             <script src="https://kit.fontawesome.com/abf8e7610f.js" crossorigin="anonymous"></script>
             <title>Mercado 88</title>
         </head>
+
         <body class="vh-100">
-         <jsp:include page="header.jsp"></jsp:include>
+            <jsp:include page="header.jsp"></jsp:include>
             <main>
                 <div id="carouselExampleIndicators" class="carousel slide margin-top">
                     <div class="carousel-indicators">
@@ -64,31 +65,33 @@
                             <button class="pre-btn"><img src="./assets/arrow.png" alt=""></button>
                             <button class="nxt-btn"><img src="./assets/arrow.png" alt=""></button>
                             <div class="produto-container">
-                                
+
                                 <c:forEach items="${produtos}" var="produto">
                                     <c:if test="${produto.desconto > 0}">
-                                    <div class="produto-card">
-                                        <div class="produto-imagem">
-                                            <span class="tag-desconto">-R$${produto.desconto}</span>
-                                            <img src="data:image/png;base64,${produto.imagemBase64}"
-                                                class="produto-capa" alt="">
-                                        </div>
-                                        <div>
-                                            <span class="produto-info">${produto.nome}</span>
+                                        <div class="produto-card">
+                                            <div class="produto-imagem">
+                                                <span class="tag-desconto">-R$${produto.desconto}</span>
+                                                <img src="data:image/png;base64,${produto.imagemBase64}"
+                                                    class="produto-capa" alt="">
+                                            </div>
                                             <div>
+                                                <span class="produto-info">${produto.nome}</span>
+                                                <div>
 
-                                            </div>
-                                            <div id="div-valor">
-                                                <span class="valor">R$${produto.valor}</span>
-                                                <span class="preco laranja-texto-3">R$${produto.valorFinal}</span>
-                                            </div>
-                                            <form action="adicionarcarrinho" method="post" class="carrinho">
-                                                <div id="div-btn">
-                                                    <button class="card-btn verde-fundo fs-6" type="submit" name="produtoSelecionado" value="${produto.idProduto}">Comprar</button>
                                                 </div>
-                                            </form>
+                                                <div id="div-valor">
+                                                    <span class="valor">R$${produto.valor}</span>
+                                                    <span class="preco laranja-texto-3">R$${produto.valorFinal}</span>
+                                                </div>
+                                                <form action="adicionarcarrinho" method="post" class="carrinho">
+                                                    <div id="div-btn">
+                                                        <button class="card-btn verde-fundo fs-6" type="submit"
+                                                            name="produtoSelecionado"
+                                                            value="${produto.idProduto}">Comprar</button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
-                                    </div>
                                     </c:if>
                                 </c:forEach>
                             </div>
