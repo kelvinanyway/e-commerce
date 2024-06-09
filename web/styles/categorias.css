@@ -10,7 +10,9 @@ body {
     position: relative;
     padding-bottom: 10vh;
 }
-
+.produto{
+    margin: 2vw;
+}
 footer {
     display: flex;
     justify-content: center;
@@ -20,11 +22,18 @@ footer {
     width: 100vw;
     position: absolute;
     bottom: 0;
-    
+
 }
 
 footer p {
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+}
+
+@media all and (max-width:768px) {
+    .produto {
+        padding: 2px;
+        margin: 15px;
+    }
 }

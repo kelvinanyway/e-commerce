@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/header.css">
-        <title>Document</title>
+    <title>Document</title>
 </head>
 
 <body>
@@ -16,7 +16,45 @@
                     <a href="./home"><img class="img-header align-self-center" src="./assets/88header.png"
                             alt="img header"></a>
                 </div>
-                <div class="col-md-6">
+                <div class="container-drop col-md-6">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle bg-dark" type="button" id="dropdownMenu2"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item" type="button">
+                                <a class="col icon-link text-decoration-none text-dark d-flex "
+                                    style="font-size: 2.5rem ;" href="./perfil">
+                                    <i class="fa-solid fa-circle-user"></i><span class="fs-6 ">Perfil</span>
+                                </a>
+                            </button>
+                            <button class="dropdown-item" type="button">
+                                <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
+                                    style="font-size: 2.5rem ;" href="">
+                                    <i class="fa-solid fa-cart-shopping"></i><span class="fs-6 ">Carrinho</span>
+                                </a>
+                            </button>
+                            <button class="dropdown-item" type="button">
+                                <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
+                                    style="font-size: 2.5rem ;" href="">
+                                    <i class="fa-solid fa-box"></i><span class="fs-6 ">Historico</span>
+                                </a>
+                            </button>
+                            <button class="dropdown-item" type="button">
+                                <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
+                                    style="font-size: 2.5rem ;" href="./home">
+                                    <i class="fa-solid fa-house"></i><span class="fs-6 ">home</span>
+                                </a>
+                            </button>
+                            <button class="dropdown-item" type="button">
+                                <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
+                                    style="font-size: 2.5rem ;" href="./categorias">
+                                    <i class="fa-brands fa-product-hunt"></i><span class="fs-6 ">Produtos</span>
+                                </a>
+                            </button>   
+                        </div>
+                    </div>
                     <form class="input-group" action="search" method="get">
                         <button type="submit" class="input-group-text" id="basic-addon1">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -28,7 +66,7 @@
                 </div>
                 <div class="col-3">
 
-                    <div class="row">
+                    <div class="mobile row">
                         <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
                             style="font-size: 2.5rem ;" href="./perfil">
                             <i class="fa-solid fa-circle-user"></i>
@@ -41,38 +79,10 @@
                             style="font-size: 2.5rem ;" href="">
                             <i class="fa-solid fa-box"></i>
                         </a>
-
-
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle bg-dark" type="button" id="dropdownMenu2"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa-solid fa-bars"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <button class="dropdown-item" type="button">
-                                    <a class="col icon-link text-decoration-none text-dark d-flex "
-                                        style="font-size: 2.5rem ;" href="./perfil">
-                                        <i class="fa-solid fa-circle-user"></i> <span class="fs-6 ">Perfil</span>
-                                    </a>
-                                </button>
-                                <button class="dropdown-item" type="button">
-                                    <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                                        style="font-size: 2.5rem ;" href="./carrinho">
-                                        <i class="fa-solid fa-cart-shopping"></i><span class="fs-6 ">Carrinho</span>
-                                    </a>
-                                </button>
-                                <button class="dropdown-item" type="button">
-                                    <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                                        style="font-size: 2.5rem ;" href="">
-                                        <i class="fa-solid fa-box"></i><span class="fs-6 ">contato</span>
-                                    </a>
-                                </button>
-                            </div>
-                        </div>
-
                     </div>
-
                 </div>
+
+
                 <ul class="col-12 nav justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link active text-dark " aria-current="page" href="./home">Home</a>
