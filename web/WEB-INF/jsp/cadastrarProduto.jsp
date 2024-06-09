@@ -22,7 +22,7 @@
                                     <a href="./home"><img class="img-header align-self-center"
                                             src="./assets/88header.png" alt="img header"></a>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-1">
                                     <div class="row">
                                         <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
                                             style="font-size: 2.5rem ;" href="./perfil">

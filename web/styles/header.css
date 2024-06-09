@@ -83,3 +83,55 @@ ul:hover li:hover~li:before {
 .dropdown {
     display: none;
 }
+
+@media all and (max-width:768px) {
+    .img-header {
+        display: none;
+    }
+
+    .container-drop {
+        display: flex;
+        gap: 2vw;
+    }
+
+    li {
+        display: none;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        color: black;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .input-group {
+        width: 70vw;
+    }
+
+    #search {
+        box-shadow: 0px 0px 5px 2px rgb(180, 175, 175);
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 10px;
+        padding-left: 10px;
+
+    }
+
+    #search:focus-visible {
+        outline: none;
+    }
+
+    .dropdown {
+        display: flex;
+    }
+    footer{
+        position: absolute;
+    }
+}

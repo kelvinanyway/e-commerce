@@ -60,12 +60,10 @@
                             <h1>Nossas Ofertas</h1>
                         </center>
 
-                        <!--JoãoGuilherme carousel-->
                         <section class="produtos">
                             <button class="pre-btn"><img src="./assets/arrow.png" alt=""></button>
                             <button class="nxt-btn"><img src="./assets/arrow.png" alt=""></button>
                             <div class="produto-container">
-
                                 <c:forEach items="${produtos}" var="produto">
                                     <c:if test="${produto.desconto > 0}">
                                         <div class="produto-card">
@@ -96,7 +94,6 @@
                                 </c:forEach>
                             </div>
                         </section>
-                        <!--JoãoGuilherme carousel-->
                     </div>
                 </div>
                 </div>

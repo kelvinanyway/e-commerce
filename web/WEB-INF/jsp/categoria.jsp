@@ -22,7 +22,7 @@
                     <center>
                         <h1>Categorias</h1>
                     </center>
-                    <div class="row p-5">
+                    <div class="produto row">
                         <c:forEach items="${produtos}" var="produto">
                             <div class="produto-card">
                                 <div class="produto-imagem">
