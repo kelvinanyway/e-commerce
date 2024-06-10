@@ -31,7 +31,7 @@
                             </button>
                             <button class="dropdown-item" type="button">
                                 <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                                    style="font-size: 2.5rem ;" href="">
+                                    style="font-size: 2.5rem ;" href="./carrinho">
                                     <i class="fa-solid fa-cart-shopping"></i><span class="fs-6 ">Carrinho</span>
                                 </a>
                             </button>

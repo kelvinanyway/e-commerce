@@ -61,7 +61,8 @@ body {
     align-items: center;
     margin-left: 15px;
     position: relative;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 5px;
     height: 13vh;
 }
 
@@ -103,11 +104,35 @@ footer {
     width: 100vw;
     position: absolute;
     bottom: 0;
-    
+
 }
 
 footer p {
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+}
+
+@media all and (max-width:768px) {
+    .carrinho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5vw;
+        flex-direction: column;
+    }
+
+    .carrinho button {
+        background-color: #FFF112;
+        border: none;
+        border-radius: 5px;
+        width: 24vw;
+        height: 7vh;
+    }
+    .formExcluir {
+        width: 3vw;
+        height: 3vh;
+        position: absolute;
+        right: 16px;
+    }
 }
