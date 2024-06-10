@@ -15,9 +15,14 @@
         </head>
 
         <body>
-            <button id="btnVoltar"><a href="./home">Voltar</a></button>
-            <a href="./cadastro-de-produto" class="d-none" id="linkadm"><button id="btnAdm"><i
-                        class="fa-solid fa-user-tie fa-lg"></i></button></a>
+            <div class="btns">
+                <button id="btnVoltar">
+                    <a href="./home">Voltar</a>
+                </button>
+                <a href="./cadastro-de-produto" class="d-none" id="linkadm">
+                    <button id="btnAdm"><i class="fa-solid fa-user-tie fa-lg"></i></button>
+                </a>
+            </div>
             <main>
 
                 <div class="perfil">
@@ -51,7 +56,7 @@
                                     class="fa-solid fa-pen"></i></button>
                         </form>
                         <form action="sair" method="post">
-                            <button type="submit" value="0" class="btn">Sair</button>
+                            <button type="submit" value="0" class="btn" >Sair</button>
                         </form>
                     </div>
                 </div>

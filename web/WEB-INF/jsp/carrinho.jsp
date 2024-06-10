@@ -22,8 +22,7 @@
                         <h1>Carrinho</h1>
                         <div>
                             <h2> Total: ${valorTotal}</h2>
-                            <a href="./adicionarcartao"><button class="btnPagamento"> Adicionar cartão para
-                                    pagamento</button></a>
+                            <a href="./adicionarInfo"><button class="btnPagamento">Finalizar Compra</button></a>
                         </div>
                     </div>
                     <div class="divisao-compras m-4">
