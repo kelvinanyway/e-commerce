@@ -53,7 +53,7 @@ public class ProdutoDAO {
         return produtos;
     }
 
-    //Início do código feito por João Guilherme
+   
     public Produto pegarProdutoporID(int id) {
         Produto produto = new Produto();
         try {
@@ -83,8 +83,6 @@ public class ProdutoDAO {
         }
         return produto;
     }
-
-    //FIM
     public List<Produto> pegarPorNome(String nome) {
         
         List<Produto> produtos = new ArrayList();
@@ -156,7 +154,7 @@ public class ProdutoDAO {
             stmt.setString(5, p.getDescricao());
             stmt.setDate(6, p.getValidade());
             stmt.setBytes(7, p.getImagem());
-            ;
+            
             
             stmt.executeUpdate();
             stmt.close();

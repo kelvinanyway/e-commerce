@@ -1,0 +1,54 @@
+#cartao {
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 25vw;
+    height: 50vh;
+    padding: 16px;
+    margin-top: 1em;
+}
+.btnFinalizar {
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 23vw;
+    height: 6vh;
+    color: white;
+    background-color: black;
+}
+.btnFinalizar:hover{
+    transform: scale(1.05);
+    background-color: #000000;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+}
+input{
+    border-radius:4px ;
+    border: 1px solid  black;
+    outline: none;
+    height: 40px;
+    padding-left: 8px;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF112;
+    height: 10vh;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+
+}
+
+footer p {
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+@media all and (max-width:768px) {
+
+
+}

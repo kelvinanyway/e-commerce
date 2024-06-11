@@ -12,14 +12,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.bean.Endereco;
-import model.dao.EnderecoDAO;
 
 /**
  *
  * @author Senai
  */
-public class AdicionarInfoController extends HttpServlet {
+public class PagamentoController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,7 +31,7 @@ public class AdicionarInfoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String nextPage = "/WEB-INF/jsp/adicionarInfo.jsp";
+        String nextPage = "/WEB-INF/jsp/pagamento.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
         dispatcher.forward(request, response);
     }
@@ -64,38 +62,17 @@ public class AdicionarInfoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-
-        String url = request.getServletPath();
-        if (url.equals("/finalizarEndereco")) {
-
-            Endereco e = new Endereco();
-            EnderecoDAO eDAO = new EnderecoDAO();
-
-            e.setCep(Integer.parseInt(request.getParameter("cep")));
-            e.setRua(request.getParameter("endereco"));
-            e.setBairro(request.getParameter("bairro"));
-            e.setCidade(request.getParameter("cidade"));
-            e.setBairro(request.getParameter("bairro"));
-            e.setCidade(request.getParameter("cidade"));
-            e.setEstado(request.getParameter("estado"));
-            e.setNumero(Integer.parseInt(request.getParameter("numero")));
-            eDAO.create(e);
-        response.sendRedirect("./pagamento");
-        }
+        processRequest(request, response);
     }
 
-        /**
-         * Returns a short description of the servlet.
-         *
-         * @return a String containing servlet description
-         */
-        @Override
-        public String getServletInfo
-        
-        
-            () {
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
         return "Short description";
-        }// </editor-fold>
+    }// </editor-fold>
 
-    }
+}

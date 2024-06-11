@@ -40,6 +40,14 @@
         <servlet-name>PerfilController</servlet-name>
         <servlet-class>controller.PerfilController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AdicionarInfoController</servlet-name>
+        <servlet-class>controller.AdicionarInfoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PagamentoController</servlet-name>
+        <servlet-class>controller.PagamentoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -123,6 +131,18 @@
     <servlet-mapping>
         <servlet-name>PerfilController</servlet-name>
         <url-pattern>/sair</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdicionarInfoController</servlet-name>
+        <url-pattern>/adicionarInfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdicionarInfoController</servlet-name>
+        <url-pattern>/finalizarEndereco</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PagamentoController</servlet-name>
+        <url-pattern>/pagamento</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

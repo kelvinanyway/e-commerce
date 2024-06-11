@@ -20,7 +20,11 @@
             <jsp:include page="header.jsp"></jsp:include>
             <main>
                 <div class="container">
-                        <center><h1>Conclua Sua Compra</h1></center>
+                    <center>
+                        <h1>Insira seu Endereço</h1>
+                    </center>
+
+                    <form action="finalizarEndereco" method="post" name="finalizarPedido">
                         <div class="inputs">
                             <label for="">Cep</label>
                             <input type="text" id="cep" name="cep" required>
@@ -32,8 +36,13 @@
                             <input type="text" name="cidade" id="cidade" required>
                             <label for="">Estado</label>
                             <input type="text" name="estado" id="estado" required>
-                            <button class="btnFinalizar">Finalizar</button>
+                            <label for="numero">Numero</label>
+                            <input type="text" name="numero" required>
+                            <button type="submit" class="btnFinalizar">Adicionar Endereço</button>
                         </div>
+                    </form>
+                </div>
+                </div>
             </main>
             <footer>
                 <p> Mercado88 &copy; todos os direitos reservados</p>
@@ -41,7 +50,7 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
                 crossorigin="anonymous"></script>
-               
+
         </body>
-          
+
         </html>
