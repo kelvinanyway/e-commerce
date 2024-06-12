@@ -11,8 +11,9 @@
                 <link rel="shortcut icon" href="assets/88header.png" type="image/x-icon">
                 <link rel="stylesheet" href="./styles/categorias.css">
                 <link rel="stylesheet" href="./styles/slider.css">
+                <link rel="stylesheet" href="./styles/header.css">
                 <script src="https://kit.fontawesome.com/abf8e7610f.js" crossorigin="anonymous"></script>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                <meta http-equiv="Content-Type" name="viewport" content="width=device-width, initial-scale=1.0, text/html; charset=UTF-8">
                 <title>Categorias</title>
             </head>
 

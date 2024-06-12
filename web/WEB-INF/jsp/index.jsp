@@ -13,6 +13,7 @@
             <link rel="shortcut icon" href="./assets/88header.png" type="image/x-icon">
             <link rel="stylesheet" href="./styles/telaInicial.css">
             <link rel="stylesheet" href="./styles/slider.css">
+            <link rel="stylesheet" href="./styles/header.css">
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <script src="https://kit.fontawesome.com/abf8e7610f.js" crossorigin="anonymous"></script>
