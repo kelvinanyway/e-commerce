@@ -44,6 +44,7 @@
                         <button class="btnFinalizar">finalizar Compra</button>
                     </div>
                 </div>
+                
             </main>
             <footer>
                 <p> Mercado88 &copy; todos os direitos reservados</p>
