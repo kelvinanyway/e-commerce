@@ -30,7 +30,6 @@ public class CarrinhoController extends HttpServlet {
     CarrinhoDAO cDAO = new CarrinhoDAO();
     UsuarioDAO uDAO = new UsuarioDAO();
     ProdutoDAO pDAO = new ProdutoDAO();
-    Usuario u = new Usuario();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,8 +42,9 @@ public class CarrinhoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Usuario u = new Usuario();
         String nextPage = "/WEB-INF/jsp/carrinho.jsp";
-        //Início do código feito por joao guilherme
+
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
@@ -53,7 +53,7 @@ public class CarrinhoController extends HttpServlet {
                 }
             }
         }
-        if (u != null) {
+        if (!(u.getIdUsuario() == 0)) {
             List<Produto> produtos = cDAO.listarProdutos(u);
             Float valorTotal = 0.0f;
             for (int i = 0; i < produtos.size(); i++) {
@@ -96,7 +96,15 @@ public class CarrinhoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        Cookie[] cookies = request.getCookies();
+        Usuario u = new Usuario();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("usuario") && !cookie.getValue().equals("")) {
+                    u = uDAO.pegarPorID(Integer.parseInt(cookie.getValue()));
+                }
+            }
+        }
         String url = request.getServletPath();
         if (url.equals("/excluir")) {
             cDAO.removerProduto(pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("item"))), cDAO.getCarrinho(u));
