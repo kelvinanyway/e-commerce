@@ -12,7 +12,7 @@
 <body>
     <header>
         <div id="container-head">
-            <nav class="row g-0 justify-content-between align-items-center">
+            <nav class="row m-0 g-0 justify-content-between align-items-center">
                 <div class="col-2 ">
                     <a href="./home"><img class="img-header align-self-center" src="./assets/88header.png"
                             alt="img header"></a>
@@ -25,32 +25,32 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark d-flex "
+                                <a class="col icon-link text-decoration-none text-dark "
                                     style="font-size: 2.5rem ;" href="./perfil">
                                     <i class="fa-solid fa-circle-user"></i><span class="fs-6 ">Perfil</span>
                                 </a>
                             </button>
                             <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                                    style="font-size: 2.5rem ;" href="./carrinho">
+                                <a class="col icon-link text-decoration-none text-dark"
+                                    style="font-size: 2.0rem ;" href="./carrinho">
                                     <i class="fa-solid fa-cart-shopping"></i><span class="fs-6 ">Carrinho</span>
                                 </a>
                             </button>
                             <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                                    style="font-size: 2.5rem ;" href="">
+                                <a class="col icon-link text-decoration-none text-dark  "
+                                    style="font-size: 2.0rem ;" href="">
                                     <i class="fa-solid fa-box"></i><span class="fs-6 ">Historico</span>
                                 </a>
                             </button>
                             <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                                    style="font-size: 2.5rem ;" href="./home">
+                                <a class="col icon-link text-decoration-none text-dark  "
+                                    style="font-size: 2.0rem ;" href="./home">
                                     <i class="fa-solid fa-house"></i><span class="fs-6 ">home</span>
                                 </a>
                             </button>
                             <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                                    style="font-size: 2.5rem ;" href="./categorias">
+                                <a class="col icon-link text-decoration-none text-dark  "
+                                    style="font-size: 2.0rem ;" href="./categorias">
                                     <i class="fa-brands fa-product-hunt"></i><span class="fs-6 ">Produtos</span>
                                 </a>
                             </button>   

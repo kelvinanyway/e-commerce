@@ -33,7 +33,7 @@
                                 </div>
                                 <ul class="col-12 nav justify-content-center">
                                     <li class="nav-item">
-                                        <a class="nav-link active text-dark " aria-current="page" href="">Editar
+                                        <a class="nav-link active text-dark " aria-current="page" href="./editarProduto">Editar
                                             Produtos</a>
                                     </li>
                                 </ul>

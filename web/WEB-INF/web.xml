@@ -52,6 +52,10 @@
         <servlet-name>CheckoutFinalController</servlet-name>
         <servlet-class>controller.CheckoutFinalController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditarProdutoController</servlet-name>
+        <servlet-class>controller.EditarProdutoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -152,10 +156,14 @@
         <servlet-name>CheckoutFinalController</servlet-name>
         <url-pattern>/pedidoFinalizado</url-pattern>
     </servlet-mapping>
-            <servlet-mapping>
-            <servlet-name>CheckoutFinalController</servlet-name>
-            <url-pattern>/finalizarPedido</url-pattern>
-        </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckoutFinalController</servlet-name>
+        <url-pattern>/finalizarPedido</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarProdutoController</servlet-name>
+        <url-pattern>/editarProduto</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

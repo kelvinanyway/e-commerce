@@ -12,7 +12,8 @@
     justify-content: center;
     gap: 10px;
     flex-direction: column;
-    align-items: center ;
+    align-items: center;
+
 }
 
 main {
@@ -51,22 +52,27 @@ input {
     height: 40px;
     padding-left: 8px;
 }
-.btnPix{
+
+.btnPix {
     background-color: white;
     height: 100px;
     width: 100px;
     border: 1px black solid;
 }
-.btnCartao{
+
+.btnCartao {
     background-color: white;
     height: 100px;
     width: 100px;
     border: 1px black solid;
 }
-.btnCartao:hover, .btnPix:hover {
+
+.btnCartao:hover,
+.btnPix:hover {
     transform: scale(1.05);
 
 }
+
 #pix {
     display: flex;
     flex-direction: column;
@@ -98,23 +104,25 @@ footer p {
 }
 
 @media all and (max-width:768px) {
-    main{
-       height: 82.4vh;
-       display: flex;
-       flex-direction: column;
+    main {
+        height:  78.4vh;
+        display: flex;
+        flex-direction: column;
     }
+
     .cartaoCC {
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-        width: 60vw;
-        height: 50vh;
+        width: 90vw;
+        height: 56vh;
         margin-top: 1em;
     }
+
     .btnFinalizar {
-        margin-top: 2vh;
+        margin-top: 1vh;
         border: 1px solid black;
         border-radius: 4px;
-        width: 52vw;
+        width: 82vw;
         height: 6vh;
         color: white;
         background-color: black;
@@ -125,10 +133,17 @@ footer p {
         background-color: #000000;
     }
 
+    .me-5 {
+        margin-right: 0rem !important;
+    }
+    .label{
+        font-size: 10px;
+    }
+
     .inputs {
         display: flex;
         flex-direction: column;
-        margin-top: 3px;
+        margin-top: 0px;
     }
 
     input {
@@ -144,13 +159,14 @@ footer p {
         width: 60vw;
     }
 
-    .btnPix{
+    .btnPix {
         background-color: white;
         height: 100px;
         width: 100px;
         border: 1px black solid;
     }
-    .btnCartao{
+
+    .btnCartao {
         background-color: white;
         height: 100px;
         width: 100px;
