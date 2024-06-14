@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
         <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
         <!DOCTYPE html>
         <html lang="en">
@@ -67,7 +68,9 @@
                                     <c:if test="${produto.desconto > 0}">
                                         <div class="produto-card">
                                             <div class="produto-imagem">
-                                                <span class="tag-desconto">-R$${produto.desconto}</span>
+                                                <span class="tag-desconto ">-
+                                                    <fmt:formatNumber value="${produto.desconto}" type="currency" />
+                                                </span>
                                                 <img src="data:image/png;base64,${produto.imagemBase64}"
                                                     class="produto-capa" alt="">
                                             </div>
@@ -77,8 +80,14 @@
 
                                                 </div>
                                                 <div id="div-valor">
-                                                    <span class="valor">R$${produto.valor}</span>
-                                                    <span class="preco laranja-texto-3">R$${produto.valorFinal}</span>
+                                                    <span class="valor">
+                                                        <fmt:formatNumber value="${produto.valor}"
+                                                            type="currency" />
+                                                    </span>
+                                                    <span class="preco laranja-texto-3">
+                                                        <fmt:formatNumber value="${produto.valorFinal}"
+                                                            type="currency" />
+                                                    </span>
                                                 </div>
                                                 <form action="adicionarcarrinho" method="post" class="carrinho">
                                                     <div id="div-btn">

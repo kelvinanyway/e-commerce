@@ -1,5 +1,6 @@
 <%-- Document : carrinho Created on : 20/05/2024, 16:47:54 Author : Senai --%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
         <%@page contentType="text/html" pageEncoding="UTF-8" %>
             <!DOCTYPE html>
             <html>
@@ -27,7 +28,7 @@
                         <c:forEach items="${produtos}" var="produto">
                             <div class="produto-card">
                                 <div class="produto-imagem">
-                                    <span class="tag-desconto">-R$${produto.desconto}</span>
+                                    <span class="tag-desconto">-<fmt:formatNumber value="${produto.desconto}" type="currency" /></span>
                                     <img src="data:image/png;base64,${produto.imagemBase64}" class="produto-capa"
                                         alt="">
                                 </div>
@@ -37,8 +38,8 @@
 
                                     </div>
                                     <div id="div-valor">
-                                        <span class="valor">R$${produto.valor}</span>
-                                        <span class="preco laranja-texto-3">R$${produto.valorFinal}</span>
+                                        <span class="valor"><fmt:formatNumber value="${produto.valor}" type="currency" /></span>
+                                        <span class="preco laranja-texto-3"><fmt:formatNumber value="${produto.valorFinal}" type="currency" /></span>
                                     </div>
                                     <form action="adicionacarrinho" method="post" class="carrinho">
                                         <div id="div-btn">

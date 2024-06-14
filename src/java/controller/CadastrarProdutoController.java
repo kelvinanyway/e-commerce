@@ -59,7 +59,7 @@ public class CadastrarProdutoController extends HttpServlet {
                     usuario = uDAO.pegarPorID(Integer.parseInt(cookie.getValue()));
                 }   
             }
-        }
+        }  
         if (usuario.getTipo() != 1) {
             response.sendRedirect("./home");
         } else {

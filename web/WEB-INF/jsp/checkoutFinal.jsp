@@ -10,7 +10,9 @@
             <script src="https://kit.fontawesome.com/abf8e7610f.js" crossorigin="anonymous"></script>
             <meta charset="UTF-8">
             <title>Pedido Finalizado</title>
-            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+                crossorigin="anonymous">
         </head>
 
         <body class="vh-100">
@@ -18,12 +20,13 @@
             <main>
                 <div class="container-agradecimento">
                     <img src="./assets/gifCompras.gif" alt="gifCompras">
-                    <center>
-                        <h2>Olá, Tudo bem?
+                    <center >
+                        <span class="fs-3">Olá, Tudo bem?
                             <br>
-                            Agradecemos muito pela sua compra! Não esqueça de ficar de olho em nossas novidades.
+                            Agradecemos muito pela sua compra! <br> Não esqueça de ficar de olho em nossas novidades 
+                            <br>
                             Precisando de qualquer coisa, nosso suporte está a um clique de distância.
-                        </h2>
+                        </span>
                     </center>
                 </div>
             </main>

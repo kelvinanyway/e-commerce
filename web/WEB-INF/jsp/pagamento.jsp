@@ -20,7 +20,7 @@
         <body>
             <jsp:include page="header.jsp"></jsp:include>
             <main>
-                <div class="btns me-5">
+                <div class="btns me-5 mt-2">
                     <center>
                         <h1>Metodos de Pagamentos</h1>
                     </center>
