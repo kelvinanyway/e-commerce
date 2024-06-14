@@ -19,30 +19,23 @@ public class Produto {
     private Float desconto;
     private Float valorFinal;
     private Date validade;
-    private String descricao;
+    private int quantidade;
     private byte[] imagem;
     private String imagemBase64;
-
-    public String getImagemBase64() {
-        return imagemBase64;
-    }
-
-    public void setImagemBase64(String imagemBase64) {
-        this.imagemBase64 = imagemBase64;
-    }
 
     public Produto() {
     }
 
-    public Produto(int idProduto, String nome, Float valor, Float desconto, Float valorFinal, Date validade, String descricao, byte[] imagem) {
+    public Produto(int idProduto, String nome, Float valor, Float desconto, Float valorFinal, Date validade, int quantidade, byte[] imagem, String imagemBase64) {
         this.idProduto = idProduto;
         this.nome = nome;
         this.valor = valor;
         this.desconto = desconto;
         this.valorFinal = valorFinal;
         this.validade = validade;
-        this.descricao = descricao;
+        this.quantidade = quantidade;
         this.imagem = imagem;
+        this.imagemBase64 = imagemBase64;
     }
 
     public int getIdProduto() {
@@ -93,12 +86,12 @@ public class Produto {
         this.validade = validade;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
     public byte[] getImagem() {
@@ -109,5 +102,15 @@ public class Produto {
         this.imagem = imagem;
     }
 
+    public String getImagemBase64() {
+        return imagemBase64;
+    }
+
+    public void setImagemBase64(String imagemBase64) {
+        this.imagemBase64 = imagemBase64;
+    }
 
 }
+
+  
+

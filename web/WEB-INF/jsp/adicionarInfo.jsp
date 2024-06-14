@@ -11,7 +11,6 @@
             <link rel="shortcut icon" href="assets/88header.png" type="image/x-icon">
             <script src="https://kit.fontawesome.com/abf8e7610f.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="./styles/adicionarInfo.css">
-            <link rel="stylesheet" href="./styles/header.css">
             <meta http-equiv="Content-Type" name="viewport" content="width=device-width, initial-scale=1.0, text/html; charset=UTF-8">
             <script src="./scripts/compraAPI.js" type="module" defer></script>
             <title>Informações</title>

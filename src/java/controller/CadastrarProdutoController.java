@@ -104,7 +104,7 @@ public class CadastrarProdutoController extends HttpServlet {
             ProdutoDAO pDAO = new ProdutoDAO();
 
             p.setNome(request.getParameter("nome"));
-            p.setDescricao(request.getParameter("descricao"));
+            p.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
             p.setValor(Float.parseFloat(request.getParameter("valor")));
             p.setDesconto(Float.parseFloat(request.getParameter("desconto")));
             p.setValidade(Date.valueOf(request.getParameter("validade")));

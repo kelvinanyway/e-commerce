@@ -22,7 +22,7 @@ import model.bean.Usuario;
  */
 public class CarrinhoDAO {
 
-    //Primeiramente que no sql já tem trigger pra criar carrinho
+ 
     public void create(Carrinho c) {
         try {
             Connection conexao = Conexao.conectar();
@@ -56,7 +56,6 @@ public class CarrinhoDAO {
     }
     }
      */
-    //Aqui começam os códigos feitos por João Guilherme
     public void addProduto(Produto p, Carrinho c) {
         try {
             Connection conexao = Conexao.conectar();
@@ -112,7 +111,7 @@ public class CarrinhoDAO {
                 p.setDesconto(rs.getFloat("desconto"));
                 p.setValor(rs.getFloat("valor"));
                 p.setValorFinal(rs.getFloat("valorFinal"));
-                p.setDescricao(rs.getString("descricao"));
+                p.setQuantidade(rs.getInt("quantidade"));
                 p.setImagem(rs.getBytes("imagem"));
                 p.setValidade(rs.getDate("validade"));
                 produtos.add(p);
@@ -151,6 +150,5 @@ public class CarrinhoDAO {
             e.printStackTrace();
         }
         return c;
-    }
-    //FIM        
+    }    
 }

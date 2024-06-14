@@ -25,7 +25,8 @@
                         <h1>Metodos de Pagamentos</h1>
                     </center>
                     <div class="row gap-5">
-                        <button class="btnCartao" onclick="mostrarCartao()"><i class="fa-regular fa-credit-card fa-xl"></i></button>
+                        <button class="btnCartao" onclick="mostrarCartao()"><i
+                                class="fa-regular fa-credit-card fa-xl"></i></button>
                         <button class="btnPix" onclick="mostrarPix()"><i class="fa-brands fa-pix fa-xl"></i></button>
                     </div>
                 </div>
@@ -33,37 +34,43 @@
                     <center>
                         <h1>Insira seu Cartão</h1>
                     </center>
-                    <div class="inputs">
-                        <label for="">Numero Cartão</label>
-                        <input type="text" id="nCartao" required>
-                        <label for="">CVC</label>
-                        <input type="text" id="cvc" required>
-                        <label for="">Val</label>
-                        <input type="date" id="validade" required>
-                        <label for="">Nome Completo do titular</label>
-                        <input type="text" id="nCompleto" required>
-                        <button class="btnFinalizar">finalizar Compra</button>
-                    </div>
+                    <form action="finalizarPedido" method="post" id="formPagamento">
+                        <div class="inputs">
+                            <label for="">Numero Cartão</label>
+                            <input type="text" id="nCartao" required placeholder="0000 0000 0000 0000">
+                            <label for="">CVC</label>
+                            <input type="text" id="cvc" required>
+                            <label for="">Val</label>
+                            <input type="text" id="validade" required placeholder="MM/AA">
+                            <label for="">Nome Completo do titular</label>
+                            <input type="text" id="nCompleto" required>
+                            <button type="submit" class="btnFinalizar">finalizar Compra</button>
+                        </div>
+                    </form>
                 </div>
-
                 <div id="chavepix" class="d-none">
                     <div id="pix">
                         <center>
                             <h1>Nosso pix para pagamento</h1>
                         </center>
                         <img class="img-qr" src="./assets/qrcode.png" alt="qrcode">
-                        <button class="btnFinalizar">finalizar Compra</button>
+                        <form action="finalizarPedido" method="post">
+                            <button type="submit" class="btnFinalizar">finalizar Compra</button>
+                        </form>
+
                     </div>
                 </div>
-
             </main>
             <footer>
                 <p> Mercado88 &copy; todos os direitos reservados</p>
             </footer>
             <script src="./scripts/pagamento.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
                 crossorigin="anonymous"></script>
+
         </body>
 
         </html>

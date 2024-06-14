@@ -48,6 +48,10 @@
         <servlet-name>PagamentoController</servlet-name>
         <servlet-class>controller.PagamentoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckoutFinalController</servlet-name>
+        <servlet-class>controller.CheckoutFinalController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -144,6 +148,14 @@
         <servlet-name>PagamentoController</servlet-name>
         <url-pattern>/pagamento</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckoutFinalController</servlet-name>
+        <url-pattern>/pedidoFinalizado</url-pattern>
+    </servlet-mapping>
+            <servlet-mapping>
+            <servlet-name>CheckoutFinalController</servlet-name>
+            <url-pattern>/finalizarPedido</url-pattern>
+        </servlet-mapping>
     <session-config>
         <session-timeout>
             30
