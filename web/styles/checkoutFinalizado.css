@@ -1,0 +1,30 @@
+
+img{
+    height: 25vh;
+    width: 30vh;
+}
+.container-agradecimento{
+    display: flex;
+    align-items: center;
+    flex-direction: column  ;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF112;
+    height: 10vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+
+}
+footer p{
+ font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+@media all and (max-width:980px) {
+
+}
