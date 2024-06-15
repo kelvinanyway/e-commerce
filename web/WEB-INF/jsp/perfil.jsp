@@ -17,7 +17,7 @@
         <body>
             <div class="btns">
                 <button id="btnVoltar">
-                    <a href="./home">Voltar</a>
+                    <a href="./home">Inicial</a>
                 </button>
                 <a href="./cadastro-de-produto" class="d-none" id="linkadm">
                     <button id="btnAdm"><i class="fa-solid fa-user-tie fa-lg"></i></button>
@@ -26,7 +26,7 @@
             <main>
 
                 <div class="perfil">
-                    <div method="post" action="" class="formPerfil">
+                    <div method="post"  class="formPerfil">
                         <center>
                             <h1>Perfil</h1>${adm}
                         </center>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/header.css">
-    
+
     <title>Document</title>
 </head>
 
@@ -25,35 +25,41 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark "
-                                    style="font-size: 2.5rem ;" href="./perfil">
+                                <a class="col icon-link text-decoration-none text-dark " style="font-size: 2.5rem ;"
+                                    href="./perfil">
                                     <i class="fa-solid fa-circle-user"></i><span class="fs-6 ">Perfil</span>
                                 </a>
                             </button>
                             <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark"
-                                    style="font-size: 2.0rem ;" href="./carrinho">
+                                <a class="col icon-link text-decoration-none text-dark" style="font-size: 2.0rem ;"
+                                    href="./carrinho">
                                     <i class="fa-solid fa-cart-shopping"></i><span class="fs-6 ">Carrinho</span>
                                 </a>
                             </button>
                             <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark  "
-                                    style="font-size: 2.0rem ;" href="">
+                                <a class="col icon-link text-decoration-none text-dark  " style="font-size: 2.0rem ;"
+                                    href="">
                                     <i class="fa-solid fa-box"></i><span class="fs-6 ">Historico</span>
                                 </a>
                             </button>
                             <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark  "
-                                    style="font-size: 2.0rem ;" href="./home">
+                                <a class="col icon-link text-decoration-none text-dark  " style="font-size: 2.0rem ;"
+                                    href="./home">
                                     <i class="fa-solid fa-house"></i><span class="fs-6 ">home</span>
                                 </a>
                             </button>
                             <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark  "
-                                    style="font-size: 2.0rem ;" href="./categorias">
+                                <a class="col icon-link text-decoration-none text-dark  " style="font-size: 2.0rem ;"
+                                    href="./categorias">
                                     <i class="fa-brands fa-product-hunt"></i><span class="fs-6 ">Produtos</span>
                                 </a>
-                            </button>   
+                            </button>
+                            <button class="dropdown-item" type="button">
+                                <a class="col icon-link text-decoration-none text-dark" style="font-size: 2.0rem ;"
+                                    href="./suporte">
+                                    <i class="fa-solid fa-headset"></i><span class="fs-6 ">Suporte</span>
+                                </a>
+                            </button>
                         </div>
                     </div>
                     <form class="input-group" action="search" method="get">
@@ -66,7 +72,6 @@
                     </form>
                 </div>
                 <div class="col-3">
-
                     <div class="mobile row">
                         <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
                             style="font-size: 2.5rem ;" href="./perfil">
@@ -92,7 +97,7 @@
                         <a class="nav-link text-dark" href="./categorias">Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Contato</a>
+                        <a class="nav-link text-dark" href="./suporte">Suporte</a>
                     </li>
                 </ul>
         </div>
