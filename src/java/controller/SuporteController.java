@@ -7,24 +7,17 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Base64;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.bean.Produto;
-import model.dao.ProdutoDAO;
 
 /**
  *
- * @author Senai
+ * @author USER
  */
-public class EditarProdutoController extends HttpServlet {
-
-    ProdutoDAO pDAO = new ProdutoDAO();
-    Produto p = new Produto();
+public class SuporteController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,15 +30,9 @@ public class EditarProdutoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nextPage = "/WEB-INF/jsp/editarProduto.jsp";
 
-        List<Produto> produtos = pDAO.read();
-        for (int i = 0; i < produtos.size(); i++) {
-            produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
-        }
-
+        String nextPage = "/WEB-INF/jsp/suporte.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-        request.setAttribute("produtos", produtos);
         dispatcher.forward(request, response);
     }
 
@@ -75,16 +62,7 @@ public class EditarProdutoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        String url = request.getServletPath();
-
-        //if (url.equals("/excluirProduto")) {
-        //} else if (url.equals("/atualizarNome")) {
-        // } else if (url.equals("/atualizarValor")) {
-        // } else if (url.equals("/atualizarValorFinal")) {
-        // } else if (url.equals("/atualizarDesconto")) {
-        //  } else if (url.equals("atualizarQuantidade")) {
-        // }
+        processRequest(request, response);
     }
 
     /**

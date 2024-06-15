@@ -18,19 +18,42 @@
 
                 <body>
                     <header>
-                        <div class="container">
+                        <div id="container-head">
+                            <nav class="row g-0 justify-content-between align-items-center">
+                                <div class="col-2 ">
+                                    <a href="./home"><img class="img-header align-self-center"
+                                            src="./assets/88header.png" alt="img header"></a>
+                                </div>
+                                <div class="col-1">
+                                    <div class="row">
+                                        <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
+                                            style="font-size: 2.5rem ;" href="./perfil">
+                                            <i class="fa-solid fa-circle-user"></i>
+                                        </a>
+                                    </div>
 
+                                </div>
+                                <ul class="col-12 nav justify-content-center">
+                                    <li class="nav-item">
+                                        <a class="nav-link active text-dark " aria-current="page" href="./cadastro-de-produto">Cadastrar Produto</a>
+                                    </li>
+                                </ul>
                         </div>
                     </header>
+
                     <main>
-                        <div class="produto d-flex flex-row">
+                        <div class="produto row m-5">
                             <c:forEach items="${produtos}" var="produto">
                                 <div class="produto-card">
                                     <div class="produto-imagem">
+                                        <form action="excluirProduto" method="post">
+                                            <button class="excluirProduto" type="submit"><i
+                                                    class="fa-solid fa-trash"></i></button>
+                                        </form>
                                         <span class="tag-desconto">
-                                            <form action="atualizarDesconto" method="post" >
+                                            <form action="atualizarDesconto" method="post">
                                                 <input name="desconto" id="inputDesconto" type="text"
-                                                    placeholder="${produto.desconto}" />
+                                                    placeholder="Desc: ${produto.desconto}" />
                                                 <button class="btnAtualizar" type="submit" name="atualizar"><i
                                                         class="fa-solid fa-pen"></i></button>
                                             </form>
@@ -38,10 +61,10 @@
                                         <img src="data:image/png;base64,${produto.imagemBase64}" class="produto-capa"
                                             alt="">
                                     </div>
-                                    <div>
-                                        <form action="atualizarNome" method="post" >
+                                    <div class="pl-4">
+                                        <form action="atualizarNome" method="post">
                                             <input name="nome" id="inputNome" type="text"
-                                                placeholder="${produto.nome}" />
+                                                placeholder="Nome: ${produto.nome}" />
                                             <button class="btnAtualizar" type="submit" name="atualizar"><i
                                                     class="fa-solid fa-pen"></i></button>
                                         </form>
@@ -50,24 +73,24 @@
                                         </div>
                                         <div id="div-valor">
                                             <span class="valor">
-                                                <form action="atualizarValor" method="post" >
+                                                <form action="atualizarValor" method="post">
                                                     <input name="valor" id="inputValor" type="text"
-                                                        placeholder="${produto.valor}" />
+                                                        placeholder="Valor: ${produto.valor}" />
                                                     <button class="btnAtualizar" type="submit" name="atualizar"><i
                                                             class="fa-solid fa-pen"></i></button>
                                                 </form>
                                             </span>
                                             <span class="preco laranja-texto-3">
-                                                <form action="atualizarValorFinal" method="post" >
+                                                <form action="atualizarValorFinal" method="post">
                                                     <input name="valorFinal" id="inputValorFinal" type="text"
-                                                        placeholder="${produto.valorFinal}" />
+                                                        placeholder="Valor Final: ${produto.valorFinal}" />
                                                     <button class="btnAtualizar" type="submit" name="atualizar"><i
                                                             class="fa-solid fa-pen"></i></button>
                                                 </form>
                                             </span>
                                         </div>
                                         <div id="quantidade">
-                                            <form action="atualizarQuantidade" method="post" >
+                                            <form action="atualizarQuantidade" method="post">
                                                 <input name="quantidade" id="inputQuantidade" type="text"
                                                     placeholder="Quantidade: ${produto.quantidade}" />
                                                 <button class="btnAtualizar" type="submit" name="atualizar"><i

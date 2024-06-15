@@ -56,6 +56,10 @@
         <servlet-name>EditarProdutoController</servlet-name>
         <servlet-class>controller.EditarProdutoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SuporteController</servlet-name>
+        <servlet-class>controller.SuporteController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -163,6 +167,10 @@
     <servlet-mapping>
         <servlet-name>EditarProdutoController</servlet-name>
         <url-pattern>/editarProduto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SuporteController</servlet-name>
+        <url-pattern>/suporte</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
