@@ -1,186 +1,170 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    position: relative;
-    padding-bottom: 10vh;
-    overflow-x: hidden;
-  }
-  
-  .img-header {
-    height: 60%;
-    width: 60%;
-  }
-  
-  nav {
-    background-color: #FFF112;
-    padding: 10px;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    font: bold 1.3rem sans-serif;
-    text-transform: uppercase;
-    color: grey;
-  }
-  
-  ul li {
-    padding: 0 .5em .25em;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: .3s;
-  }
-  
-  ul li:hover {
-    color: #fff;
-  }
-  
-  ul li:before {
-    content: "";
-    position: absolute;
-    inset: calc(100% - 3px) 0 0 0;
-    background: #000000;
-    scale: 0 1;
-    transition: .3s, translate 0s .3s;
-  }
-  
-  ul:hover li:before {
-    scale: 1;
-  }
-  
-  ul li:hover:before {
-    translate: 0;
-    transition: .3s;
-  }
-  
-  ul:hover li:has(~ li:hover):before {
-    translate: 100% 0;
-    transition: .2s .2s, scale 0s .4s;
-  }
-  
-  ul:hover li:hover~li:before {
-    translate: -100% 0;
-    transition: .2s .2s, scale 0s .4s;
-  }
-  
-  .dropdown-menu a {
-    display: block;
-    color: black;
-  }
-  
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
+
+header{
+
+  width: 100%;
+}
+main {
+  width: 100%;
+  height: 74.4vh;
+}
+
+
+.img-header {
+  height: 60%;
+  width: 60%;
+}
+
+nav {
+  background-color: #FFF112;
+  padding: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  font: bold 1.3rem sans-serif;
+  text-transform: uppercase;
+  color: grey;
+}
+
+ul li {
+  padding: 0 .5em .25em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+
+ul li:hover {
+  color: #fff;
+}
+
+ul li:before {
+  content: "";
+  position: absolute;
+  inset: calc(100% - 3px) 0 0 0;
+  background: #000000;
+  scale: 0 1;
+  transition: .3s, translate 0s .3s;
+}
+
+ul:hover li:before {
+  scale: 1;
+}
+
+ul li:hover:before {
+  translate: 0;
+  transition: .3s;
+}
+
+ul:hover li:has(~ li:hover):before {
+  translate: 100% 0;
+  transition: .2s .2s, scale 0s .4s;
+}
+
+ul:hover li:hover~li:before {
+  translate: -100% 0;
+  transition: .2s .2s, scale 0s .4s;
+}
+
+.dropdown-menu a {
+  display: block;
+  color: black;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 input {
-    font-size: 1em;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    border-radius: 4px;
-    transition: all linear 160ms;
-    outline: none;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border-radius: 4px;
+  transition: all linear 160ms;
+  outline: none;
 }
 
 .excluirProduto {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
 
 #inputDesconto {
-    width: 80px;
-    height: 35px;
+  width: 80px;
+  height: 35px;
 }
 
 #inputNome {
-    width: 80%;
-    height: 35px;
+  width: 80%;
+  height: 35px;
 }
 
 #inputValorFinal {
-    width: 80%;
-    height: 35px;
+  width: 80%;
+  height: 35px;
 }
 
 #inputValor {
-    width: 80%;
+  width: 80%;
 }
-#inputQuantidade{
-    width: 80%;
-    height: 35px;
+
+#inputQuantidade {
+  width: 80%;
+  height: 35px;
 }
 
 .btnAtualizar {
-    border: none;
-    background-color: transparent;
-    width: 1%;
-    cursor: pointer;
-    margin-bottom: 10px;
+  border: none;
+  background-color: transparent;
+  width: 1%;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+form input {
+  font-size: 1.2rem;
+  height: 1.5rem;
+}
+
+.preco {
+  font-size: 1rem !important;
+}
+
+.valor {
+  opacity: 1 !important;
+}
+
+footer {
+  justify-content: center;
+  align-items: center;
+  background-color: #FFF112;
+  height: 10vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  bottom: 0;
+
+}
+
+footer p {
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
 @media all and (max-width:768px) {
-    .produto-card {
-        min-width: 40vw;
-        max-height: 40vh;
-    }
-
-    #div-btn {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .card-btn {
-        margin-top: 10px;
-        padding: 4px;
-        padding-bottom: 5px;
-        width: 50%;
-        height: 60%;
-        position: relative;
-        bottom: 0;
-        text-transform: capitalize;
-        border: none;
-        outline: none;
-        transition: 0.5s;
-        cursor: pointer;
-        opacity: 1;
-        font-size: 0.6rem;
-        font-weight: 600;
-        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.27);
-        overflow: hidden;
-        background-color: green;
-        color: yellow;
-    }
-
-    .card-btn:hover {
-        background-color: yellow;
-        color: green;
-    }
-
-    .produto-info {
-        width: 103%;
-        height: 50%;
-        padding-top: 0px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .produto-imagem {
-        position: relative;
-        width: 100%;
-        height: 45%;
-        overflow: hidden;
-        padding: 2px 1px;
-    }
+  main {
+    width: 100%;
+    height: 82.4vh;
+  } 
+  footer {
+    position: absolute !important;
+    bottom: 0;
+  }
 }

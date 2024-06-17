@@ -79,21 +79,9 @@ ul:hover li:hover~li:before {
   display: block;
 }
 
-#search {
-  box-shadow: 0px 0px 5px 2px rgb(180, 175, 175);
-  border: 2px solid white;
-  border-radius: 10px;
-  padding: 10px;
-  padding-left: 10px;
-
-}
-
-#search:focus-visible {
-  outline: none;
-}
-
 footer {
-
+  align-items: center;
+  justify-content: center;
   background-color: #FFF112;
   height: 10vh;
   width: 100vw;
@@ -120,7 +108,7 @@ footer p {
     width: 100vw;
     margin: 0;
     padding: 0;
-    position: absolute; 
+    position: absolute;
     bottom: 0%;
   }
 }
