@@ -23,39 +23,39 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa-solid fa-bars"></i>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark " style="font-size: 2.5rem ;"
+                        <div class="dropdown-menu mt-5" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item " type="button">
+                                <a class="col icon-link d-flex align-items-center gap-3 justify-content-start px-2 text-decoration-none text-dark " style="font-size: 2.5rem ;"
                                     href="./perfil">
                                     <i class="fa-solid fa-circle-user"></i><span class="fs-6 ">Perfil</span>
                                 </a>
                             </button>
-                            <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark" style="font-size: 2.0rem ;"
+                            <button class="dropdown-item " type="button">
+                                <a class="col icon-link d-flex align-items-center gap-3 justify-content-start px-2 text-decoration-none text-dark" style="font-size: 2.0rem ;"
                                     href="./carrinho">
                                     <i class="fa-solid fa-cart-shopping"></i><span class="fs-6 ">Carrinho</span>
                                 </a>
                             </button>
-                            <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark  " style="font-size: 2.0rem ;"
+                            <button class="dropdown-item " type="button">
+                                <a class="col icon-link d-flex align-items-center gap-3 justify-content-start px-2 text-decoration-none text-dark  " style="font-size: 2.0rem ;"
                                     href="">
                                     <i class="fa-solid fa-box"></i><span class="fs-6 ">Historico</span>
                                 </a>
                             </button>
-                            <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark  " style="font-size: 2.0rem ;"
+                            <button class="dropdown-item " type="button">
+                                <a class="col icon-link d-flex align-items-center gap-3 justify-content-start px-2 text-decoration-none text-dark  " style="font-size: 2.0rem ;"
                                     href="./home">
                                     <i class="fa-solid fa-house"></i><span class="fs-6 ">home</span>
                                 </a>
                             </button>
-                            <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark  " style="font-size: 2.0rem ;"
+                            <button class="dropdown-item " type="button">
+                                <a class="col icon-link d-flex align-items-center gap-3 justify-content-start px-2 text-decoration-none text-dark  " style="font-size: 2.0rem ;"
                                     href="./categorias">
                                     <i class="fa-brands fa-product-hunt"></i><span class="fs-6 ">Produtos</span>
                                 </a>
                             </button>
-                            <button class="dropdown-item" type="button">
-                                <a class="col icon-link text-decoration-none text-dark" style="font-size: 2.0rem ;"
+                            <button class="dropdown-item " type="button">
+                                <a class="col icon-link d-flex align-items-center gap-3 justify-content-start px-2 text-decoration-none text-dark" style="font-size: 2.0rem ;"
                                     href="./suporte">
                                     <i class="fa-solid fa-headset"></i><span class="fs-6 ">Suporte</span>
                                 </a>
