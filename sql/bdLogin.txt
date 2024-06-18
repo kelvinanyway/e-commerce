@@ -1,0 +1,4 @@
+Banco de dados: mercadoecommerce
+Nome de usuário: kelvinmercado
+Senha : kelvinbaubau
+Email: kelvinfaquetti1@outlook.com
