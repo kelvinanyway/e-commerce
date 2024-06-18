@@ -7,20 +7,16 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.bean.Usuario;
-import model.dao.UsuarioDAO;
 
 /**
  *
  * @author Senai
  */
-public class CadastroController extends HttpServlet {
+public class HistoricoPedidoController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,10 +29,19 @@ public class CadastroController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nextPage = "/WEB-INF/jsp/cadastro.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-        dispatcher.forward(request, response);
-
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet HistoricoPedidoController</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet HistoricoPedidoController at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -65,36 +70,7 @@ public class CadastroController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = request.getServletPath();
-        if (url.equals("/cadastrar")) {
-            String nextPage = "/WEB-INF/jsp/login.jsp";
-            Usuario usuario = new Usuario();
-            UsuarioDAO uDAO = new UsuarioDAO();
-
-            String cpf = request.getParameter("Cpf");
-            cpf = cpf.replaceAll("\\.", "");
-            cpf = cpf.replaceAll("-", "");
-            String telefone = request.getParameter("Telefone");
-            telefone = telefone.replace("(", "");
-            telefone = telefone.replace(")", "");
-            telefone = telefone.replace(" ", "");
-            telefone = telefone.replace("-", "");
-            usuario.setNome(request.getParameter("nome"));
-            usuario.setSenha(Integer.toString(request.getParameter("senha").hashCode()));
-            
-            usuario.setEmail(request.getParameter("email"));
-            usuario.setData(Date.valueOf(request.getParameter("data")));
-            usuario.setCpf(cpf);
-            usuario.setTelefone(telefone);
-
-            try {
-                uDAO.create(usuario);
-                response.sendRedirect("./login");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-        }
+        processRequest(request, response);
     }
 
     /**

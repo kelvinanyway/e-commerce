@@ -69,7 +69,7 @@ public class LoginController extends HttpServlet {
             UsuarioDAO uDAO = new UsuarioDAO();
             Usuario usuario = new Usuario();
             usuario.setEmail(request.getParameter("email"));
-            usuario.setSenha(request.getParameter("senha"));
+            usuario.setSenha(Integer.toString(request.getParameter("senha").hashCode()));
 
             try {
                 if (uDAO.login(usuario) != -1) {

@@ -14,7 +14,10 @@ center {
     margin-top: 3rem;
     gap: 10px;
 }
-
+main{
+    height: 74.4vh;
+    width: 100%;
+}
 footer {
     display: flex;
     justify-content: center;

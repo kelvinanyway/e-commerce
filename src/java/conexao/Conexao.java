@@ -14,9 +14,9 @@ import java.sql.SQLException;
  * @author Senai
  */
 public class Conexao {
-        private static final String url = "jdbc:mysql://localhost:3306/mercado88?useSSL=false";
-    private static final String user = "root";
-    private static final String senha = "";
+        private static final String url = "jdbc:mysql://db4free.net:3306/mercadoecommerce?useSSL=false";
+    private static final String user = "kelvinmercado";
+    private static final String senha = "kelvinbaubau";
 
     public static Connection conectar() throws SQLException {
         Connection conn = null;

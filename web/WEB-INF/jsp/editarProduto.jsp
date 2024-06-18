@@ -49,44 +49,47 @@
                                     <div class="produto-card">
                                         <div class="produto-imagem">
                                             <form action="excluirProduto" method="post">
-                                                <button class="excluirProduto" type="submit"><i
+                                                <button class="excluirProduto" name="excluir"
+                                                    value="${produto.idProduto}" type="submit"><i
                                                         class="fa-solid fa-trash"></i></button>
                                             </form>
                                             <span class="tag-desconto">
                                                 <form action="atualizarDesconto" method="post">
                                                     <input name="desconto" id="inputDesconto" type="text"
                                                         placeholder="Desc: ${produto.desconto}" />
-                                                    <button class="btnAtualizar" type="submit" name="atualizar"><i
+                                                    <button value="${produto.idProduto}" class="btnAtualizar" type="submit"
+                                                        name="atualizarDesconto"><i
                                                             class="fa-solid fa-pen"></i></button>
                                                 </form>
                                             </span>
-                                            <img src="data:image/png;base64,${produto.imagemBase64}" class="produto-capa"
-                                                alt="">
+                                            <img src="data:image/png;base64,${produto.imagemBase64}"
+                                                class="produto-capa" alt="">
                                         </div>
                                         <div class="pl-4">
-                                            <form action="atualizarNome" method="post">
+                                            <form action="atualizarNomeProduto" method="post">
                                                 <input name="nome" id="inputNome" type="text"
                                                     placeholder="Nome: ${produto.nome}" />
-                                                <button class="btnAtualizar" type="submit" name="atualizar"><i
-                                                        class="fa-solid fa-pen"></i></button>
+                                                <button class="btnAtualizar" type="submit" value="${produto.idProduto}"
+                                                    name="atualizarNomeProduto"><i class="fa-solid fa-pen"></i></button>
                                             </form>
                                             <div>
-    
+
                                             </div>
                                             <div id="div-valor">
                                                 <span class="valor">
                                                     <form action="atualizarValor" method="post">
                                                         <input name="valor" id="inputValor" type="text"
                                                             placeholder="Valor: ${produto.valor}" />
-                                                        <button class="btnAtualizar" type="submit" name="atualizar"><i
+                                                        <button class="btnAtualizar" type="submit"
+                                                            name="atualizarValor" value="${produto.idProduto}"><i
                                                                 class="fa-solid fa-pen"></i></button>
                                                     </form>
                                                 </span>
                                                 <span class="preco laranja-texto-3">
                                                     <form action="atualizarValorFinal" method="post">
                                                         <input name="valorFinal" id="inputValorFinal" type="text"
-                                                            placeholder="Valor Final: ${produto.valorFinal}" />
-                                                        <button class="btnAtualizar" type="submit" name="atualizar"><i
+                                                            placeholder="Atualizar Valor final" />
+                                                        <button class="btnAtualizar" type="submit" value="${produto.idProduto}" name="atualizar"><i
                                                                 class="fa-solid fa-pen"></i></button>
                                                     </form>
                                                 </span>
@@ -105,7 +108,7 @@
                                 </c:forEach>
                             </div>
                         </main>
-    
+
                     </main>
                     <footer class="d-flex">
                         <p> Mercado88 &copy; todos os direitos reservados</p>
