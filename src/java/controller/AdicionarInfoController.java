@@ -6,7 +6,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -20,7 +19,6 @@ import model.bean.Produto;
 import model.bean.Usuario;
 import model.dao.CarrinhoDAO;
 import model.dao.EnderecoDAO;
-import model.dao.ProdutoDAO;
 import model.dao.UsuarioDAO;
 
 /**
@@ -42,33 +40,40 @@ public class AdicionarInfoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+
         response.setContentType("text/html;charset=UTF-8");
-       CarrinhoDAO cDAO = new CarrinhoDAO();
+        CarrinhoDAO cDAO = new CarrinhoDAO();
         Usuario u = new Usuario();
         UsuarioDAO uDao = new UsuarioDAO();
         Cookie[] cookies = request.getCookies();
-        if(cookies != null) {
+        if (cookies != null) {
             for (Cookie cookie : cookies) {
-                if(cookie.getName().equals("usuario")) {
-                     u = uDao.pegarPorID(Integer.parseInt(cookie.getValue()));
+                if (cookie.getName().equals("usuario")) {
+                    u = uDao.pegarPorID(Integer.parseInt(cookie.getValue()));
                 }
             }
         }
         List<Produto> produtos = new ArrayList();
         if (u.getIdUsuario() > 0) {
-           produtos = cDAO.listarProdutos(u); 
+            produtos = cDAO.listarProdutos(u);
         }
-           System.out.println("p"+produtos.size());
-       
+        System.out.println("p" + produtos.size());
+
         if (produtos.size() < 1) {
             response.sendRedirect("./carrinho");
         } else {
-            String nextPage = "/WEB-INF/jsp/adicionarInfo.jsp";
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-        dispatcher.forward(request, response);
+            String url = request.getServletPath();
+            if (url.equals("/finalizarEndereco")) {
+                String nextPage = "/WEB-INF/jsp/pagamento.jsp";
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+                dispatcher.forward(request, response);
+            } else {
+                String nextPage = "/WEB-INF/jsp/adicionarInfo.jsp";
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+                dispatcher.forward(request, response);
+            }
         }
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -113,8 +118,9 @@ public class AdicionarInfoController extends HttpServlet {
             e.setCidade(request.getParameter("cidade"));
             e.setEstado(request.getParameter("estado"));
             e.setNumero(Integer.parseInt(request.getParameter("numero")));
-            eDAO.create(e);
-            response.sendRedirect("./pagamento");
+
+            int id = eDAO.create(e);
+            request.setAttribute("idEndereco", id);
         }
     }
 

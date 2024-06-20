@@ -146,15 +146,15 @@ public class ProdutoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("UPDATE produto SET nome = ?, valor = ?, desconto = ?,quantidade = ?,validade = ?, imagem = ? WHERE idProduto = ? ");
-            stmt.setInt(1, p.getIdProduto());
-            stmt.setString(2, p.getNome());
-            stmt.setFloat(3, p.getValor());
-            stmt.setFloat(4, p.getDesconto());
-            stmt.setInt(5, p.getQuantidade());
-            stmt.setDate(6, p.getValidade());
-            stmt.setBytes(7, p.getImagem());
-
+            stmt = conexao.prepareStatement("UPDATE produto SET nome = ?, valor = ?, desconto = ?, quantidade = ?, validade = ?, imagem = ? WHERE idProduto = ? ");
+            stmt.setString(1    , p.getNome());
+            stmt.setFloat(2, p.getValor());
+            stmt.setFloat(3, p.getDesconto());
+            stmt.setInt(4, p.getQuantidade());
+            stmt.setDate(5, p.getValidade());
+            stmt.setBytes(6, p.getImagem());
+            stmt.setInt(7, p.getIdProduto());
+            
             stmt.executeUpdate();
             stmt.close();
             conexao.close();

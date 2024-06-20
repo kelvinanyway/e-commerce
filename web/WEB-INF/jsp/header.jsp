@@ -25,39 +25,52 @@
                         </button>
                         <div class="dropdown-menu mt-5" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item " type="button">
-                                <a class="col icon-link d-flex align-items-center gap-3 justify-content-start px-2 text-decoration-none text-dark " style="font-size: 2.5rem ;"
-                                    href="./perfil">
-                                    <i class="fa-solid fa-circle-user"></i><span class="fs-6 ">Perfil</span>
+                                <a class="col icon-link d-flex align-items-center ps-1 justify-content-center text-decoration-none text-dark  "
+                                    style="font-size: 2.0rem ;" href="./home">
+                                    <span class="w-50 d-flex justify-content-center pe-3"><i
+                                            class="fa-solid fa-house"></i></span>
+                                    <span class="fs-6 w-50">Home</span>
                                 </a>
                             </button>
                             <button class="dropdown-item " type="button">
-                                <a class="col icon-link d-flex align-items-center gap-3 justify-content-start px-2 text-decoration-none text-dark" style="font-size: 2.0rem ;"
-                                    href="./carrinho">
-                                    <i class="fa-solid fa-cart-shopping"></i><span class="fs-6 ">Carrinho</span>
+                                <a class="col icon-link d-flex align-items-center ps-1 justify-content-center text-decoration-none text-dark "
+                                    style="font-size: 2.0rem ;" href="./perfil">
+                                    <span class="w-50 d-flex justify-content-center pe-3"><i
+                                            class="fa-solid fa-circle-user"></i></span>
+                                    <span class="fs-6 w-50">Perfil</span>
                                 </a>
                             </button>
                             <button class="dropdown-item " type="button">
-                                <a class="col icon-link d-flex align-items-center gap-3 justify-content-start px-2 text-decoration-none text-dark  " style="font-size: 2.0rem ;"
-                                    href="">
-                                    <i class="fa-solid fa-box"></i><span class="fs-6 ">Historico</span>
+                                <a class="col icon-link d-flex align-items-center ps-1 justify-content-center text-decoration-none text-dark"
+                                    style="font-size: 2.0rem ;" href="./carrinho">
+                                    <span class="w-50 d-flex justify-content-center pe-3"><i
+                                            class="fa-solid fa-cart-shopping"></i></span>
+                                    <span class="fs-6 w-50">Carrinho</span>
                                 </a>
                             </button>
                             <button class="dropdown-item " type="button">
-                                <a class="col icon-link d-flex align-items-center gap-3 justify-content-start px-2 text-decoration-none text-dark  " style="font-size: 2.0rem ;"
-                                    href="./home">
-                                    <i class="fa-solid fa-house"></i><span class="fs-6 ">home</span>
+                                <a class="col icon-link d-flex align-items-center ps-1 justify-content-center text-decoration-none text-dark  "
+                                    style="font-size: 2.0rem ;" href="./historicoPedidos">
+                                    <span class="w-50 d-flex justify-content-center pe-3"><i
+                                            class="fa-solid fa-box"></i></span>
+
+                                    <span class="fs-6 w-50">Historico</span>
                                 </a>
                             </button>
                             <button class="dropdown-item " type="button">
-                                <a class="col icon-link d-flex align-items-center gap-3 justify-content-start px-2 text-decoration-none text-dark  " style="font-size: 2.0rem ;"
-                                    href="./categorias">
-                                    <i class="fa-brands fa-product-hunt"></i><span class="fs-6 ">Produtos</span>
+                                <a class="col icon-link d-flex align-items-center ps-1 justify-content-center text-decoration-none text-dark  "
+                                    style="font-size: 2.0rem ;" href="./categorias">
+                                    <span class="w-50 d-flex justify-content-center pe-3"><i
+                                            class="fa-brands fa-product-hunt"></i></span>
+                                    <span class="fs-6 w-50">Produtos</span>
                                 </a>
                             </button>
-                            <button class="dropdown-item " type="button">
-                                <a class="col icon-link d-flex align-items-center gap-3 justify-content-start px-2 text-decoration-none text-dark" style="font-size: 2.0rem ;"
-                                    href="./suporte">
-                                    <i class="fa-solid fa-headset"></i><span class="fs-6 ">Suporte</span>
+                            <button class="dropdown-item" type="button">
+                                <a class="col icon-link d-flex align-items-center ps-1 justify-content-center text-decoration-none text-dark"
+                                    style="font-size: 2.0rem ;" href="./suporte">
+                                    <span class="w-50 d-flex justify-content-center pe-3"><i
+                                            class="fa-solid fa-headset"></i></span>
+                                    <span class="fs-6 w-50">Suporte</span>
                                 </a>
                             </button>
                         </div>
@@ -66,7 +79,7 @@
                         <button type="submit" class="input-group-text" id="basic-addon1">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input type="search" class="form-control" name="s"
+                        <input type="search" id="input-search" class="form-control" name="s"
                             placeholder="Pesquise produtos de seu interesse" aria-label="Input group example"
                             aria-describedby="basic-addon1">
                     </form>
@@ -82,7 +95,7 @@
                             <i class="fa-solid fa-cart-shopping"></i>
                         </a>
                         <a class="col icon-link text-decoration-none text-dark d-flex justify-content-between "
-                            style="font-size: 2.5rem ;" href="">
+                            style="font-size: 2.5rem ;" href="./historicoPedidos">
                             <i class="fa-solid fa-box"></i>
                         </a>
                     </div>

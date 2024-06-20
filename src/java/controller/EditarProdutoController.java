@@ -81,8 +81,8 @@ public class EditarProdutoController extends HttpServlet {
         if (url.equals("/excluirProduto")) {
             p = pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("excluir")));
             pDAO.deletar(p);
-            response.sendRedirect("editarProduto");
-        } else if (url.equals("/atualizarNome")) {
+           
+        } else if (url.equals("/atualizarNomeProduto")) {
             p = pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("atualizarNomeProduto")));
             p.setNome(request.getParameter("nome"));
             pDAO.update(p);
@@ -91,22 +91,19 @@ public class EditarProdutoController extends HttpServlet {
             p = pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("atualizarValor")));
             p.setValor(Float.parseFloat(request.getParameter("valor")));
             pDAO.update(p);
-
-        } else if (url.equals("/atualizarValorFinal")) {
-            p = pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("atualizarValorFinal")));
-            p.setValorFinal(Float.parseFloat(request.getParameter("valorFinal")));
-            pDAO.update(p);
+            
 
         } else if (url.equals("/atualizarDesconto")) {
             p = pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("atualizarDesconto")));
             p.setDesconto(Float.parseFloat(request.getParameter("desconto")));
             pDAO.update(p);
 
-        } else if (url.equals("atualizarQuantidade")) {
+        } else if (url.equals("/atualizarQuantidade")) {
             p = pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("atualizarQuantidade")));
             p.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
             pDAO.update(p);
         }
+        response.sendRedirect("./editarProduto");
     }
 
     /**

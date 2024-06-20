@@ -41,8 +41,6 @@
                                 </ul>
                         </div>
                     </header>
-                    <main>
-
                         <main>
                             <div class="produto row m-5">
                                 <c:forEach items="${produtos}" var="produto">
@@ -55,7 +53,7 @@
                                             </form>
                                             <span class="tag-desconto">
                                                 <form action="atualizarDesconto" method="post">
-                                                    <input name="desconto" id="inputDesconto" type="text"
+                                                    <input step="0.01" name="desconto" id="inputDesconto" type="number"
                                                         placeholder="Desc: ${produto.desconto}" />
                                                     <button value="${produto.idProduto}" class="btnAtualizar" type="submit"
                                                         name="atualizarDesconto"><i
@@ -78,27 +76,19 @@
                                             <div id="div-valor">
                                                 <span class="valor">
                                                     <form action="atualizarValor" method="post">
-                                                        <input name="valor" id="inputValor" type="text"
+                                                        <input step="0.01" name="valor" id="inputValor" type="number"
                                                             placeholder="Valor: ${produto.valor}" />
                                                         <button class="btnAtualizar" type="submit"
                                                             name="atualizarValor" value="${produto.idProduto}"><i
                                                                 class="fa-solid fa-pen"></i></button>
                                                     </form>
                                                 </span>
-                                                <span class="preco laranja-texto-3">
-                                                    <form action="atualizarValorFinal" method="post">
-                                                        <input name="valorFinal" id="inputValorFinal" type="text"
-                                                            placeholder="Atualizar Valor final" />
-                                                        <button class="btnAtualizar" type="submit" value="${produto.idProduto}" name="atualizar"><i
-                                                                class="fa-solid fa-pen"></i></button>
-                                                    </form>
-                                                </span>
                                             </div>
                                             <div id="quantidade">
                                                 <form action="atualizarQuantidade" method="post">
-                                                    <input name="quantidade" id="inputQuantidade" type="text"
+                                                    <input name="quantidade" id="inputQuantidade" type="number"
                                                         placeholder="Quantidade: ${produto.quantidade}" />
-                                                    <button class="btnAtualizar" type="submit" name="atualizar"><i
+                                                    <button class="btnAtualizar" type="submit" value="${produto.idProduto}" name="atualizarQuantidade"><i
                                                             class="fa-solid fa-pen"></i></button>
                                                 </form>
                                             </div>
@@ -108,8 +98,6 @@
                                 </c:forEach>
                             </div>
                         </main>
-
-                    </main>
                     <footer class="d-flex">
                         <p> Mercado88 &copy; todos os direitos reservados</p>
                     </footer>

@@ -70,7 +70,6 @@ public class LoginController extends HttpServlet {
             Usuario usuario = new Usuario();
             usuario.setEmail(request.getParameter("email"));
             usuario.setSenha(Integer.toString(request.getParameter("senha").hashCode()));
-
             try {
                 if (uDAO.login(usuario) != -1) {
                     Cookie cookie = new Cookie("usuario", Integer.toString(uDAO.login(usuario)));

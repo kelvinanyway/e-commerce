@@ -34,7 +34,7 @@
                     <center>
                         <h1>Insira seu Cartão</h1>
                     </center>
-                    <form action="finalizarPedido" method="post" id="formPagamento">
+                    <form action="adicionarPagamento" method="post" id="formPagamento">
                         <div class="inputs">
                             <label for="">Numero Cartão</label>
                             <input type="text" id="nCartao" required placeholder="0000 0000 0000 0000">
@@ -44,7 +44,7 @@
                             <input type="text" id="validade" required placeholder="MM/AA">
                             <label for="">Nome Completo do titular</label>
                             <input type="text" id="nCompleto" required>
-                            <button type="submit" class="btnFinalizar">finalizar Compra</button>
+                            <button type="submit" value="cartao" name="formaPagamento" class="btnFinalizar">finalizar Compra</button>
                         </div>
                     </form>
                 </div>
@@ -55,7 +55,7 @@
                         </center>
                         <img class="img-qr" src="./assets/qrcode.png" alt="qrcode">
                         <form action="finalizarPedido" method="post">
-                            <button type="submit" class="btnFinalizar">finalizar Compra</button>
+                            <button type="submit" value="pix" name="formaPagamento" class="btnFinalizar">finalizar Compra</button>
                         </form>
 
                     </div>

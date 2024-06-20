@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden  ;
+}
 img {
     height: 25vh;
     width: 30vh;
@@ -15,7 +18,7 @@ center {
     gap: 10px;
 }
 main{
-    height: 74.4vh;
+    height: 64.4vh;
     width: 100%;
 }
 footer {
