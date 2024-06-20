@@ -38,7 +38,7 @@ public class EditarProdutoController extends HttpServlet {
             throws ServletException, IOException {
         String nextPage = "/WEB-INF/jsp/editarProduto.jsp";
 
-        List<Produto> produtos = pDAO.read();
+        List<Produto> produtos = pDAO.lerProduto();
         for (int i = 0; i < produtos.size(); i++) {
             produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
         }

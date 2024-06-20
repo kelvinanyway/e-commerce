@@ -7,17 +7,26 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.Pedido;
+import model.bean.Usuario;
+import model.dao.PedidoDAO;
+import model.dao.UsuarioDAO;
 
 /**
  *
  * @author Senai
  */
 public class HistoricoPedidoController extends HttpServlet {
+
+    PedidoDAO pDAO = new PedidoDAO();
+    UsuarioDAO uDAO = new UsuarioDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,6 +41,21 @@ public class HistoricoPedidoController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String nextPage = "/WEB-INF/jsp/HistoricoPedidos.jsp";
+        Pedido p = new Pedido();
+        Usuario u = new Usuario();
+
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("usuario") && !cookie.getValue().equals("")) {
+                    u = uDAO.pegarPorID(Integer.parseInt(cookie.getValue()));
+                }
+            }
+        }
+
+        List<Pedido> pedidos = pDAO.listPedidos(u);
+
+        request.setAttribute("pedidos", pedidos);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
         dispatcher.forward(request, response);
     }

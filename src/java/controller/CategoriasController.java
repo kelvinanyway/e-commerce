@@ -48,7 +48,7 @@ public class CategoriasController extends HttpServlet {
             throws ServletException, IOException {
         String nextPage = "/WEB-INF/jsp/categoria.jsp";
 
-        List<Produto> produtos = pDAO.read();
+        List<Produto> produtos = pDAO.lerProduto();
         for (int i = 0; i < produtos.size(); i++) {
             produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
         }
@@ -121,7 +121,6 @@ public class CategoriasController extends HttpServlet {
         String url = request.getServletPath();
         if (url.equals("/adicionacarrinho")) {
             int idProduto = Integer.parseInt(request.getParameter("produtoSelecionado"));
-            System.out.println("PRODUTO"+idProduto+".");
             if (u != null) {       
                cDAO.addProduto(pDAO.pegarProdutoporID(idProduto), cDAO.getCarrinho(u));
                response.sendRedirect("./categorias");

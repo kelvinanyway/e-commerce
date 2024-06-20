@@ -110,7 +110,7 @@ public class AdicionarInfoController extends HttpServlet {
             Endereco e = new Endereco();
             EnderecoDAO eDAO = new EnderecoDAO();
 
-            e.setCep(Integer.parseInt(request.getParameter("cep")));
+            e.setCep(request.getParameter("cep"));
             e.setRua(request.getParameter("endereco"));
             e.setBairro(request.getParameter("bairro"));
             e.setCidade(request.getParameter("cidade"));

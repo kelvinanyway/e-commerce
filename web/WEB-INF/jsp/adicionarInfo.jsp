@@ -24,7 +24,7 @@
                         <h1>Insira seu Endereço</h1>
                     </center>
 
-                    <form action="finalizarEndereco" method="post" name="finalizarPedido">
+                    <form action="adicionarPagamento" method="post" >
                         <div class="inputs">
                             <label for="">Cep</label>
                             <input type="text" id="cep" name="cep" required>

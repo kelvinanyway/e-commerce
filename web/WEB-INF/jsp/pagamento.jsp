@@ -34,7 +34,7 @@
                     <center>
                         <h1>Insira seu Cartão</h1>
                     </center>
-                    <form action="adicionarPagamento" method="post" id="formPagamento">
+                    <form action="finalizarPedido" method="post" id="formPagamento">
                         <div class="inputs">
                             <label for="">Numero Cartão</label>
                             <input type="text" id="nCartao" required placeholder="0000 0000 0000 0000">
