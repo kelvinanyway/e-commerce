@@ -2,6 +2,9 @@ body{
     height: 100vh;
     overflow-x: hidden;
 }
+main{
+    height: 74.4vh;
+}
 footer{
     display: flex;
     justify-content: center;
@@ -19,4 +22,7 @@ footer p{
  font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+}
+main {
+    height:  83.4vh;
 }

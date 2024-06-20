@@ -21,7 +21,7 @@ import model.bean.Produto;
  */
 public class ProdutoDAO {
 
-    public List<Produto> read() {
+    public List<Produto> lerProduto() {
         List<Produto> produtos = new ArrayList();
         try {
             Connection conexao = Conexao.conectar();

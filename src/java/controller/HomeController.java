@@ -42,7 +42,7 @@ CarrinhoDAO cDao = new CarrinhoDAO();
             throws ServletException, IOException {
         String nextPage = "/WEB-INF/jsp/index.jsp";
         
-        List<Produto> produtos = pDao.read();
+        List<Produto> produtos = pDao.lerProduto();
         for (int i = 0; i < produtos.size(); i++) {
             produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
         }

@@ -165,7 +165,7 @@
         <url-pattern>/pedidoFinalizado</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CheckoutFinalController</servlet-name>
+        <servlet-name>PagamentoController</servlet-name>
         <url-pattern>/finalizarPedido</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
