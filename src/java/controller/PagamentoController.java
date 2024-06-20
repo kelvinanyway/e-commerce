@@ -7,16 +7,18 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.Endereco;
 
 /**
  *
  * @author Senai
  */
+@WebServlet(name = "PagamentoController", urlPatterns = {"/PagamentoController"})
 public class PagamentoController extends HttpServlet {
 
     /**
@@ -31,9 +33,15 @@ public class PagamentoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String nextPage = "/WEB-INF/jsp/pagamento.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
-        dispatcher.forward(request, response);
+        Endereco e = new Endereco();
+        
+        e.setCep(Integer.parseInt(request.getParameter("cep")));
+        e.setCidade(request.getParameter("cidade"));
+        e.setBairro(request.getParameter("bairro"));
+        e.setEstado(request.getParameter("estado"));
+        e.setRua(request.getParameter("rua"));
+        e.setNumero(Integer.parseInt(request.getParameter("numero")));
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

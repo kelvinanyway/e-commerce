@@ -44,7 +44,7 @@
         <servlet-name>AdicionarInfoController</servlet-name>
         <servlet-class>controller.AdicionarInfoController</servlet-class>
     </servlet>
-    <servlet>
+        <servlet>
         <servlet-name>PagamentoController</servlet-name>
         <servlet-class>controller.PagamentoController</servlet-class>
     </servlet>
@@ -154,10 +154,10 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AdicionarInfoController</servlet-name>
-        <url-pattern>/finalizarEndereco</url-pattern>
+        <url-pattern>/finalizarPagamento</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>PagamentoController</servlet-name>
+        <servlet-name>AdicionarInfoController</servlet-name>
         <url-pattern>/pagamento</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -186,15 +186,15 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditarProdutoController</servlet-name>
-        <url-pattern>/atualizarValorFinal</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EditarProdutoController</servlet-name>
         <url-pattern>/atualizarDesconto</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditarProdutoController</servlet-name>
         <url-pattern>/atualizarQuantidade</url-pattern>
+    </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>PagamentoController</servlet-name>
+        <url-pattern>/adicionarPagamento</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SuporteController</servlet-name>

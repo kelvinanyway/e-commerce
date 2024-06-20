@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import model.bean.Endereco;
@@ -51,12 +52,13 @@ public class EnderecoDAO {
         return enderecos;
     }
 
-    public void create(Endereco end) {
+    public int create(Endereco end) {
+        int id = 0;
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("INSERT INTO endereco( cep, rua, bairro, cidade, estado, numero) values (?, ?, ?, ?, ?, ? )");
+            stmt = conexao.prepareStatement("INSERT INTO endereco( cep, rua, bairro, cidade, estado, numero) values (?, ?, ?, ?, ?, ? )", Statement.RETURN_GENERATED_KEYS);
 
             stmt.setInt(1, end.getCep());
             stmt.setString(2, end.getRua());
@@ -64,14 +66,23 @@ public class EnderecoDAO {
             stmt.setString(4, end.getCidade());
             stmt.setString(5, end.getEstado());
             stmt.setInt(6, end.getNumero());
+           
 
             stmt.executeUpdate();
+            try (ResultSet rs = stmt.getGeneratedKeys()) {
+                if (rs.next()) {
+                  id = rs.getInt(1);
+                        
+                }
+            }
             stmt.close();
             conexao.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return id;
+             
     }
 
     public void update(Endereco end) {

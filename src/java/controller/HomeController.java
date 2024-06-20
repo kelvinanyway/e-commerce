@@ -85,7 +85,7 @@ CarrinhoDAO cDao = new CarrinhoDAO();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //Início do código feito por João Guilherme
+       
         Cookie[] cookies = request.getCookies();
         Usuario u = null;
         if (cookies != null) {
@@ -108,7 +108,6 @@ CarrinhoDAO cDao = new CarrinhoDAO();
             }
             
         }
-        //FIM
     }
 
     /**

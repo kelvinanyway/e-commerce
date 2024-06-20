@@ -1,4 +1,6 @@
-
+body{
+  overflow-x: hidden;
+}
 header{
 
   width: 100%;
@@ -137,6 +139,7 @@ form input {
 
 .valor {
   opacity: 1 !important;
+  text-decoration: none !important;
 }
 
 footer {
