@@ -71,13 +71,16 @@ public class LoginController extends HttpServlet {
             usuario.setEmail(request.getParameter("email"));
             usuario.setSenha(Integer.toString(request.getParameter("senha").hashCode()));
             try {
+                //caso o tipo do usuario for maior que 1, ele passa direto para a pagina inicial
                 if (uDAO.login(usuario) != -1) {
                     Cookie cookie = new Cookie("usuario", Integer.toString(uDAO.login(usuario)));
+                    //adiciona um cookie pro usuario ao entrar em sua conta
                     response.addCookie(cookie);
                     usuario = uDAO.pegarPorID(uDAO.login(usuario));
                     if (usuario.getTipo() != 1) {
                     response.sendRedirect("./home");    
                     } else {
+                        //se o tipo for igual a 1, ele será um administrador
                         response.sendRedirect("./cadastro-de-produto");
                     }
                     

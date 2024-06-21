@@ -10,6 +10,10 @@ body {
     position: relative;
     padding-bottom: 10vh;
 }
+main{
+    height: 79.4vh;
+    width: 100%;
+}
 .produto{
     margin: 2vw;
 }
@@ -33,7 +37,7 @@ footer p {
 
 @media all and (max-width:768px) {
     .produto {
-        padding: 2px;
+        padding: 60px;
         margin: 14px;
     }
 }

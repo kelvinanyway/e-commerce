@@ -22,7 +22,7 @@
                <jsp:include page="header.jsp"></jsp:include>
                 <main>
                     <center>
-                        <h1>Categorias</h1>
+                        <h1>Produtos</h1>
                     </center>
                     <div class="produto row">
                         <c:forEach items="${produtos}" var="produto">

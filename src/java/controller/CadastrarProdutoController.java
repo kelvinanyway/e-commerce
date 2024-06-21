@@ -102,7 +102,7 @@ public class CadastrarProdutoController extends HttpServlet {
 
             Produto p = new Produto();
             ProdutoDAO pDAO = new ProdutoDAO();
-
+            //função para cadastrar o produto
             p.setNome(request.getParameter("nome"));
             p.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
             p.setValor(Float.parseFloat(request.getParameter("valor")));

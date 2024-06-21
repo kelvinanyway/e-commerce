@@ -43,7 +43,8 @@ public class HistoricoPedidoController extends HttpServlet {
         String nextPage = "/WEB-INF/jsp/HistoricoPedidos.jsp";
         Pedido p = new Pedido();
         Usuario u = new Usuario();
-
+        
+        //faz a diferença de cookie para ver se o usuario esta em sua conta ou não
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {

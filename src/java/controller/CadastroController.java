@@ -70,7 +70,7 @@ public class CadastroController extends HttpServlet {
             String nextPage = "/WEB-INF/jsp/login.jsp";
             Usuario usuario = new Usuario();
             UsuarioDAO uDAO = new UsuarioDAO();
-
+            //função para cadastrar o usuario
             String cpf = request.getParameter("Cpf");
             cpf = cpf.replaceAll("\\.", "");
             cpf = cpf.replaceAll("-", "");

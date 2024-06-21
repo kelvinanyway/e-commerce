@@ -95,15 +95,15 @@ CarrinhoDAO cDao = new CarrinhoDAO();
                 }
             }
         }
-
+        //ao usuario clicar em comprar, faz a função de adicionar ao carrinho
         String url = request.getServletPath();
         if (url.equals("/adicionarcarrinho")) {
             int idProduto = Integer.parseInt(request.getParameter("produtoSelecionado"));
-            System.out.println("PRODUTO"+idProduto+".");
             if (u != null) {       
                cDao.addProduto(pDao.pegarProdutoporID(idProduto), cDao.getCarrinho(u));
                response.sendRedirect("./home");
             } else {
+               //caso não esteja em sua conta, passa para a tela de login
                 response.sendRedirect("./login");
             }
             
