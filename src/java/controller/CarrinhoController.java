@@ -53,6 +53,7 @@ public class CarrinhoController extends HttpServlet {
                 }
             }
         }
+        //adiciona os items que o usuario deseja comprar
         if (!(u.getIdUsuario() == 0)) {
             List<Produto> produtos = cDAO.listarProdutos(u);
             Float valorTotal = 0.0f;
@@ -65,6 +66,7 @@ public class CarrinhoController extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         } else {
+            // caso o usuario nao esteja em sua conta, ele irá pra tela de login
             response.sendRedirect("./login");
         }
 

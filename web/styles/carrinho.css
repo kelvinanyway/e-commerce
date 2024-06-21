@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5vw;
+    padding: 10px 5vw;
 }
 
 .carrinho div {
@@ -36,8 +36,12 @@ body {
     border: none;
     border-radius: 5px;
     width: 8vw;
-    height: 5vh;
+    height: 9vh;
 
+}
+main{
+    height: 79.4vh;
+    width: 100%;
 }
 
 .carrinho button:hover {
@@ -68,7 +72,6 @@ body {
 
 .produtos img {
     height: 11vh;
-    width: vw;
     padding-left: 9px;
 }
 
@@ -114,6 +117,21 @@ footer p {
 }
 
 @media all and (max-width:768px) {
+    main{
+        height: 79.4vh;
+        width: 100%;
+    }
+    
+.produtos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 15px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 5px;
+    height: 18vh;
+}
     .carrinho {
         display: flex;
         justify-content: space-between;
@@ -127,7 +145,7 @@ footer p {
         border: none;
         border-radius: 5px;
         width: 24vw;
-        height: 7vh;
+        height: 9vh;
     }
     .formExcluir {
         width: 3vw;

@@ -88,7 +88,7 @@ public class PerfilController extends HttpServlet {
                 idUsuario = Integer.parseInt(cookie.getValue());
             }
         }
-        
+        //função para o cliente editar suas informações
         if (url.equals("/atualizarNome")) {
             uDAO.update(idUsuario, request.getParameter("nome"), "nome");
         } else if (url.equals("/atualizarEmail")) {

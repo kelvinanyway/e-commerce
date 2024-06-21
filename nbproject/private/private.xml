@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/PagamentoController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/HistoricoPedidoController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/CadastrarProdutoController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/model/dao/PedidoDAO.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/LoginController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/HomeController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/CheckoutFinalController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/model/dao/EnderecoDAO.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/CadastroController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/SuporteController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/model/dao/CarrinhoDAO.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/CarrinhoController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/PerfilController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/EditarProdutoController.java</file>
+        </group>
+    </open-files>
 </project-private>
