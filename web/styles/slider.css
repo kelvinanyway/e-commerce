@@ -196,10 +196,10 @@
   margin-bottom: 10px;
 }
 
-@media (min-width:600px )and (max-width:800px) {
+@media (min-width:600px )and (max-width:799px) {
   .produto-card {
     min-width: 30vw;
-    max-height: 40vh;
+    max-height: 35vh;
   }
   #div-btn {
     width: 100%;
@@ -323,3 +323,9 @@
     padding: 2px 1px;
   }
 }
+@media (min-width:800px )and (max-width:1361px){
+  .produto-card {
+      min-width: 20vw !important;
+      max-height: 39vh !important;
+  }
+} 

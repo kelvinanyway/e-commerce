@@ -10,13 +10,16 @@ body {
     position: relative;
     padding-bottom: 10vh;
 }
-main{
+
+main {
     height: 79.4vh;
     width: 100%;
 }
-.produto{
+
+.produto {
     margin: 2vw;
 }
+
 footer {
     display: flex;
     justify-content: center;
@@ -35,9 +38,16 @@ footer p {
     color: white;
 }
 
-@media all and (max-width:768px) {
-    .produto {
-        padding: 60px;
-        margin: 14px;
+@media all and (max-width:1361px) {
+    .produto-card {
+        min-width: 20vw !important;
+        max-height: 39vh !important;
     }
+}
+@media all and (max-width:799px) {
+    .produto-card {
+        min-width: 42vw !important;
+        max-height: 39vh !important;
+    }
+
 }

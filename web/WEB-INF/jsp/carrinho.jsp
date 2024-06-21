@@ -25,7 +25,9 @@
                         <div class="carrinho">
                             <h1>Carrinho</h1>
                             <span class="fs-3">
-                                <span class="fs-3">Total: <fmt:formatNumber value="${valorTotal}" type="currency" /></span>
+                                <span class="fs-3">Total:
+                                    <fmt:formatNumber value="${valorTotal}" type="currency" />
+                                </span>
 
                             </span>
                             <a href="./adicionarInfo"><button class="btnPagamento">Finalizar Compra</button></a>
@@ -38,7 +40,9 @@
                                             <img src="data:image/png;base64,${produto.imagemBase64}">
                                             <div class="labels">
                                                 <h2>${produto.nome}</h2>
-                                                <fmt:formatNumber value="${produto.valorFinal}" type="currency" />
+                                                <span>Valor unit:
+                                                    <fmt:formatNumber value="${produto.valorFinal}" type="currency" />
+                                                </span>
                                             </div>
                                             <form class="formExcluir" action="excluir" method="post">
                                                 <button type="submit" name="item" value="${produto.idProduto}"><i

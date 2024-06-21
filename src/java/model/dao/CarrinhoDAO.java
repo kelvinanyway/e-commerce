@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.bean.Carrinho;
+import model.bean.CarrinhoProduto;
 import model.bean.Produto;
 import model.bean.Usuario;
 
@@ -151,4 +152,21 @@ public class CarrinhoDAO {
         }
         return c;
     }    
+    public void excluirProdutoCarrinho(CarrinhoProduto cp){
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+
+            stmt = conexao.prepareStatement("DELETE FROM carrinhoproduto WHERE carrinho = ? ");
+            stmt.setInt(1, cp.getCarrinho());
+
+            stmt.executeUpdate();
+
+            stmt.close();
+            conexao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    
+    }
 }
