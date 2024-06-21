@@ -1,10 +1,12 @@
-body{
+body {
   overflow-x: hidden;
 }
-header{
 
+header {
+  overflow-x: hidden;
   width: 100%;
 }
+
 main {
   width: 100%;
   height: 74.4vh;
@@ -165,7 +167,8 @@ footer p {
   main {
     width: 100%;
     height: 82.4vh;
-  } 
+  }
+
   footer {
     position: absolute !important;
     bottom: 0;
