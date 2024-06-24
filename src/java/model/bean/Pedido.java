@@ -21,7 +21,7 @@ public class Pedido {
     private int enderecoEntrega;
     private Date dataPedido;
     private Float valorTotal;
-    private String Status;
+    private int Status;
 
     public int getIdPedido() {
         return idPedido;
@@ -70,15 +70,15 @@ public class Pedido {
         this.valorTotal = valorTotal;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return Status;
     }
 
-    public void setStatus(String Status) {
+    public void setStatus(int Status) {
         this.Status = Status;
     }
 
-    public Pedido(int idPedido, int usuario, int enderecoEntrega, Date dataPedido, Float valorTotal, String Status) {
+    public Pedido(int idPedido, int usuario, int enderecoEntrega, Date dataPedido, Float valorTotal, int Status) {
         this.idPedido = idPedido;
         this.usuario = usuario;
         this.enderecoEntrega = enderecoEntrega;

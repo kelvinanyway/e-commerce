@@ -29,9 +29,10 @@ public class EnderecoDAO {
             ResultSet rs = null;
 
             stmt = conexao.prepareStatement("SELECT * FROM endereco WHERE idEndereco = ?");
+            stmt.setInt(1, id);
             rs = stmt.executeQuery();
             if (rs.next()) {
-                
+
                 endereco.setIdEndereco(rs.getInt("idEndereco"));
                 endereco.setCep(rs.getString("cep"));
                 endereco.setRua(rs.getString("rua"));

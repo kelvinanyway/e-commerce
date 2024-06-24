@@ -127,7 +127,7 @@ public class CarrinhoDAO {
         return produtos;
     }
 
-    public Carrinho getCarrinho(Usuario u) {
+    public Carrinho pegarCarrinho(Usuario u) {
         Carrinho c = new Carrinho();
         try {
             Connection conexao = Conexao.conectar();
@@ -168,5 +168,22 @@ public class CarrinhoDAO {
             e.printStackTrace();
         }
     
+    }
+    
+    public void excluirCarrinho(Usuario u) {
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+
+            stmt = conexao.prepareStatement("DELETE FROM carrinhoProduto WHERE carrinho = ?");
+            stmt.setInt(1, u.getIdUsuario());
+
+            stmt.executeUpdate();
+
+            stmt.close();
+            conexao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
