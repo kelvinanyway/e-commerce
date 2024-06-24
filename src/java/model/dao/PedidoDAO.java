@@ -39,7 +39,7 @@ public class PedidoDAO {
                 pedido.setEnderecoEntrega(rs.getInt("enderecoEntrega"));
                 pedido.setDataPedido(rs.getDate("dataPedido"));
                 pedido.setValorTotal(rs.getFloat("valorTotal"));
-                pedido.setStatus(rs.getString("status"));
+                pedido.setStatus(rs.getInt("status"));
                 pedidos.add(pedido);
             }
 
@@ -52,6 +52,68 @@ public class PedidoDAO {
         }
         return pedidos;
     }
+    public List<Pedido> lerPedidosUsuario(Usuario u) {
+        List<Pedido> pedidos = new ArrayList();
+
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+
+            stmt = conexao.prepareStatement("SELECT * FROM pedido WHERE usuario = ?");
+            stmt.setInt(1, u.getIdUsuario());
+
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Pedido p = new Pedido();
+                p.setIdPedido(rs.getInt("idPedido"));
+                p.setUsuario(rs.getInt("usuario"));
+                p.setEnderecoEntrega(rs.getInt("enderecoEntrega"));
+                p.setValorTotal(rs.getFloat("valorTotal"));
+                p.setDataPedido(rs.getDate("dataPedido"));
+                pedidos.add(p);
+            }
+
+            rs.close();
+            stmt.close();
+            conexao.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return pedidos;
+    }
+     public List<Produto> selecionarProdutosDoPedido(Pedido pedido) {
+        List<Produto> produtos = new ArrayList();
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+
+            stmt = conexao.prepareStatement("SELECT p.* FROM produtopedido as pp JOIN produto AS p ON pp.produto = p.idProduto JOIN pedido AS ped ON pp.pedido = ped.idPedido WHERE ped.idPedido = ?");
+            stmt.setInt(1, pedido.getIdPedido());
+
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Produto p = new Produto();
+                p.setIdProduto(rs.getInt("idProduto"));
+                p.setNome(rs.getString("nome"));
+                p.setValor(rs.getFloat("valor"));
+                p.setDesconto(rs.getFloat("desconto"));
+                p.setValorFinal(rs.getFloat("valorFinal"));
+ 
+                produtos.add(p);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return produtos;
+    }
+
 
     public List<Pedido> lerPedido() {
         List<Pedido> pedidos = new ArrayList();
@@ -69,7 +131,7 @@ public class PedidoDAO {
                 pedido.setEnderecoEntrega(rs.getInt("enderecoEntrega"));
                 pedido.setDataPedido(rs.getDate("dataPedido"));
                 pedido.setValorTotal(rs.getFloat("valorTotal"));
-                pedido.setStatus(rs.getString("status"));
+                pedido.setStatus(rs.getInt("status"));
                 pedidos.add(pedido);
             }
 
@@ -88,12 +150,12 @@ public class PedidoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
 
-            stmt = conexao.prepareStatement("INSERT INTO endereco(usuario, enderecoEntrega, dataPedido, valorTotal, status) values ( ?, ?, ?, ?, ?)");
+            stmt = conexao.prepareStatement("INSERT INTO pedido(usuario, enderecoEntrega, dataPedido, valorTotal, status) values ( ?, ?, ?, ?, ?)");
             stmt.setInt(1, p.getUsuario());
             stmt.setInt(2, p.getEnderecoEntrega());
             stmt.setDate(3, p.getDataPedido());
             stmt.setFloat(4, p.getValorTotal());
-            stmt.setString(5, p.getStatus());
+            stmt.setInt(5, p.getStatus());
 
             stmt.executeUpdate();
             stmt.close();

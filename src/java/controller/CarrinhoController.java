@@ -109,7 +109,7 @@ public class CarrinhoController extends HttpServlet {
         }
         String url = request.getServletPath();
         if (url.equals("/excluir")) {
-            cDAO.removerProduto(pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("item"))), cDAO.getCarrinho(u));
+            cDAO.removerProduto(pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("item"))), cDAO.pegarCarrinho(u));
             response.sendRedirect("./carrinho");
         }
     }

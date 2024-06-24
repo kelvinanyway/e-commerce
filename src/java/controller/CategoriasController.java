@@ -122,7 +122,7 @@ public class CategoriasController extends HttpServlet {
         if (url.equals("/adicionacarrinho")) {
             int idProduto = Integer.parseInt(request.getParameter("produtoSelecionado"));
             if (u != null) {       
-               cDAO.addProduto(pDAO.pegarProdutoporID(idProduto), cDAO.getCarrinho(u));
+               cDAO.addProduto(pDAO.pegarProdutoporID(idProduto), cDAO.pegarCarrinho(u));
                response.sendRedirect("./categorias");
             } else {
                 response.sendRedirect("./login");

@@ -119,10 +119,12 @@ public class PagamentoController extends HttpServlet {
                 valorFinal += produtos.get(i).getValorFinal();
             }
             p.setUsuario(u.getIdUsuario());
+            p.setEnderecoEntrega(e.getIdEndereco());
             p.setValorTotal(valorFinal + 10.0f);
             
            cDAO.listarProdutos(u);
            pDAO.create(p);
+           cDAO.excluirCarrinho(u);
            response.sendRedirect("./pedidoFinalizado");
         } else {
             processRequest(request, response);
