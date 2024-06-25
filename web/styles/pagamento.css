@@ -95,8 +95,9 @@ footer {
     background-color: #FFF112;
     height: 10vh;
     width: 100vw;
-    position: absolute;
+    position: relative;
     bottom: 0;
+    margin-top: 45px;
 
 }
 
@@ -106,9 +107,9 @@ footer p {
     color: white;
 }
 
-@media all and (max-width:768px) {
+@media all and (max-width:800px) {
     main {
-        height:  78.4vh;
+        height:  82.4vh;
         display: flex;
         flex-direction: column;
     }
@@ -125,7 +126,7 @@ footer p {
         margin-top: 1vh;
         border: 1px solid black;
         border-radius: 4px;
-        width: 82vw;
+        width: 35vw;
         height: 6vh;
         color: white;
         background-color: black;
@@ -134,6 +135,15 @@ footer p {
     .btnFinalizar:hover {
         transform: scale(1.05);
         background-color: #000000;
+    }
+    .btnFinalizarCartao{
+        margin-top: 1vh;
+        border: 1px solid black;
+        border-radius: 4px;
+        width: 86vw;
+        height: 6vh;
+        color: white;
+        background-color: black;
     }
 
     .me-5 {
@@ -159,7 +169,7 @@ footer p {
 
     .img-qr {
         height: 30vh;
-        width: 60vw;
+        width: 30vw;
     }
 
     .btnPix {

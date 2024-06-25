@@ -7,7 +7,6 @@
 
                 <head>
                     <link rel="stylesheet" href="./styles/editarProduto.css">
-                    <link rel="stylesheet" href="./styles/slider.css">
                     <link rel="shortcut icon" href="./assets/88header.png" type="image/x-icon">
                     <script src="https://kit.fontawesome.com/abf8e7610f.js" crossorigin="anonymous"></script>
                     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -41,66 +40,41 @@
                                 </ul>
                         </div>
                     </header>
-                        <main>
-                            <div class="produto row m-5">
-                                <c:forEach items="${produtos}" var="produto">
-                                    <div class="produto-card">
-                                        <div class="produto-imagem">
-                                            <form action="excluirProduto" method="post">
-                                                <button class="excluirProduto" name="excluir"
-                                                    value="${produto.idProduto}" type="submit"><i
-                                                        class="fa-solid fa-trash"></i></button>
-                                            </form>
-                                            <span class="tag-desconto">
-                                                <form action="atualizarDesconto" method="post">
-                                                    <input step="0.01" name="desconto" id="inputDesconto" type="number"
-                                                        placeholder="Desc: ${produto.desconto}" />
-                                                    <button value="${produto.idProduto}" class="btnAtualizar" type="submit"
-                                                        name="atualizarDesconto"><i
-                                                            class="fa-solid fa-pen"></i></button>
-                                                </form>
-                                            </span>
-                                            <img src="data:image/png;base64,${produto.imagemBase64}"
-                                                class="produto-capa" alt="">
-                                        </div>
-                                        <div class="pl-4">
-                                            <form action="atualizarNomeProduto" method="post">
-                                                <input name="nome" id="inputNome" type="text"
-                                                    placeholder="Nome: ${produto.nome}" />
-                                                <button class="btnAtualizar" type="submit" value="${produto.idProduto}"
-                                                    name="atualizarNomeProduto"><i class="fa-solid fa-pen"></i></button>
-                                            </form>
-                                            <div>
-
-                                            </div>
-                                            <div id="div-valor">
-                                                <span class="valor">
-                                                    <form action="atualizarValor" method="post">
-                                                        <input step="0.01" name="valor" id="inputValor" type="number"
-                                                            placeholder="Valor: ${produto.valor}" />
-                                                        <button class="btnAtualizar" type="submit"
-                                                            name="atualizarValor" value="${produto.idProduto}"><i
-                                                                class="fa-solid fa-pen"></i></button>
-                                                    </form>
-                                                </span>
-                                            </div>
-                                            <div id="quantidade">
-                                                <form action="atualizarQuantidade" method="post">
-                                                    <input name="quantidade" id="inputQuantidade" type="number"
-                                                        placeholder="Quantidade: ${produto.quantidade}" />
-                                                    <button class="btnAtualizar" type="submit" value="${produto.idProduto}" name="atualizarQuantidade"><i
-                                                            class="fa-solid fa-pen"></i></button>
-                                                </form>
-                                            </div>
-                                            </form>
-                                        </div>
+                    <main>
+                        <div class="produto row m-5">
+                            <c:forEach items="${produtos}" var="produto">
+                                <div class="produtos">
+                                    <img src="data:image/png;base64,${produto.imagemBase64}">
+                                    <div class="labels">
+                                        <form action="atualizarNomeProduto" method="post">
+                                            <input name="nome" id="inputNome" type="text"
+                                                placeholder="Nome: ${produto.nome}" />
+                                            <button class="btnAtualizar" type="submit" value="${produto.idProduto}"
+                                                name="atualizarNomeProduto"><i class="fa-solid fa-pen"></i></button>
+                                        </form>
+                                        <form action="atualizarDesconto" method="post">
+                                            <input step="0.01" name="desconto" id="inputDesconto" type="number"
+                                                placeholder="Desc: ${produto.desconto}" />
+                                            <button value="${produto.idProduto}" class="btnAtualizar" type="submit"
+                                                name="atualizarDesconto"><i class="fa-solid fa-pen"></i></button>
+                                        </form>
+                                        <form action="atualizarQuantidade" method="post">
+                                            <input name="quantidade" id="inputQuantidade" type="number"
+                                                placeholder="Quantidade: ${produto.quantidade}" />
+                                            <button class="btnAtualizar" type="submit" value="${produto.idProduto}"
+                                                name="atualizarQuantidade"><i class="fa-solid fa-pen"></i></button>
+                                        </form>
                                     </div>
-                                </c:forEach>
-                            </div>
-                        </main>
+                                    <form class="formExcluir" action="excluirProduto" method="post">
+                                        <button type="submit" name="excluir" value="${produto.idProduto}"><i
+                                                class="fa-solid fa-trash fa-xl" style="color: #000000;"></i></button>
+                                    </form>
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </main>
                     <footer class="d-flex">
                         <p> Mercado88 &copy; todos os direitos reservados</p>
                     </footer>
                 </body>
-
                 </html>

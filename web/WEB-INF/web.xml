@@ -108,6 +108,10 @@
         <servlet-name>CarrinhoController</servlet-name>
         <url-pattern>/excluir</url-pattern>
     </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>CarrinhoController</servlet-name>
+        <url-pattern>/mudarQuantidadeProduto</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CarrinhoController</servlet-name>
         <url-pattern>/finalizarCompra</url-pattern>

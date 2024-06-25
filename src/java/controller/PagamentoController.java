@@ -16,6 +16,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.CarrinhoProduto;
 import model.bean.Endereco;
 import model.bean.Pedido;
 import model.bean.Produto;
@@ -36,6 +37,7 @@ public class PagamentoController extends HttpServlet {
     UsuarioDAO uDAO = new UsuarioDAO();
     CarrinhoDAO cDAO = new CarrinhoDAO();
     PedidoDAO pDAO = new PedidoDAO();
+    
     
 
     /**
@@ -116,7 +118,8 @@ public class PagamentoController extends HttpServlet {
             List<Produto> produtos = cDAO.listarProdutos(u);
             Float valorFinal = 0.0f;
             for (int i = 0; i < produtos.size(); i++) {
-                valorFinal += produtos.get(i).getValorFinal();
+                 List<CarrinhoProduto> produtoquantidade = cDAO.selecionarQuantidadeProduto(cDAO.selecionarCarrinho(u));
+                valorFinal += produtos.get(i).getValorFinal()* produtoquantidade.get(i).getQuantidade();
             }
             p.setUsuario(u.getIdUsuario());
             p.setEnderecoEntrega(e.getIdEndereco());

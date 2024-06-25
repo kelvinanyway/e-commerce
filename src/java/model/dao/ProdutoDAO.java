@@ -165,7 +165,7 @@ public class ProdutoDAO {
         }
     }
 
-    public void deletar(Produto p) {
+    public void excluirProduto(Produto p) {
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;

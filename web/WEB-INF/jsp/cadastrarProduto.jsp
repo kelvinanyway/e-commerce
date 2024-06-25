@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="imagem">Imagem do Produto:</label>
-                                    <input type="file" class="form-control-file" id="imagem" name="imagem">
+                                    <input required type="file" class="form-control-file" id="imagem" name="imagem">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Cadastrar Produto</button>
                             </form>

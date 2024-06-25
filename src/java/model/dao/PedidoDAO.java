@@ -12,7 +12,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import model.bean.Endereco;
 import model.bean.Pedido;
+import model.bean.PedidoProduto;
 import model.bean.Produto;
 import model.bean.Usuario;
 
@@ -83,6 +85,66 @@ public class PedidoDAO {
 
         }
         return pedidos;
+    }
+    public Endereco selecionarEnderecoUsuario(Pedido p) {
+        Endereco e = new Endereco();
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+
+            stmt = conexao.prepareStatement("SELECT * FROM endereco WHERE idEndereco = ?");
+            stmt.setInt(1, p.getEnderecoEntrega());
+
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                e.setIdEndereco(rs.getInt("idEndereco"));
+                e.setEstado(rs.getString("estado"));
+                e.setCidade(rs.getString("cidade"));
+                e.setCep(rs.getString("cep"));
+                e.setBairro(rs.getString("bairro"));
+                e.setRua(rs.getString("rua"));
+                e.setNumero(rs.getInt("numero"));
+            }
+
+            rs.close();
+            stmt.close();
+            conexao.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return e;
+    }
+    
+    public List<PedidoProduto> selecionarPedidoProduto(Pedido ped) {
+        List<PedidoProduto> listPp = new ArrayList();
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+
+            stmt = conexao.prepareStatement("SELECT * FROM produtopedido WHERE pedido = ?");
+            stmt.setInt(1, ped.getIdPedido());
+
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                PedidoProduto pp = new PedidoProduto();
+                pp.setIdPedidoProduto(rs.getInt("idProdutoPedido"));
+                pp.setPedido(rs.getInt("pedido"));
+                pp.setProduto(rs.getInt("produto"));
+                pp.setQuantidade(rs.getInt("quantidade"));
+                listPp.add(pp);
+            }
+
+            rs.close();
+            stmt.close();
+            conexao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listPp;
     }
      public List<Produto> selecionarProdutosDoPedido(Pedido pedido) {
         List<Produto> produtos = new ArrayList();

@@ -15,6 +15,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.CarrinhoProduto;
 import model.bean.Produto;
 import model.bean.Usuario;
 import model.dao.CarrinhoDAO;
@@ -53,18 +54,27 @@ public class CarrinhoController extends HttpServlet {
                 }
             }
         }
-        //adiciona os items que o usuario deseja comprar
+        //verifica se o id do usuario 
         if (!(u.getIdUsuario() == 0)) {
+            List<CarrinhoProduto> produtoquantidade = cDAO.selecionarQuantidadeProduto(cDAO.selecionarCarrinho(u));
+
             List<Produto> produtos = cDAO.listarProdutos(u);
-            Float valorTotal = 0.0f;
+            Float valorTotal = 0f;
             for (int i = 0; i < produtos.size(); i++) {
                 produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
-                valorTotal += produtos.get(i).getValorFinal();
+                valorTotal += produtos.get(i).getValorFinal() * produtoquantidade.get(i).getQuantidade();
+
             }
-            request.setAttribute("valorTotal", valorTotal);
+            request.setAttribute("usuario", u);
+            request.setAttribute("produtoQtd", produtoquantidade);
             request.setAttribute("carrinho", produtos);
+            request.setAttribute("valorTotal", valorTotal);
+
+           
+            
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
+
         } else {
             // caso o usuario nao esteja em sua conta, ele irá pra tela de login
             response.sendRedirect("./login");
@@ -110,6 +120,12 @@ public class CarrinhoController extends HttpServlet {
         String url = request.getServletPath();
         if (url.equals("/excluir")) {
             cDAO.removerProduto(pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("item"))), cDAO.pegarCarrinho(u));
+            response.sendRedirect("./carrinho");
+        } else if (url.equals("/mudarQuantidadeProduto")) {
+            CarrinhoProduto carrinhoproduto = cDAO.selecionarCarrinhoProduto(Integer.parseInt(request.getParameter("confirmarQuantidade")));
+            carrinhoproduto.setQuantidade(Integer.parseInt(request.getParameter("inputQuantidade")));
+            cDAO.alterarQuantidadeProduto(carrinhoproduto);
+            
             response.sendRedirect("./carrinho");
         }
     }

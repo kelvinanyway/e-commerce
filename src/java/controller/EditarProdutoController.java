@@ -36,6 +36,7 @@ public class EditarProdutoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+         response.setContentType("text/html;charset=UTF-8");
         String nextPage = "/WEB-INF/jsp/editarProduto.jsp";
        //faz a leitura dos items cadastrdados e retotrna na página
         List<Produto> produtos = pDAO.lerProduto();
@@ -81,7 +82,7 @@ public class EditarProdutoController extends HttpServlet {
        //função para o administrador editar os produtos
         if (url.equals("/excluirProduto")) {
             p = pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("excluir")));
-            pDAO.deletar(p);
+            pDAO.excluirProduto(p);
 
         } else if (url.equals("/atualizarNomeProduto")) {
             p = pDAO.pegarProdutoporID(Integer.parseInt(request.getParameter("atualizarNomeProduto")));

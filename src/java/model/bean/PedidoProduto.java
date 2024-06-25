@@ -10,40 +10,52 @@ package model.bean;
  * @author Senai
  */
 public class PedidoProduto {
-    private int idProdutoPedido;
-    private int idPedido;
-    private int idProduto;
-
-    public int getIdProdutoPedido() {
-        return idProdutoPedido;
-    }
-
-    public void setIdProdutoPedido(int idProdutoPedido) {
-        this.idProdutoPedido = idProdutoPedido;
-    }
-
-    public int getIdPedido() {
-        return idPedido;
-    }
-
-    public void setIdPedido(int idPedido) {
-        this.idPedido = idPedido;
-    }
-
-    public int getIdProduto() {
-        return idProduto;
-    }
-
-    public void setIdProduto(int idProduto) {
-        this.idProduto = idProduto;
-    }
-
-    public PedidoProduto(int idProdutoPedido, int idPedido, int idProduto) {
-        this.idProdutoPedido = idProdutoPedido;
-        this.idPedido = idPedido;
-        this.idProduto = idProduto;
-    }
+    private int idPedidoProduto;
+    private int pedido;
+    private int produto;
+    private int quantidade;
 
     public PedidoProduto() {
     }
+
+    public PedidoProduto(int idPedidoProduto, int pedido, int produto, int quantidade) {
+        this.idPedidoProduto = idPedidoProduto;
+        this.pedido = pedido;
+        this.produto = produto;
+        this.quantidade = quantidade;
+    }
+
+    public int getIdPedidoProduto() {
+        return idPedidoProduto;
+    }
+
+    public void setIdPedidoProduto(int idPedidoProduto) {
+        this.idPedidoProduto = idPedidoProduto;
+    }
+
+    public int getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(int pedido) {
+        this.pedido = pedido;
+    }
+
+    public int getProduto() {
+        return produto;
+    }
+
+    public void setProduto(int produto) {
+        this.produto = produto;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+  
 }
