@@ -9,7 +9,6 @@ body{
     overflow-x:hidden ;
 }
 
-
 footer{
     display: flex;
     justify-content: center;
@@ -26,4 +25,10 @@ footer p{
  font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+}
+@media all and (max-width:800px) {
+footer{
+    position: relative !important;
+    z-index: 70;
+}
 }

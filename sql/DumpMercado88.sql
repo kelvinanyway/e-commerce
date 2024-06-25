@@ -15,11 +15,12 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+use mercado88;
 --
 -- Table structure for table `carrinho`
 --
-create database mercado88;
-use mercado88;
+
+
 DROP TABLE IF EXISTS `carrinho`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -53,6 +54,7 @@ CREATE TABLE `carrinhoproduto` (
   `idCarrinhoProduto` int(11) NOT NULL AUTO_INCREMENT,
   `carrinho` int(11) NOT NULL,
   `produto` int(11) NOT NULL,
+  `quantidade` int(11) NOT NULL,
   PRIMARY KEY (`idCarrinhoProduto`),
   KEY `carrinho` (`carrinho`),
   KEY `produto` (`produto`),
@@ -67,7 +69,7 @@ CREATE TABLE `carrinhoproduto` (
 
 LOCK TABLES `carrinhoproduto` WRITE;
 /*!40000 ALTER TABLE `carrinhoproduto` DISABLE KEYS */;
-INSERT INTO `carrinhoproduto` VALUES (6,1,6),(43,1,11);
+
 /*!40000 ALTER TABLE `carrinhoproduto` ENABLE KEYS */;
 UNLOCK TABLES;
 

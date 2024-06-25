@@ -16,7 +16,9 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.Endereco;
 import model.bean.Pedido;
+import model.bean.PedidoProduto;
 import model.bean.Produto;
 import model.bean.Usuario;
 import model.dao.PedidoDAO;
@@ -43,22 +45,35 @@ public class HistoricoPedidoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String nextPage = "/WEB-INF/jsp/HistoricoPedidos.jsp";
-        Pedido pedido = new Pedido();
-        Usuario usuario = new Usuario();
-        Produto produto = new Produto();
+        response.setCharacterEncoding("UTF-8");
+        Usuario u = new Usuario();
 
-        //le os produtos do carrinho e depois envia para o historico de pedidos
-        List<Pedido> pedidos = pDAO.lerPedidosUsuario(usuario);
+        List<Pedido> pedidos = pDAO.lerPedidosUsuario(u);
         List<List<Produto>> itensDoPedido = new ArrayList();
+        List<List<PedidoProduto>> produtopedido = new ArrayList();
+        List<Integer> qtdItens = new ArrayList();
+        List<Endereco> enderecos = new ArrayList();
         pedidos.forEach((p) -> {
             List<Produto> produtos = pDAO.selecionarProdutosDoPedido(p);
+            List<PedidoProduto> produtoPedido = pDAO.selecionarPedidoProduto(p);
+
+            int quantidade = 0;
             for (int i = 0; i < produtos.size(); i++) {
                 produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
             }
+            for (int i = 0; i < produtoPedido.size(); i++) {
+                quantidade += produtoPedido.get(i).getQuantidade();
+            }
+            System.out.println(itensDoPedido);
             itensDoPedido.add(produtos);
+            produtopedido.add(produtoPedido);
+            qtdItens.add(quantidade);
+            enderecos.add(pDAO.selecionarEnderecoUsuario(p));
         });
+        request.setAttribute("enderecos", enderecos);
+        request.setAttribute("qtdItens", qtdItens);
         request.setAttribute("itensDoPedido", itensDoPedido);
+        request.setAttribute("produtopedido", produtopedido);
         request.setAttribute("pedidos", pedidos);
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/HistoricoPedidos.jsp");
         rd.forward(request, response);

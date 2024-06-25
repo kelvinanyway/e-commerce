@@ -100,7 +100,7 @@ CarrinhoDAO cDao = new CarrinhoDAO();
         if (url.equals("/adicionarcarrinho")) {
             int idProduto = Integer.parseInt(request.getParameter("produtoSelecionado"));
             if (u != null) {       
-               cDao.addProduto(pDao.pegarProdutoporID(idProduto), cDao.pegarCarrinho(u));
+               cDao.adicionarProduto(pDao.pegarProdutoporID(idProduto), cDao.pegarCarrinho(u));
                response.sendRedirect("./home");
             } else {
                //caso não esteja em sua conta, passa para a tela de login

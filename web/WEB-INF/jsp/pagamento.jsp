@@ -44,7 +44,7 @@
                             <input type="text" id="validade" required placeholder="MM/AA">
                             <label for="">Nome Completo do titular</label>
                             <input type="text" id="nCompleto" required>
-                            <button type="submit" value="cartao" name="formaPagamento" class="btnFinalizar">finalizar Compra</button>
+                            <button type="submit" value="cartao" name="formaPagamento" class="btnFinalizarCartao">finalizar Compra</button>
                         </div>
                     </form>
                 </div>

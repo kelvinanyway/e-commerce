@@ -39,7 +39,8 @@ body {
     height: 9vh;
 
 }
-main{
+
+main {
     height: 79.4vh;
     width: 100%;
 }
@@ -47,6 +48,31 @@ main{
 .carrinho button:hover {
     transform: scale(1.1);
 
+}
+
+.mudarQntd {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.btnMais {
+    width: 20px;
+    border: none;
+}
+.btnConfirmar{
+    width: 30px;
+}
+
+input {
+    outline: none;
+    width: 40px;
+    padding-left: 5px;
+}
+
+.btnMenos {
+   width: 20px;
+   border: none;
 }
 
 .compras {
@@ -67,7 +93,7 @@ main{
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     border-radius: 5px;
-    height: 13vh;
+    height: 20vh;
 }
 
 .produtos img {
@@ -117,21 +143,22 @@ footer p {
 }
 
 @media all and (max-width:768px) {
-    main{
+    main {
         height: 79.4vh;
         width: 100%;
     }
-    
-.produtos {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 15px;
-    position: relative;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-    border-radius: 5px;
-    height: 18vh;
-}
+
+    .produtos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 15px;
+        position: relative;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        border-radius: 5px;
+        height: 20vh;
+    }
+
     .carrinho {
         display: flex;
         justify-content: space-between;
@@ -147,6 +174,7 @@ footer p {
         width: 24vw;
         height: 9vh;
     }
+
     .formExcluir {
         width: 3vw;
         height: 3vh;
