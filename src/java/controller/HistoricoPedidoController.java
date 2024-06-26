@@ -64,7 +64,6 @@ public class HistoricoPedidoController extends HttpServlet {
             for (int i = 0; i < produtoPedido.size(); i++) {
                 quantidade += produtoPedido.get(i).getQuantidade();
             }
-            System.out.println(itensDoPedido);
             itensDoPedido.add(produtos);
             produtopedido.add(produtoPedido);
             qtdItens.add(quantidade);

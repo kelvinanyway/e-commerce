@@ -10,7 +10,7 @@ package model.bean;
  * @author Senai
  */
 public class PedidoProduto {
-    private int idPedidoProduto;
+    private int idProdutoPedido;
     private int pedido;
     private int produto;
     private int quantidade;
@@ -18,19 +18,19 @@ public class PedidoProduto {
     public PedidoProduto() {
     }
 
-    public PedidoProduto(int idPedidoProduto, int pedido, int produto, int quantidade) {
-        this.idPedidoProduto = idPedidoProduto;
+    public PedidoProduto(int idProdutoPedido, int pedido, int produto, int quantidade) {
+        this.idProdutoPedido = idProdutoPedido;
         this.pedido = pedido;
         this.produto = produto;
         this.quantidade = quantidade;
     }
 
-    public int getIdPedidoProduto() {
-        return idPedidoProduto;
+    public int getIdProdutoPedido() {
+        return idProdutoPedido;
     }
 
-    public void setIdPedidoProduto(int idPedidoProduto) {
-        this.idPedidoProduto = idPedidoProduto;
+    public void setIdProdutoPedido(int idProdutoPedido) {
+        this.idProdutoPedido = idProdutoPedido;
     }
 
     public int getPedido() {

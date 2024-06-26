@@ -20,32 +20,13 @@
             <body>
                 <jsp:include page="header.jsp"></jsp:include>
                 <main>
-                    <center>Historico de Pedidos</center>
-                    <c:forEach items="${pedidos}" var="pedido" varStatus="contagemPedido">
-                        <c:forEach var="item" items="${itensDoPedido[contagemPedido.index]}" varStatus="contagem">
-                            <li>
-                                <div class="produto-imagem">
-                                    <img src="data:image/png;base64,${item.imagemBase64}" alt="">
-                                </div>
-                                <div class="produto-detalhes">
-                                    <div class="detalhes-nome">
-                                        <span>
-                                            ${item.nome}
-                                        </span>
-                                    </div>
-                                    <div class="detalhes-qtd">
-                                        <span>
-                                            Quantidade:
-                                        </span>
-                                        <span>
-                                            ${produtopedido[contagemPedido.index].produtoPedido[contagem.index].quantidade}
-                                        </span>
-                                    </div>
-                                    <div class="detalhes-total">
-                                        <span>
-                        </c:forEach>
+                    <div class="div-center">
+                        <center>Historico de Pedidos</center>
+                        <div class="fundo-pedido">
+    
+                        </div>
+                    </div>
 
-                    </c:forEach>
                 </main>
                 <footer>
                     <p> Mercado88 &copy; todos os direitos reservados</p>

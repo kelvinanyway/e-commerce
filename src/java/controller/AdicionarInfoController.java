@@ -57,7 +57,6 @@ public class AdicionarInfoController extends HttpServlet {
         if (u.getIdUsuario() > 0) {
             produtos = cDAO.listarProdutos(u);
         }
-        System.out.println("p" + produtos.size());
 
         if (produtos.size() < 1) {
             response.sendRedirect("./carrinho");

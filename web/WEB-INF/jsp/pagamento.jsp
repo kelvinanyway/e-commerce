@@ -40,7 +40,7 @@
                             <input type="text" id="nCartao" required placeholder="0000 0000 0000 0000">
                             <label for="">CVC</label>
                             <input type="text" id="cvc" required>
-                            <label for="">Val</label>
+                            <label for="">Validade</label>
                             <input type="text" id="validade" required placeholder="MM/AA">
                             <label for="">Nome Completo do titular</label>
                             <input type="text" id="nCompleto" required>

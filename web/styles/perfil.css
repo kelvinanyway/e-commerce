@@ -142,34 +142,34 @@ form {
 .d-flex {
     display: flex;
 }
-@media all and (max-width:980px) {
+@media all and (max-width:800px) {
     center{
-        font-size: 2em;
+        font-size: 1em;
     }
     .formPerfil p{
-        font-size: 2em;
+        font-size: 1em;
     }
     form {
         width: 100%;
         display: flex;
         justify-content: center;
-        font-size: 33px;
+        font-size: 25px;
     }
-        .formPerfil {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            background-color: #fff;
-            border-radius: 7px;
-            padding: 40px;
-            box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-            gap: 0;
-            width: 70%;
-            padding-bottom: 50px;
-            height: 45%;
-        }
+    .formPerfil {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 7px;
+        padding: 15px;
+        box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+        gap: 0;
+        width: 65%;
+        padding-bottom: 50px;
+        height: 73%;
+    }
         .formPerfil label{
-            font-size: 2em;
+            font-size: 1em;
         }
 
     form button {
@@ -193,12 +193,12 @@ form {
     #btnVoltar{
         position: static;
         margin-left: 20px;
-        font-size: 2em;
+        font-size:  1em;
     }
     .btn{
         width: 80% !important;
         position: absolute;
         bottom: 4%;
-        height: 4vh;
+        height: 6vh;
     }
   }

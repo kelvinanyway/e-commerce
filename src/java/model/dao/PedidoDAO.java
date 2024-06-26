@@ -131,7 +131,7 @@ public class PedidoDAO {
 
             while (rs.next()) {
                 PedidoProduto pp = new PedidoProduto();
-                pp.setIdPedidoProduto(rs.getInt("idProdutoPedido"));
+                pp.setIdProdutoPedido(rs.getInt("idProdutoPedido"));
                 pp.setPedido(rs.getInt("pedido"));
                 pp.setProduto(rs.getInt("produto"));
                 pp.setQuantidade(rs.getInt("quantidade"));

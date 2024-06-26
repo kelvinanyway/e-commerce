@@ -54,7 +54,7 @@
                                                             method="post">
                                                             <div class="mudarQntd">
                                                                 <div>
-                                                                    <button class="quantidade-btn btnMenos"
+                                                                    <button class="quantidade-btn btnMenos d-none"
                                                                         type="button">
                                                                         <i class="fa-solid fa-minus"></i>
                                                                     </button>
@@ -65,7 +65,7 @@
                                                                         name="inputQuantidade">
                                                                 </div>
                                                                 <div>
-                                                                    <button class="quantidade-btn btnMais"
+                                                                    <button class="quantidade-btn btnMais d-none"
                                                                         type="button">
                                                                         <i class="fa-solid fa-plus"></i>
                                                                     </button>
