@@ -17,7 +17,13 @@
             <main>
                 <div class="cadastro">
                     <form method="post" action="cadastrar" class="formCadastro">
-                        <h1>Cadastro</h1>
+                        <div class="retornoLogin">
+                            <h1>Cadastro</h1>
+                            <a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 0, 0, 0;"
+                                href="./login">
+                               Login
+                            </a>
+                        </div>
                         <p>Digite os seus dados de acesso no campo abaixo.</p>
                         <label for="nome">Nome</label>
                         <input id="inputNome" name="nome" type="text" placeholder="Digite seu Nome" required />

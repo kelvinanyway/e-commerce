@@ -54,7 +54,7 @@ public class CarrinhoController extends HttpServlet {
                 }
             }
         }
-        //verifica se o id do usuario 
+        //verifica se o id do usuario e faz a listagem de quantidade e produtos
         if (!(u.getIdUsuario() == 0)) {
             List<CarrinhoProduto> produtoquantidade = cDAO.selecionarQuantidadeProduto(cDAO.selecionarCarrinho(u));
 
