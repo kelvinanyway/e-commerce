@@ -208,6 +208,10 @@
         <servlet-name>HistoricoPedidoController</servlet-name>
         <url-pattern>/historicoPedidos</url-pattern>
     </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>HistoricoPedidoController</servlet-name>
+        <url-pattern>/cancelarPedido</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

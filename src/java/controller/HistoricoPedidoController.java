@@ -48,34 +48,26 @@ public class HistoricoPedidoController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         Usuario u = new Usuario();
 
-        List<Pedido> pedidos = pDAO.lerPedidosUsuario(u);
-        List<List<Produto>> itensDoPedido = new ArrayList();
-        List<List<PedidoProduto>> produtopedido = new ArrayList();
-        List<Integer> qtdItens = new ArrayList();
-        List<Endereco> enderecos = new ArrayList();
-        pedidos.forEach((p) -> {
-            List<Produto> produtos = pDAO.selecionarProdutosDoPedido(p);
-            List<PedidoProduto> produtoPedido = pDAO.selecionarPedidoProduto(p);
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("usuario") && !cookie.getValue().equals("")) {
+                    u = uDAO.pegarPorID(Integer.parseInt(cookie.getValue()));
+                }
+            }
+        }
+        //verifica se o id do usuario e faz a listagem de quantidade e produtos
+        if (!(u.getIdUsuario() == 0)) {
+            List<Pedido> pedidos = pDAO.lerPedidosUsuario(u);
+            request.setAttribute("pedidos", pedidos);
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/HistoricoPedidos.jsp");
+            rd.forward(request, response);
 
-            int quantidade = 0;
-            for (int i = 0; i < produtos.size(); i++) {
-                produtos.get(i).setImagemBase64(Base64.getEncoder().encodeToString(produtos.get(i).getImagem()));
-            }
-            for (int i = 0; i < produtoPedido.size(); i++) {
-                quantidade += produtoPedido.get(i).getQuantidade();
-            }
-            itensDoPedido.add(produtos);
-            produtopedido.add(produtoPedido);
-            qtdItens.add(quantidade);
-            enderecos.add(pDAO.selecionarEnderecoUsuario(p));
-        });
-        request.setAttribute("enderecos", enderecos);
-        request.setAttribute("qtdItens", qtdItens);
-        request.setAttribute("itensDoPedido", itensDoPedido);
-        request.setAttribute("produtopedido", produtopedido);
-        request.setAttribute("pedidos", pedidos);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/jsp/HistoricoPedidos.jsp");
-        rd.forward(request, response);
+        } else {
+            // caso o usuario nao esteja em sua conta, ele irá pra tela de login
+            response.sendRedirect("./login");
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -104,7 +96,13 @@ public class HistoricoPedidoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String url = request.getServletPath();
+        Pedido p = new Pedido();
+        if (url.equals("/cancelarPedido")) {
+            p = pDAO.pegarPedidoPorId(Integer.parseInt(request.getParameter("cancelarPedido")));
+            pDAO.excluirPedido(p);
+             response.sendRedirect("./historicoPedidos");
+        }
     }
 
     /**
