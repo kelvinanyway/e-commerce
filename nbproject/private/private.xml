@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/model/dao/ProdutoDAO.java</file>
             <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/HistoricoPedidoController.java</file>
-            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/model/bean/PedidoProduto.java</file>
             <file>file:/C:/Users/USER/Documents/e-commerce/src/java/model/dao/PedidoDAO.java</file>
             <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/CarrinhoController.java</file>
-            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/model/bean/Pedido.java</file>
-            <file>file:/C:/Users/USER/Documents/e-commerce/web/WEB-INF/jsp/categoria.jsp</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/src/java/controller/EditarProdutoController.java</file>
+            <file>file:/C:/Users/USER/Documents/e-commerce/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>
