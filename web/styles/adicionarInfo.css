@@ -61,14 +61,14 @@ footer p {
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         width: 78vw;
         height: 63vh;
-        padding: 16px;
-        margin-top: 2em;
+        padding: 0px;
+        margin-top: 0em;
     }
     .btnFinalizar{
         margin-top: 10px;
         border: 1px solid black;
         border-radius: 4px;
-        width: 69vw;
+        width: 78vw;
         height: 6vh;
         color: white;
         background-color: black;
@@ -114,14 +114,14 @@ footer p {
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         width: 51vw;
         height: 63vh;
-        padding: 16px;
-        margin-top: 2em;
+        padding: 0px;
+        margin-top: 0em;
     }
     .btnFinalizar{
         margin-top: 10px;
         border: 1px solid black;
         border-radius: 4px;
-        width: 47vw;
+        width: 51vw;
         height: 6vh;
         color: white;
         background-color: black;

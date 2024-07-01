@@ -81,7 +81,6 @@ public class CadastroController extends HttpServlet {
             telefone = telefone.replace("-", "");
             usuario.setNome(request.getParameter("nome"));
             usuario.setSenha(Integer.toString(request.getParameter("senha").hashCode()));
-            
             usuario.setEmail(request.getParameter("email"));
             usuario.setData(Date.valueOf(request.getParameter("data")));
             usuario.setCpf(cpf);

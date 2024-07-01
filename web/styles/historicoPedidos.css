@@ -209,11 +209,12 @@ footer p {
     }
 
     .labels {
-        margin: 20px;
+        margin: 0px;
         display: flex;
         flex-direction: row;
-        gap: 40px;
+        gap: 11px;
     }
+
 
     label {
         font-weight: 300;

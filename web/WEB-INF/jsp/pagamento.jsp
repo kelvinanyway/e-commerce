@@ -38,13 +38,13 @@
                         <div class="inputs">
                             <label for="">Numero Cartão</label>
                             <input type="text" id="nCartao" required placeholder="0000 0000 0000 0000">
-                            <label for="">CVC</label>
+                            <label for="">CVV</label>
                             <input type="text" id="cvc" required>
                             <label for="">Validade</label>
                             <input type="text" id="validade" required placeholder="MM/AA">
                             <label for="">Nome Completo do titular</label>
                             <input type="text" id="nCompleto" required>
-                            <button type="submit" value="cartao" name="formaPagamento" class="btnFinalizarCartao">finalizar Compra</button>
+                            <button onclick="alert('pedido finalizado com sucesso')" type="submit" value="cartao" name="formaPagamento" class="btnFinalizarCartao">finalizar Compra</button>
                         </div>
                     </form>
                 </div>
@@ -55,7 +55,7 @@
                         </center>
                         <img class="img-qr" src="./assets/qrcode.png" alt="qrcode">
                         <form action="finalizarPedido" method="post">
-                            <button type="submit" value="pix" name="formaPagamento" class="btnFinalizar">finalizar Compra</button>
+                            <button onclick="alert('pedido finalizado com sucesso')" type="submit" value="pix" name="formaPagamento" class="btnFinalizar">finalizar Compra</button>
                         </form>
 
                     </div>
