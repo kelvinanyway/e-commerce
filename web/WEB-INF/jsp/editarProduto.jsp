@@ -49,24 +49,24 @@
                                         <form action="atualizarNomeProduto" method="post">
                                             <input name="nome" id="inputNome" type="text"
                                                 placeholder="Nome: ${produto.nome}" />
-                                            <button class="btnAtualizar" type="submit" value="${produto.idProduto}"
+                                            <button  onclick="alert('nome atualizada com sucesso')" class="btnAtualizar" type="submit" value="${produto.idProduto}"
                                                 name="atualizarNomeProduto"><i class="fa-solid fa-pen"></i></button>
                                         </form>
                                         <form action="atualizarDesconto" method="post">
                                             <input step="0.01" name="desconto" id="inputDesconto" type="number"
                                                 placeholder="Desc: ${produto.desconto}" />
-                                            <button value="${produto.idProduto}" class="btnAtualizar" type="submit"
+                                            <button onclick="alert('desconto atualizado com sucesso')" value="${produto.idProduto}" class="btnAtualizar" type="submit"
                                                 name="atualizarDesconto"><i class="fa-solid fa-pen"></i></button>
                                         </form>
                                         <form action="atualizarQuantidade" method="post">
                                             <input name="quantidade" id="inputQuantidade" type="number"
                                                 placeholder="Quantidade: ${produto.quantidade}" />
-                                            <button class="btnAtualizar" type="submit" value="${produto.idProduto}"
+                                            <button onclick="alert('quantidade atualizada com sucesso')" class="btnAtualizar" type="submit" value="${produto.idProduto}"
                                                 name="atualizarQuantidade"><i class="fa-solid fa-pen"></i></button>
                                         </form>
                                     </div>
                                     <form class="formExcluir" action="excluirProduto" method="post">
-                                        <button type="submit" name="excluir" value="${produto.idProduto}"><i
+                                        <button onclick="alert('produto excluido com sucesso')" type="submit" name="excluir" value="${produto.idProduto}"><i
                                                 class="fa-solid fa-trash fa-xl" style="color: #000000;"></i></button>
                                     </form>
                                 </div>

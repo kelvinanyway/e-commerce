@@ -25,26 +25,25 @@
                             </a>
                         </div>
                         <p>Digite os seus dados de acesso no campo abaixo.</p>
-                        <label for="nome">Nome</label>
+                        <label for="">Nome</label>
                         <input id="inputNome" name="nome" type="text" placeholder="Digite seu Nome" required />
-                        <label for="email">Email</label>
-                        <input id="inputEmail" name="email" type="email" placeholder="Digite seu Email" />
-                        <label for="senha">Senha</label>
+                        <label for="">Email</label>
+                        <input id="inputEmail" name="email" type="email" placeholder="Digite seu Email" required/>
+                        <label for="">Senha</label>
                         <input id="inputSenha" name="senha" type="password" placeholder="Digite sua Senha" required />
-                        <label for="inputData">Data de Nascimento</label>
-                        <input id="inputData" name="data" type="date" />
-                        <label for="cpf">Cpf</label>
-                        <input id="inputCpf" name="Cpf" type="text" placeholder="Digite seu CPF" />
-                        <label for="telefone">Telefone</label>
-                        <input id="inputTelefone" name="Telefone" type="tel" placeholder="Digite seu Telefone" />
-                        <button type="submit" class="btn">Cadastrar</button>
+                        <label for="">Data de Nascimento</label>
+                        <input id="inputData" name="data" type="date" required/>
+                        <label for="">Cpf</label>
+                        <input data-mask="000.000.000-00" data-mask-selectonfocus="true" id="inputCpf" name="Cpf" type="text" placeholder="Digite seu CPF" required/>
+                        <label for="">Telefone</label>
+                        <input data-mask="(00) 0000-0000" data-mask-selectonfocus="true" id="inputTelefone" name="Telefone" type="tel" placeholder="Digite seu Telefone" required />
+                        <button onclick="alert('cadastro efetuado')" type="submit" class="btn">Cadastrar</button>
                     </form>
                 </div>
             </main>
-
+            <script src="./scripts/cadastro.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
-            <script src="./scripts/cadastro.js"></script>
         </body>
 
         </html>

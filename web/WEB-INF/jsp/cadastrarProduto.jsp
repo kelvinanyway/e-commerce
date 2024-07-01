@@ -80,7 +80,7 @@
                                     <label for="imagem">Imagem do Produto:</label>
                                     <input required type="file" class="form-control-file" id="imagem" name="imagem">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Cadastrar Produto</button>
+                                <button onclick="alert('produto adicionado com sucesso')"  type="submit" class="btn btn-primary">Cadastrar Produto</button>
                             </form>
                         </div>
                     </main>

@@ -71,7 +71,7 @@
                                                                     </button>
                                                                 </div>
                                                                 <div>
-                                                                    <button class="btnConfirmar"
+                                                                    <button onclick="alert('produto adicionado com sucesso')" id="botaoAdicionar" class="btnConfirmar"
                                                                         name="confirmarQuantidade" type="submit"
                                                                         value="${produtoQtd[contagem.index].idCarrinhoProduto}">
                                                                         <i class="fa-solid fa-check"></i>
@@ -82,7 +82,7 @@
                                                     </div>
                                                 </div>
                                                 <form class="formExcluir" action="excluir" method="post">
-                                                    <button type="submit" name="item" value="${produto.idProduto}"><i
+                                                    <button onclick="alert('produto retirado do carrinho')" type="submit" name="item" value="${produto.idProduto}"><i
                                                             class="fa-solid fa-trash fa-xl"
                                                             style="color: #000000;"></i></button>
                                                 </form>

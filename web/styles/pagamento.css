@@ -1,6 +1,7 @@
-body{
+body {
     overflow-x: hidden;
 }
+
 .cartaoCC {
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -17,6 +18,16 @@ body{
     flex-direction: column;
     align-items: center;
 
+}
+
+.btnFinalizarCartao {
+    margin-top: 1vh;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 22vw;
+    height: 6vh;
+    color: white;
+    background-color: black;
 }
 
 main {
@@ -57,7 +68,7 @@ input {
 }
 
 .btnPix {
-    background-color: white;
+    color: rgb(0, 0, 0);
     height: 100px;
     width: 100px;
     border: 1px black solid;
@@ -109,7 +120,7 @@ footer p {
 
 @media all and (max-width:800px) {
     main {
-        height:  82.4vh;
+        height: 82.4vh;
         display: flex;
         flex-direction: column;
     }
@@ -136,7 +147,8 @@ footer p {
         transform: scale(1.05);
         background-color: #000000;
     }
-    .btnFinalizarCartao{
+
+    .btnFinalizarCartao {
         margin-top: 1vh;
         border: 1px solid black;
         border-radius: 4px;
@@ -149,7 +161,8 @@ footer p {
     .me-5 {
         margin-right: 0rem !important;
     }
-    .label{
+
+    .label {
         font-size: 10px;
     }
 
@@ -186,4 +199,7 @@ footer p {
         border: 1px black solid;
     }
 
+    footer {
+        position: relative !important;
+    }
 }

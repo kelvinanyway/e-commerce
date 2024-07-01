@@ -43,7 +43,7 @@
                                     </div>
                                     <form action="adicionacarrinho" method="post" class="carrinho">
                                         <div id="div-btn">
-                                            <button class="card-btn verde-fundo fs-6" type="submit"
+                                            <button onclick="alert('produto adicionado ao carrinho')" class="card-btn verde-fundo fs-6" type="submit"
                                                 name="produtoSelecionado" value="${produto.idProduto}">Comprar</button>
                                         </div>
                                     </form>

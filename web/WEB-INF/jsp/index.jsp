@@ -53,7 +53,7 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-                <div class="container text-center my-5">
+                <div class="container text-center">
                     <h2 class="font-weight-light"></h2>
                     <div class="row mx-auto my-auto">
                         <center>
@@ -91,7 +91,7 @@
                                                 </div>
                                                 <form action="adicionarcarrinho" method="post" class="carrinho">
                                                     <div id="div-btn">
-                                                        <button class="card-btn verde-fundo fs-6" type="submit"
+                                                        <button onclick="alert('produto adicionado ao carrinho')" class="card-btn verde-fundo fs-6" type="submit"
                                                             name="produtoSelecionado"
                                                             value="${produto.idProduto}">Comprar</button>
                                                     </div>

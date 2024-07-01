@@ -20,76 +20,58 @@ body {
     width: 100%;
     height: 100vh;
 }
-
-.formCadastro {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 7px; 
-    padding: 40px;
-    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
-    gap: 0;
-    width: 430px;
+a{
+    color: rgb(13 110 253);
 }
 .retornoLogin{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-
+.formCadastro {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 26px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 0;
+    width: 370px;
+    height: 82vh;
+}
+button{
+margin-top: 10vh;
+    height: 50px;
+    color: #fff;
+    background-color: black;
+}
 .formCadastro h1 {
     padding: 0;
     margin: 0;
     font-weight: 500;
-    font-size: 2.3em;
+    font-size: 1.5em;
 }
-
 .formCadastro p {
     display: inline-block;
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
-    margin-bottom: 25px;
+    margin-bottom: 7px;
 }
-
+.formCadastro label {
+    font-size: 11px;
+    font-weight: 600;
+}
 .formCadastro input {
-    padding: 15px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 11px;
     border: 1px solid #ccc;
-    margin-bottom: 20px;
-    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-top: 0px;
     border-radius: 4px;
     transition: all linear 160ms;
     outline: none;
 }
-
-
-.formCadastro input:focus {
-    border: 1px solid #000000;
-}
-
-.formCadastro label {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.btn {
-    background-color: #2c2729;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border: none !important;
-    transition: all linear 160ms;
-    cursor: pointer;
-    margin: 0 !important;
-    height: 50px;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-    background-color: #2c2729;
-
-}
-@media all and (max-width:800px){
+@media (min-width:601px ) and (max-width:800px){
     .cadastro {
         display: flex;
         flex-direction: column;
@@ -137,6 +119,74 @@ body {
     .formCadastro input {
         padding: 10px;
         font-size: 12px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        margin-top: 0px;
+        border-radius: 4px;
+        transition: all linear 160ms;
+        outline: none;
+    }
+    button{
+        margin-top: 3vh;
+            height: 40px;
+            color: #fff;
+            background-color: black;
+        }
+}
+@media all and (min-width:600px) {
+    .cadastro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
+    a{
+        color: rgb(13 110 253);
+    }
+    button{
+        margin-top: 0vh;
+            height: 40px;
+            color: #fff;
+            background-color: black;
+        }
+    .retornoLogin{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .formCadastro {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 7px;
+        padding: 26px;
+        box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+        gap: 0;
+        width: 370px;
+        height: 74vh;
+    }
+    .formCadastro h1 {
+        padding: 0;
+        margin: 0;
+        font-weight: 500;
+        font-size: 1.3em;
+    }
+    .formCadastro p {
+        display: inline-block;
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 7px;
+    }
+    .formCadastro label {
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .formCadastro input {
+        padding: 10px;
+        font-size: 13px;
         border: 1px solid #ccc;
         margin-bottom: 10px;
         margin-top: 0px;

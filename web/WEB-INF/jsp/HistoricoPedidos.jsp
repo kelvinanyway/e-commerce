@@ -24,7 +24,7 @@
                     <main>
                         <div class="div-center">
                             <center>
-                                <h1>Historico de Pedidos</h1>
+                                <h1>Histórico de pedidos</h1>
                             </center>
                             <div class="divisao-pedidos m-4">
                                 <div class="pedidos-compras w-100">
@@ -59,7 +59,7 @@
                                                     </div>
                                                 </div>
                                                 <form class="formExcluir" action="cancelarPedido" method="post">
-                                                    <button type="submit" name="cancelarPedido" value="${pedido.idPedido}">
+                                                    <button onclick="alert('pedido cancelado')" type="submit" name="cancelarPedido" value="${pedido.idPedido}">
                                                         Cancelar pedido
                                                     </button>
                                                 </form>
